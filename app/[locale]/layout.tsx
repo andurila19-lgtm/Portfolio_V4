@@ -1,7 +1,6 @@
 import NextTopLoader from "nextjs-toploader";
 import Script from "next/script";
 import { getServerSession } from "next-auth";
-import { Analytics } from "@vercel/analytics/react";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -90,7 +89,6 @@ const RootLayout = async ({
             </ThemeProviderContext>
           </NextAuthProvider>
         </NextIntlClientProvider>
-        <Analytics />
       </body>
     </html>
   );

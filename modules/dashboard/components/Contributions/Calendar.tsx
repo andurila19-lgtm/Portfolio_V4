@@ -65,9 +65,9 @@ const Calendar = ({ data }: CalendarProps) => {
   const contributionColors = ["#ffffb8", "#ffff8a", "#ffff5c", "#fbe400"];
   return (
     <>
-      <div className="overflow-x-auto pb-4 no-scrollbar">
-        <div className="relative flex flex-col min-w-[800px] md:min-w-full">
-          <ul className="flex justify-start gap-[3px] text-xs dark:text-neutral-400">
+      <div className="overflow-x-auto pb-2 custom-scrollbar">
+        <div className="flex flex-col w-max min-w-full">
+          <ul className="flex gap-[3px] text-xs dark:text-neutral-400 mb-1">
             {months.map((month) => (
               <li
                 key={month.firstDay}
@@ -79,9 +79,9 @@ const Calendar = ({ data }: CalendarProps) => {
             ))}
           </ul>
 
-          <div className="flex justify-start gap-[2.9px]">
+          <div className="flex gap-[2.9px]">
             {weeks?.map((week) => (
-              <div key={week.firstDay}>
+              <div key={week.firstDay} className="flex flex-col gap-[2.9px]">
                 {week.contributionDays.map((contribution) => {
                   const colorIndex = data?.colors.indexOf(contribution.color);
                   const customColor =
@@ -106,7 +106,7 @@ const Calendar = ({ data }: CalendarProps) => {
                           transition: { delay: getRandomDelayAnimate },
                         },
                       }}
-                      className="my-[2px] block h-[12px] w-[12px] rounded-sm bg-neutral-300 dark:bg-neutral-800"
+                      className="block h-[12px] w-[12px] rounded-sm bg-neutral-300 dark:bg-neutral-800"
                       style={backgroundColor ? { backgroundColor } : undefined}
                       onMouseEnter={() =>
                         setSelectContribution({
