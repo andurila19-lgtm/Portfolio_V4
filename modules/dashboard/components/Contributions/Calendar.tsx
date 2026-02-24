@@ -65,62 +65,64 @@ const Calendar = ({ data }: CalendarProps) => {
   const contributionColors = ["#ffffb8", "#ffff8a", "#ffff5c", "#fbe400"];
   return (
     <>
-      <div className="relative flex flex-col">
-        <ul className="flex justify-end gap-[3px] overflow-hidden text-xs dark:text-neutral-400 md:justify-start">
-          {months.map((month) => (
-            <li
-              key={month.firstDay}
-              className={clsx(`${month.totalWeeks < 2 ? "invisible" : ""}`)}
-              style={{ minWidth: 14.3 * month.totalWeeks }}
-            >
-              {month.name}
-            </li>
-          ))}
-        </ul>
+      <div className="overflow-x-auto pb-4 no-scrollbar">
+        <div className="relative flex flex-col min-w-[800px] md:min-w-full">
+          <ul className="flex justify-start gap-[3px] text-xs dark:text-neutral-400">
+            {months.map((month) => (
+              <li
+                key={month.firstDay}
+                className={clsx(`${month.totalWeeks < 2 ? "invisible" : ""}`)}
+                style={{ minWidth: 14.3 * month.totalWeeks }}
+              >
+                {month.name}
+              </li>
+            ))}
+          </ul>
 
-        <div className="flex justify-start gap-[2.9px] overflow-hidden">
-          {weeks?.map((week) => (
-            <div key={week.firstDay}>
-              {week.contributionDays.map((contribution) => {
-                const colorIndex = data?.colors.indexOf(contribution.color);
-                const customColor =
-                  colorIndex !== -1 ? contributionColors[colorIndex!] : null;
+          <div className="flex justify-start gap-[2.9px]">
+            {weeks?.map((week) => (
+              <div key={week.firstDay}>
+                {week.contributionDays.map((contribution) => {
+                  const colorIndex = data?.colors.indexOf(contribution.color);
+                  const customColor =
+                    colorIndex !== -1 ? contributionColors[colorIndex!] : null;
 
-                const backgroundColor =
-                  contribution.contributionCount > 0 ? customColor : null;
+                  const backgroundColor =
+                    contribution.contributionCount > 0 ? customColor : null;
 
-                const getRandomDelayAnimate =
-                  Math.random() * week.contributionDays.length * 0.15;
+                  const getRandomDelayAnimate =
+                    Math.random() * week.contributionDays.length * 0.15;
 
-                return (
-                  <motion.span
-                    key={contribution.date}
-                    initial="initial"
-                    animate="animate"
-                    variants={{
-                      initial: { opacity: 0, translateY: -20 },
-                      animate: {
-                        opacity: 1,
-                        translateY: 0,
-                        transition: { delay: getRandomDelayAnimate },
-                      },
-                    }}
-                    className="my-[2px] block h-[12px] w-[12px] rounded-sm bg-neutral-300 dark:bg-neutral-800"
-                    style={backgroundColor ? { backgroundColor } : undefined}
-                    onMouseEnter={() =>
-                      setSelectContribution({
-                        count: contribution.contributionCount,
-                        date: contribution.date,
-                      })
-                    }
-                    onMouseLeave={() =>
-                      setSelectContribution({ count: null, date: null })
-                    }
-                  />
-                );
-              })}
-            </div>
-          ))}
+                  return (
+                    <motion.span
+                      key={contribution.date}
+                      initial="initial"
+                      animate="animate"
+                      variants={{
+                        initial: { opacity: 0, translateY: -20 },
+                        animate: {
+                          opacity: 1,
+                          translateY: 0,
+                          transition: { delay: getRandomDelayAnimate },
+                        },
+                      }}
+                      className="my-[2px] block h-[12px] w-[12px] rounded-sm bg-neutral-300 dark:bg-neutral-800"
+                      style={backgroundColor ? { backgroundColor } : undefined}
+                      onMouseEnter={() =>
+                        setSelectContribution({
+                          count: contribution.contributionCount,
+                          date: contribution.date,
+                        })
+                      }
+                      onMouseLeave={() =>
+                        setSelectContribution({ count: null, date: null })
+                      }
+                    />
+                  );
+                })}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
