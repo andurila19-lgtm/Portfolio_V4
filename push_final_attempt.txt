@@ -1,0 +1,162 @@
+﻿git : remote: error: GH013: Repository rule 
+violations found for refs/heads/main.       
+ 
+At line:1 char:1
++ git push https://ghp_CnKZsea9EgmlepsrqHKcy
+ABP3AcA4X2fQZW9@github.com/ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: 
+    (remote: error: ...s/main.        :Str  
+  ing) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommand 
+   Error
+ 
+remote: 
+remote: - GITHUB PUSH PROTECTION        
+remote:   ÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔ
+ÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇö
+ÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇ
+ö        
+remote:     Resolve the following violations
+ before pushing again        
+remote: 
+remote:     - Push cannot contain secrets   
+     
+remote: 
+remote:             
+remote:      (?) Learn how to resolve a bloc
+ked push        
+remote:      https://docs.github.com/code-se
+curity/secret-scanning/working-with-secret-s
+canning-and-push-protection/working-with-pus
+h-protection-from-the-command-line#resolving
+-a-blocked-push        
+remote:             
+remote:             
+remote:       ÔÇöÔÇö GitHub Personal Access 
+Token ÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇ
+öÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇö        
+remote:        locations:        
+remote:          - commit: 73c77583557ddfe43
+e2479df02d9743c1a481417        
+remote:            path: .env:9        
+remote:          - commit: 278e5672a8d75eac2
+7f13988e6af96fe2f368267        
+remote:            path: .env:9        
+remote:             
+remote:        (?) To push, remove secret fr
+om commit(s) or follow this URL to allow the
+ secret.        
+remote:        https://github.com/andurila19
+-lgtm/anduril.web.id/security/secret-scannin
+g/unblock-secret/3A7pGMQQk3xZjCmIMhcAbcQrFGx
+        
+remote:             
+remote:             
+remote:       ÔÇöÔÇö GitHub Personal Access 
+Token ÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇ
+öÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇö        
+remote:        locations:        
+remote:          - commit: 8717fb2d5e06721f7
+d85cd1600a30ccda547b8cf        
+remote:            path: .env:9        
+remote:             
+remote:        (?) To push, remove secret fr
+om commit(s) or follow this URL to allow the
+ secret.        
+remote:        https://github.com/andurila19
+-lgtm/anduril.web.id/security/secret-scannin
+g/unblock-secret/3A7p0Z2ZWkQl6nhq0PRqcV6zGp6
+        
+remote:             
+remote:             
+remote:       ÔÇöÔÇö GitHub Personal Access 
+Token ÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇ
+öÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇö        
+remote:        locations:        
+remote:          - commit: 55effdae2491c5c06
+e47a4a01ca21d20f463c374        
+remote:            path: .env:9        
+remote:          - commit: c72f52e4fbb639405
+7d2d0292d79cc97af9ba729        
+remote:            path: .env:9        
+remote:          - commit: 54350507d1f6db040
+367e36db90d5480c02f39fd        
+remote:            path: .env:9        
+remote:          - commit: 4c8b42c447c1972da
+98f14f1eed286dc8128ff82        
+remote:            path: .env:9        
+remote:          - commit: b99f6dfc5c56c5c3d
+bfdab7b78a1179dc7b46069        
+remote:            path: .env:9        
+remote:             
+remote:        (?) To push, remove secret fr
+om commit(s) or follow this URL to allow the
+ secret.        
+remote:        https://github.com/andurila19
+-lgtm/anduril.web.id/security/secret-scannin
+g/unblock-secret/3A7p0XIJFjxsYAv9rcSjwTbBGTN
+        
+remote:             
+remote:             
+remote:       ÔÇöÔÇö GitHub Personal Access 
+Token ÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇ
+öÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇö        
+remote:        locations:        
+remote:          - commit: aedaff35de43aace1
+5a362df38865faadaec52b2        
+remote:            path: .env:9        
+remote:             
+remote:        (?) To push, remove secret fr
+om commit(s) or follow this URL to allow the
+ secret.        
+remote:        https://github.com/andurila19
+-lgtm/anduril.web.id/security/secret-scannin
+g/unblock-secret/3A7p0X4CyMyMUqxxTeCiFVZreY2
+        
+remote:             
+remote:             
+remote:       ÔÇöÔÇö GitHub Personal Access 
+Token ÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇ
+öÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇö        
+remote:        locations:        
+remote:          - commit: 872d49b3679d448a9
+c06d92dd3815f8fa7f5a10b        
+remote:            path: .env:9        
+remote:             
+remote:        (?) To push, remove secret fr
+om commit(s) or follow this URL to allow the
+ secret.        
+remote:        https://github.com/andurila19
+-lgtm/anduril.web.id/security/secret-scannin
+g/unblock-secret/3A7p0bRWmAYFck7vRaciigzybpv
+        
+remote:             
+remote:             
+remote:     ÔÇöÔÇö[ WARNING ]ÔÇöÔÇöÔÇöÔÇöÔÇö
+ÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇ
+öÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔ
+ÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇö        
+remote:      10 more secrets detected. Remov
+e each secret from your commit history to vi
+ew more detections.        
+remote:      https://docs.github.com/code-se
+curity/secret-scanning/using-advanced-secret
+-scanning-and-push-protection-features/exclu
+ding-folders-and-files-from-secret-scanning 
+       
+remote:     ÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇ
+öÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔ
+ÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇö
+ÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇö  
+      
+remote: 
+remote: 
+To https://github.com/andurila19-lgtm/anduri
+l.web.id.git
+ ! [remote rejected] rebrand -> main (push d
+eclined due to repository rule violations)
+error: failed to push some refs to 'https://
+github.com/andurila19-lgtm/anduril.web.id.gi
+t'
