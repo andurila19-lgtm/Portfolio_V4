@@ -6,7 +6,7 @@
 
 <br/>
 
-<img width="1525" height="1221" alt="Portfolio Screenshot" src="https://github.com/user-attachments/assets/fcf5a30b-0ad8-4a57-b1bf-e846e4ed416c" />
+<img width="1525" height="1221" alt="Portfolio Screenshot" src="/public/images/screenshot.png" />
 
 ## 📘 Introduction
 
