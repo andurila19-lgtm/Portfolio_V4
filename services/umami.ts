@@ -22,12 +22,17 @@ export const getPageViewsByDataRange = async (domain: string) => {
   const url = `${base_url}/${website_id}${endpoint.page_views}`;
 
   try {
+    const currentParams = {
+      ...parameters,
+      endAt: new Date().getTime(),
+    };
+
     const response = await axios.get(url, {
       headers: {
         Accept: "application/json",
         "x-umami-api-key": api_key || "",
       },
-      params: parameters,
+      params: currentParams,
     });
 
     if (response.data?.error) {
@@ -71,7 +76,10 @@ export const getWebsiteStats = async (domain: string) => {
         Accept: "application/json",
         "x-umami-api-key": api_key || "",
       },
-      params: { startAt: parameters.startAt, endAt: parameters.endAt },
+      params: {
+        startAt: parameters.startAt,
+        endAt: new Date().getTime()
+      },
     });
 
     if (response.data?.error) {

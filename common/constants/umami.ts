@@ -16,7 +16,7 @@ export const UMAMI_ACCOUNT = {
   websites: [
     {
       domain: "anduril.web.id",
-      website_id: process.env.UMAMI_WEBSITE_ID,
+      website_id: "cd912b2f-6f76-4633-a28f-93ddd2f841da",
       umami_url:
         "https://cloud.umami.is/share/91c868c5-2a89-4a1d-b292-56c40ea30137/anduril.web.id",
     },
