@@ -1,0 +1,14 @@
+﻿git : To https://github.com/andurila19-lgtm/
+Portfolio_V4.git
+At line:1 char:1
++ git push https://ghp_CnKZsea9EgmlepsrqHKcy
+ABP3AcA4X2fQZW9@github.com/ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: 
+    (To https://gith...ortfolio_V4.git:Str  
+  ing) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommand 
+   Error
+ 
+ * [new branch]      master -> main

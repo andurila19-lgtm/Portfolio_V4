@@ -6,7 +6,7 @@
 
 <br/>
 
-<img width="1525" height="1221" alt="Portfolio Screenshot" src="/public/images/screenshot.png" />
+<img width="1525" height="1221" alt="Portfolio Screenshot" src="/public/images/Screenshot%20.png" />
 
 ## 📘 Introduction
 
