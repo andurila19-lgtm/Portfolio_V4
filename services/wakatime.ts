@@ -11,7 +11,7 @@ const fetchReadStats = async () => {
       `${base_url}${stats_endpoint}/last_7_days`,
       {
         headers: {
-          Authorization: `Basic ${Buffer.from(api_key || "").toString("base64")}`,
+          Authorization: `Basic ${Buffer.from(`${api_key}:`).toString("base64")}`,
         },
       },
     );
@@ -44,7 +44,7 @@ const fetchAllTimeSinceToday = async () => {
   try {
     const response = await axios.get(`${base_url}${all_time_endpoint}`, {
       headers: {
-        Authorization: `Basic ${Buffer.from(api_key || "").toString("base64")}`,
+        Authorization: `Basic ${Buffer.from(`${api_key}:`).toString("base64")}`,
       },
     });
 
