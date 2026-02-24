@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
 
@@ -30,6 +30,7 @@ interface CalendarProps {
 }
 
 const Calendar = ({ data }: CalendarProps) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
   const [selectContribution, setSelectContribution] = useState<{
     count: number | null;
     date: string | null;
@@ -37,6 +38,12 @@ const Calendar = ({ data }: CalendarProps) => {
     count: null,
     date: null,
   });
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft = scrollRef.current.scrollWidth;
+    }
+  }, [data]);
 
   const t = useTranslations("DashboardPage.github");
   const locale = useLocale();
@@ -65,7 +72,7 @@ const Calendar = ({ data }: CalendarProps) => {
   const contributionColors = ["#ffffb8", "#ffff8a", "#ffff5c", "#fbe400"];
   return (
     <>
-      <div className="overflow-x-auto pb-2 custom-scrollbar">
+      <div ref={scrollRef} className="overflow-x-auto pb-2 custom-scrollbar">
         <div className="flex flex-col w-max min-w-full">
           <ul className="flex gap-[3px] text-xs dark:text-neutral-400 mb-1">
             {months.map((month) => (
