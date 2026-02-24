@@ -14,8 +14,8 @@ const Story = () => {
         </div>
       ))}
       <Image
-        src="/images/signature.png"
-        alt="signature"
+        src="/images/Andrl%20-blue.png"
+        alt="Anduril Ahmad"
         width={100}
         height={100}
       />
