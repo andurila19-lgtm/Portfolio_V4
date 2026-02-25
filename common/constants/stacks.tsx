@@ -1,7 +1,9 @@
 import { BiLogoPostgresql } from "react-icons/bi";
 import { BsFillBootstrapFill, BsRobot } from "react-icons/bs";
 import { TbBeach, TbBrandFramerMotion } from "react-icons/tb";
-import { FaNpm, FaGolang } from "react-icons/fa6";
+import { FaNpm, FaGolang, FaMapLocationDot, FaFont } from "react-icons/fa6";
+import { MdInstallMobile } from "react-icons/md";
+import { LuPenTool } from "react-icons/lu";
 import {
   SiCss3,
   SiExpress,
@@ -303,6 +305,30 @@ export const STACKS: SkillProps = {
     icon: <SiGithub size={iconSize} />,
     background: "bg-slate-800",
     color: "text-neutral-50",
+    isActive: true,
+  },
+  PWA: {
+    icon: <MdInstallMobile size={iconSize} />,
+    background: "bg-violet-500",
+    color: "text-violet-500",
+    isActive: true,
+  },
+  "Google Maps": {
+    icon: <FaMapLocationDot size={iconSize} />,
+    background: "bg-green-500",
+    color: "text-green-500",
+    isActive: true,
+  },
+  "Google Font API": {
+    icon: <FaFont size={iconSize} />,
+    background: "bg-red-500",
+    color: "text-red-500",
+    isActive: true,
+  },
+  Lucide: {
+    icon: <LuPenTool size={iconSize} />,
+    background: "bg-orange-400",
+    color: "text-orange-400",
     isActive: true,
   },
 };
