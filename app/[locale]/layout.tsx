@@ -90,7 +90,9 @@ const RootLayout = async ({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          key="person-jsonld"
         />
+
       </head>
 
       <body className={inter.className}>
