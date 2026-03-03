@@ -1,0 +1,56 @@
+[
+  {
+    "id": 27,
+    "name": "AI Agents and Agentic AI Architecture in Python",
+    "issuing_organization": "Vanderbilt University",
+    "slug": "1"
+  },
+  {
+    "id": 28,
+    "name": "AI Agents and Agentic AI with Python & Generative AI",
+    "issuing_organization": "Vanderbilt University",
+    "slug": "2"
+  },
+  {
+    "id": 29,
+    "name": "HTML: How to Build a Website",
+    "issuing_organization": "University of London",
+    "slug": "3"
+  },
+  {
+    "id": 30,
+    "name": "Data-driven websites: JSON, APIs and Templates",
+    "issuing_organization": "University of London",
+    "slug": "4"
+  },
+  {
+    "id": 31,
+    "name": "Cloud Computing Specialization",
+    "issuing_organization": "Coursera",
+    "slug": "cloud"
+  },
+  {
+    "id": 32,
+    "name": "Dasar Pemrograman Web",
+    "issuing_organization": "Dicoding",
+    "slug": "dasar"
+  },
+  {
+    "id": 33,
+    "name": "AI Agents and Agentic AI Architecture in Python",
+    "issuing_organization": "Vanderbilt University",
+    "slug": "5"
+  },
+  {
+    "id": 34,
+    "name": "Data-driven websites: JSON, APIs and Templates",
+    "issuing_organization": "University of London",
+    "slug": "6"
+  },
+  {
+    "id": 35,
+    "name": "HTML: How to Build a Website",
+    "issuing_organization": "University of London",
+    "slug": "7"
+  }
+]

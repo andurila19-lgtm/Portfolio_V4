@@ -38,8 +38,9 @@ export const SOCIAL_MEDIA: SocialMediaProps[] = [
     borderColor: "border-purple-200",
     backgroundGradientColor:
       "bg-gradient-to-b from-purple-700 via-pink-500 to-orange-500",
-    isShow: false,
+    isShow: true,
   },
+
   {
     title: "Let's Connect",
     description:
