@@ -15,7 +15,7 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: "/(.*)",
+        source: "/((?!sitemap\\.xml|robots\\.txt).*)",
         headers: [
           {
             key: "Strict-Transport-Security",
@@ -49,6 +49,7 @@ const nextConfig = {
       },
     ];
   },
+
 };
 
 export default withNextIntl(nextConfig);
