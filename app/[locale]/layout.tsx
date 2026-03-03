@@ -64,21 +64,6 @@ const RootLayout = async ({
   const messages = await getMessages();
   const session = await getServerSession();
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: METADATA.creator,
-    url: "https://anduril.web.id",
-    sameAs: [
-      "https://www.instagram.com/rm_andurilahmad",
-      "https://www.linkedin.com/in/anduril-ahmad-silvera-burhani-837492387/",
-      "https://github.com/andurila19-lgtm",
-      "https://www.tiktok.com/@amad.ddd",
-    ],
-    jobTitle: "Software Engineer",
-    description: METADATA.description,
-  };
-
   return (
     <html lang={locale} suppressHydrationWarning={true}>
       <head>
@@ -87,13 +72,8 @@ const RootLayout = async ({
           src="https://cloud.umami.is/script.js"
           data-website-id="cd912b2f-6f76-4633-a28f-93ddd2f841da"
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-          key="person-jsonld"
-        />
-
       </head>
+
 
       <body className={inter.className}>
         <NextTopLoader
