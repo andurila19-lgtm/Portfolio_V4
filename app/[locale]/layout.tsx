@@ -66,16 +66,14 @@ const RootLayout = async ({
 
   return (
     <html lang={locale} suppressHydrationWarning={true}>
-      <head>
+      <head />
+      <body className={inter.className}>
         <Script
           defer
           src="https://cloud.umami.is/script.js"
           data-website-id="cd912b2f-6f76-4633-a28f-93ddd2f841da"
         />
-      </head>
 
-
-      <body className={inter.className}>
         <NextTopLoader
           color="#fbe400"
           initialPosition={0.08}
