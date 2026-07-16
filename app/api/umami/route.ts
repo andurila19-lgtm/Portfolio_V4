@@ -5,7 +5,7 @@ import {
   getAllWebsiteData,
 } from "@/services/umami";
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 60; // cache umami data for 1 minute
 
 export const GET = async (req: NextRequest) => {
   try {

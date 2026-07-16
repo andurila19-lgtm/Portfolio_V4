@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { FiArrowLeftCircle as BackButtonIcon } from "react-icons/fi";
@@ -18,7 +18,7 @@ const BackButton = ({ url }: BackButtonProps) => {
 
   const handleOnClick = () => {
     if (url) {
-      window.location.href = url;
+      router.push(url);
     } else {
       router.back();
     }

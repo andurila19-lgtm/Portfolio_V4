@@ -1,6 +1,5 @@
 import NextTopLoader from "nextjs-toploader";
 import Script from "next/script";
-import { getServerSession } from "next-auth";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -62,7 +61,6 @@ const RootLayout = async ({
   setRequestLocale(locale);
 
   const messages = await getMessages();
-  const session = await getServerSession();
 
   return (
     <html lang={locale} suppressHydrationWarning={true}>
@@ -86,7 +84,7 @@ const RootLayout = async ({
           shadow="0 0 10px #fbe400,0 0 5px #ffffb8"
         />
         <NextIntlClientProvider messages={messages} locale={locale}>
-          <NextAuthProvider session={session}>
+          <NextAuthProvider session={null}>
             <ThemeProviderContext>
               <SkeletonThemeProvider>
                 <Layouts>{children}</Layouts>

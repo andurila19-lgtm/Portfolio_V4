@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { HiOutlineArrowSmRight as ViewIcon } from "react-icons/hi";
 import { useTranslations } from "next-intl";
 import { TbPinnedFilled as PinIcon } from "react-icons/tb";

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { MdVerified as VerifiedIcon } from "react-icons/md";
 
 import ThemeToggle from "./ThemeToggle";

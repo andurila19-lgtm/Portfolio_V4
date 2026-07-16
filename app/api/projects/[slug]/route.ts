@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 import { getProjectsDataBySlug } from "@/services/projects";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export const GET = async (
   req: Request,

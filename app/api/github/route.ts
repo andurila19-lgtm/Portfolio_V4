@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 import { getGithubData } from "@/services/github";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 600; // cache github stats for 10 minutes
 
 export const GET = async () => {
   try {
