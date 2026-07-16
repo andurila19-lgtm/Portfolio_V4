@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { getProjectsData } from "@/services/projects";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export const GET = async (req: NextRequest) => {
   try {
