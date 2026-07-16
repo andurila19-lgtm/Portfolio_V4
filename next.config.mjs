@@ -8,7 +8,15 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "**",
+        hostname: "*.supabase.co",
+      },
+      {
+        protocol: "https",
+        hostname: "*.supabase.in",
+      },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
       },
     ],
   },
@@ -19,7 +27,7 @@ const nextConfig = {
         headers: [
           {
             key: "Strict-Transport-Security",
-            value: "max-age=31536000; includeSubDomains; preload",
+            value: "max-age=63072000; includeSubDomains; preload",
           },
           {
             key: "X-Frame-Options",
@@ -28,10 +36,6 @@ const nextConfig = {
           {
             key: "X-Content-Type-Options",
             value: "nosniff",
-          },
-          {
-            key: "X-XSS-Protection",
-            value: "1; mode=block",
           },
           {
             key: "Referrer-Policy",
@@ -43,7 +47,8 @@ const nextConfig = {
           },
           {
             key: "Content-Security-Policy",
-            value: "upgrade-insecure-requests",
+            value:
+              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cloud.umami.is; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://*.supabase.co https://*.supabase.in https://avatars.githubusercontent.com; connect-src 'self' https://*.supabase.co https://*.supabase.in https://cloud.umami.is https://api.github.com https://api.monkeytype.com; frame-src 'none'; upgrade-insecure-requests",
           },
         ],
       },

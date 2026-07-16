@@ -9,14 +9,29 @@ import { STACKS } from "@/common/constants/stacks";
 const SkillList = () => {
   const t = useTranslations("HomePage");
 
-  const stacksInArray: Array<
-    [string, { icon: JSX.Element; background: string }]
-  > = Object.entries(STACKS)
-    .filter(([, value]) => value.isActive)
-    .map(([name, value]) => [
-      name,
-      { icon: value.icon, background: value.background },
-    ]);
+  const categories = [
+    { key: "frontend", label: t("skills.frontend") },
+    { key: "backend", label: t("skills.backend") },
+    { key: "languages", label: t("skills.languages") },
+    { key: "database", label: t("skills.database") },
+    { key: "devops", label: t("skills.devops") },
+    { key: "cloud", label: t("skills.cloud") },
+    { key: "cybersecurity", label: t("skills.cybersecurity") },
+    { key: "tools", label: t("skills.tools") },
+  ];
+
+  const groupedSkills = categories
+    .map((cat) => {
+      const skills = Object.entries(STACKS)
+        .filter(([, value]) => value.isActive && value.category === cat.key)
+        .map(([name, value]) => ({
+          name,
+          icon: value.icon,
+          background: value.background,
+        }));
+      return { ...cat, skills };
+    })
+    .filter((group) => group.skills.length > 0);
 
   return (
     <section className="space-y-6">
@@ -27,14 +42,23 @@ const SkillList = () => {
         </SectionSubHeading>
       </div>
 
-      <div className="grid w-full grid-cols-6 gap-x-[1em] gap-y-[2.7em] py-2 md:grid-cols-10 lg:grid-cols-11">
-        {stacksInArray.map(([name, { icon, background }], index) => (
-          <GlassIcon
-            key={index}
-            name={name}
-            icon={icon}
-            background={background}
-          />
+      <div className="space-y-10 pt-4">
+        {groupedSkills.map((group) => (
+          <div key={group.key} className="space-y-4">
+            <h3 className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-800 pb-2">
+              {group.label}
+            </h3>
+            <div className="flex flex-wrap gap-x-6 gap-y-[2.8em] pb-6 pt-2">
+              {group.skills.map((skill, index) => (
+                <GlassIcon
+                  key={index}
+                  name={skill.name}
+                  icon={skill.icon}
+                  background={skill.background}
+                />
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </section>

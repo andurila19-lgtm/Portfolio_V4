@@ -6,7 +6,7 @@ import { METADATA } from "@/common/constants/metadata";
 export const metadata: Metadata = {
   title: `Privacy Policy ${METADATA.exTitle}`,
   description:
-    "Privacy Policy for Satria Bahari's Portfolio App regarding TikTok API integration",
+    "Privacy Policy for Anduril Ahmad's Portfolio App regarding TikTok API integration",
   keywords: "portfolio frontend developer, privacy policy, tiktok api",
   alternates: {
     canonical: `${process.env.DOMAIN}/privacy-policy`,
@@ -39,7 +39,7 @@ const PrivacyPolicyPage = () => {
           </h2>
           <p>
             The App utilizes the TikTok Display API to fetch and show the
-            developer&apos;s (Satria Bahari) public TikTok content for
+            developer&apos;s (Anduril Ahmad) public TikTok content for
             professional display purposes.
           </p>
           <ul className="ml-6 list-disc space-y-2">
@@ -49,15 +49,15 @@ const PrivacyPolicyPage = () => {
               likes.
             </li>
             <li>
-              <strong>Content Feed:</strong> The App displays public videos
-              uploaded by the developer.
-            </li>
-            <li>
-              <strong>Data Scope:</strong> The App only accesses the
-              developer&apos;s own public content. No private user data from
-              TikTok or data from other users is accessed or collected.
+              <strong>Video Content:</strong> The App embeds public videos from
+              the developer&apos;s TikTok feed on the site.
             </li>
           </ul>
+          <p>
+            The App only retrieves public data authorized via the official API
+            flow and does not gain access to private messages, account settings,
+            or non-public resources.
+          </p>
         </section>
 
         <section className="space-y-4">
@@ -65,13 +65,14 @@ const PrivacyPolicyPage = () => {
             3. Third-Party Services
           </h2>
           <p>
-            All displayed TikTok data is pulled directly from the official
-            TikTok API. Use of these features is subject to the{" "}
+            All media displayed through the TikTok API is subject to TikTok&apos;s
+            own Terms of Service and Privacy Policy. By interacting with the App,
+            you also acknowledge the terms specified in the{" "}
             <a
               href="https://www.tiktok.com/legal/privacy-policy"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 hover:underline"
+              className="text-primary hover:underline"
             >
               TikTok Privacy Policy
             </a>
@@ -85,7 +86,7 @@ const PrivacyPolicyPage = () => {
           </h2>
           <p>
             If you have any questions regarding this Privacy Policy, you may
-            contact the developer at: <strong>satriaabaharii@gmail.com</strong>.
+            contact the developer at: <strong>andurila19@gmail.com</strong>.
           </p>
         </section>
       </div>

@@ -21,7 +21,6 @@ const ContactForm = () => {
     formState: { errors },
   } = useForm<FormEmail>();
   const [isLoading, setIsLoading] = useState(false);
-  const [buttonText, setButtonText] = useState("Send Email");
   const [isSuccess, setIsSuccess] = useState(false);
 
   const t = useTranslations("ContactPage");
@@ -30,13 +29,19 @@ const ContactForm = () => {
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   useEffect(() => {
-    setButtonText(isLoading ? "Sending your message..." : "Send Email");
-    if (!isLoading && isSuccess) setButtonText("Your email sent successfully");
-    const timeout = setTimeout(() => {
-      setButtonText("Send Email");
-    }, 5000);
-    return () => clearTimeout(timeout);
-  }, [isLoading, isSuccess]);
+    if (isSuccess) {
+      const timeout = setTimeout(() => {
+        setIsSuccess(false);
+      }, 5000);
+      return () => clearTimeout(timeout);
+    }
+  }, [isSuccess]);
+
+  const buttonText = isLoading
+    ? t("form.button_sending")
+    : isSuccess
+      ? t("form.button_success")
+      : t("form.button");
 
   const handleFormSubmit = async (payload: FormEmail) => {
     setIsLoading(true);
@@ -53,7 +58,7 @@ const ContactForm = () => {
 
   return (
     <div className="space-y-4">
-      <h2>{t("form.title")}</h2>
+      <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">{t("form.title")}</h2>
       <form
         onSubmit={handleSubmit(handleFormSubmit)}
         className="space-y-4 transition-all duration-300"

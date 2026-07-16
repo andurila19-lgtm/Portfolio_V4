@@ -1,15 +1,43 @@
 {
   "HomePage": {
     "intro": "Hi, I'm Anduril Ahmad",
+    "role": "Full-Stack Developer & Cyber Security Enthusiast",
     "location": "Based in Madiun, Indonesia 🇮🇩",
-    "location_type": "Onsite",
+    "location_type": "Onsite & Remote",
+    "cta_projects": "View Projects",
+    "cta_contact": "Contact Me",
     "resume": {
-      "paragraph_1": "A FullStack Developer and Cyber Security Enthusiast dedicated to building secure, efficient, and impactful digital solutions. I focus on end-to-end web platform development using modern technologies and implementing security practices to protect systems and user data.",
-      "paragraph_2": "My focus is on designing structured, maintainable application architecture with strong security standards to align with business needs. I combine technical skills, security analysis, and proactive communication to ensure every project has optimal performance and real protection in the digital world."
+      "paragraph_1": "I build secure, high-performance, and scalable web applications. Bridging the gap between robust backend architecture and clean frontend interfaces, I ensure that application logic and system security go hand in hand.",
+      "paragraph_2": "With a background in both full-stack development and security analysis, I focus on writing maintainable code, optimizing database performance, and implementing industry-standard security protocols to protect user data and business assets."
     },
     "skills": {
-      "title": "Skills",
-      "sub_title": "My professional skills."
+      "title": "Skills & Tech Stack",
+      "sub_title": "My professional skills grouped by domain.",
+      "frontend": "Frontend Development",
+      "backend": "Backend Development",
+      "languages": "Programming Languages",
+      "database": "Database Systems",
+      "devops": "DevOps",
+      "cloud": "Cloud Services",
+      "cybersecurity": "Cyber Security",
+      "tools": "Tools & Environments"
+    },
+    "services": {
+      "title": "Services & Solutions",
+      "subtitle": "Professional web and application development services tailored to grow your business.",
+      "cta": "Get a Free Proposal",
+      "web_dev": {
+        "title": "Custom Web & App Development",
+        "desc": "High-performance company profiles, landing pages, and interactive web applications designed to convert visitors into loyal clients."
+      },
+      "ecommerce": {
+        "title": "E-Commerce & Digital Storefronts",
+        "desc": "Seamless online stores integrated with WhatsApp checkouts, payment systems, and responsive admin dashboard management."
+      },
+      "security": {
+        "title": "Performance & Security Auditing",
+        "desc": "Ensure your systems are bulletproof against vulnerabilities, optimize server latency, and boost database queries for speed."
+      }
     },
     "bento": {
       "title": "Featured Sections",
@@ -20,11 +48,11 @@
   },
   "AboutPage": {
     "title": "About",
-    "description": "A brief introduction to who I am.",
+    "description": "A brief introduction to my background and workflow.",
     "resume": {
-      "paragraph_1": "I'm Anduril Ahmad, a Madiun-based FullStack Developer and Cyber Security Enthusiast dedicated to building secure, efficient, and impactful digital solutions. I focus on end-to-end web platform development using modern technologies and implementing security practices to protect systems and user data.",
-      "paragraph_2": "My primary focus is crafting application architecture that doesn't just work but is well-structured, maintainable, and has strong security standards to meet business needs. I believe that high-quality code must go hand-in-hand with system efficiency and robust protection.",
-      "paragraph_3": "I blend technical expertise with security analysis, proactive communication, and critical thinking. I thrive in collaborative environments and leverage leadership skills to ensure every project delivers optimal results and a real-world impact.",
+      "paragraph_1": "I am Anduril Ahmad, a Full-Stack Developer and Cyber Security Enthusiast based in Madiun, Indonesia. I specialize in building secure, clean, and efficient web platforms that deliver smooth user experiences while protecting sensitive data.",
+      "paragraph_2": "My approach to development is centered on clean code and reliable architecture. I don't just build features; I design maintainable systems that scale with business growth and satisfy rigorous security standards.",
+      "paragraph_3": "I believe successful projects are built on clear communication, critical thinking, and structured execution. Whether working independently or collaborating in a team, my goal is always to deliver optimal performance and measurable business value.",
       "paragraph_4": "Best regards,"
     },
     "career": {
@@ -164,7 +192,7 @@
   },
   "ContactPage": {
     "title": "Contact",
-    "description": "Let's get in touch.",
+    "description": "Let's work together or discuss your next project.",
     "error": "Failed to send message.",
     "no_data": "No contact information available.",
     "social_media": {
@@ -191,11 +219,14 @@
       }
     },
     "form": {
-      "title": "Or send me a message",
+      "title": "Or send me a message directly",
       "input_name": "Name",
       "input_email": "Email",
       "input_message": "Message",
-      "button": "Send Email"
+      "button": "Send Email",
+      "button_sending": "Sending your message...",
+      "button_success": "Your message has been sent!",
+      "button_error": "Failed to send email. Try again."
     }
   },
   "SmartTalkPage": {

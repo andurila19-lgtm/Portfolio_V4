@@ -1,15 +1,43 @@
 {
   "HomePage": {
     "intro": "Halo, Saya Anduril Ahmad",
+    "role": "Full-Stack Developer & Cyber Security Enthusiast",
     "location": "Berdomisili di Madiun, Indonesia 🇮🇩",
-    "location_type": "Onsite",
+    "location_type": "Onsite & Remote",
+    "cta_projects": "Lihat Proyek",
+    "cta_contact": "Hubungi Saya",
     "resume": {
-      "paragraph_1": "Seorang FullStack Developer dan Cyber Security Enthusiast yang berdedikasi dalam membangun solusi digital yang aman, efisien, dan berdampak. Saya berfokus pada pengembangan platform web end-to-end menggunakan teknologi modern serta menerapkan praktik keamanan untuk melindungi sistem dan data pengguna.",
-      "paragraph_2": "Fokus saya adalah merancang arsitektur aplikasi yang terstruktur, mudah dipelihara, dan memiliki standar keamanan yang kuat agar selaras dengan kebutuhan bisnis. Saya memadukan kemampuan teknis, analisis keamanan, serta komunikasi proaktif untuk memastikan setiap proyek memiliki performa optimal dan perlindungan yang nyata di dunia digital."
+      "paragraph_1": "Saya membangun aplikasi web yang aman, berkinerja tinggi, dan scalable. Menjembatani arsitektur backend yang kokoh dengan antarmuka frontend yang bersih, saya memastikan logika aplikasi dan keamanan sistem berjalan beriringan.",
+      "paragraph_2": "Berbekal latar belakang dalam pengembangan full-stack dan analisis keamanan, saya berfokus pada penulisan kode yang mudah dipelihara, optimasi performa basis data, serta penerapan protokol keamanan standar industri untuk melindungi data pengguna dan aset bisnis."
     },
     "skills": {
-      "title": "Keahlian",
-      "sub_title": "Keahlian profesional saya."
+      "title": "Keahlian & Teknologi",
+      "sub_title": "Keahlian profesional saya dikelompokkan berdasarkan bidang.",
+      "frontend": "Frontend Development",
+      "backend": "Backend Development",
+      "languages": "Bahasa Pemrograman",
+      "database": "Sistem Basis Data",
+      "devops": "DevOps",
+      "cloud": "Layanan Cloud",
+      "cybersecurity": "Keamanan Siber",
+      "tools": "Tools & Lingkungan Kerja"
+    },
+    "services": {
+      "title": "Jasa & Layanan Solusi",
+      "subtitle": "Jasa pembuatan website dan aplikasi profesional yang dirancang khusus untuk meningkatkan omzet dan kredibilitas bisnis Anda.",
+      "cta": "Mulai Diskusi Proyek",
+      "web_dev": {
+        "title": "Pembuatan Website & Aplikasi Custom",
+        "desc": "Pembuatan Company Profile, Landing Page, dan aplikasi web interaktif berkecepatan tinggi yang dirancang untuk mengonversi pengunjung menjadi klien."
+      },
+      "ecommerce": {
+        "title": "E-Commerce & Toko Online",
+        "desc": "Toko online modern dengan integrasi checkout WhatsApp, kalkulasi biaya otomatis, integrasi kurir, dan dashboard manajemen yang mudah digunakan."
+      },
+      "security": {
+        "title": "Audit Keamanan & Optimasi Performa",
+        "desc": "Pemeriksaan celah keamanan (vulnerability assessment), proteksi standar OWASP Top 10, optimasi database, dan peningkatan kecepatan website."
+      }
     },
     "bento": {
       "title": "Bagian Unggulan",
@@ -20,11 +48,11 @@
   },
   "AboutPage": {
     "title": "Tentang",
-    "description": "Pengenalan singkat mengenai siapa saya.",
+    "description": "Pengenalan singkat mengenai latar belakang dan alur kerja saya.",
     "resume": {
-      "paragraph_1": "Saya Anduril Ahmad, seorang FullStack Developer dan Cyber Security Enthusiast yang berbasis di Madiun, berdedikasi dalam membangun solusi digital yang aman, efisien, dan berdampak. Saya berfokus pada pengembangan platform web end-to-end menggunakan teknologi modern serta menerapkan praktik keamanan untuk melindungi sistem dan data pengguna.",
-      "paragraph_2": "Fokus utama saya adalah merancang arsitektur aplikasi yang terstruktur, mudah dipelihara, dan memiliki standar keamanan yang kuat agar selaras dengan kebutuhan bisnis. Saya memadukan kemampuan teknis, analisis keamanan, serta komunikasi proaktif untuk memastikan setiap proyek memiliki performa optimal dan perlindungan yang nyata di dunia digital.",
-      "paragraph_3": "Saya memadukan keahlian teknis dengan komunikasi proaktif, berpikir kritis, dan manajemen waktu yang efektif. Saya berkembang dalam lingkungan kolaboratif dan memanfaatkan keterampilan kepemimpinan untuk memastikan setiap proyek memberikan hasil optimal dan dampak nyata.",
+      "paragraph_1": "Saya Anduril Ahmad, seorang Full-Stack Developer dan peminat Keamanan Siber yang berbasis di Madiun, Indonesia. Saya spesialis dalam membangun platform web yang aman, bersih, dan efisien yang menghadirkan pengalaman pengguna yang lancar sekaligus melindungi data sensitif.",
+      "paragraph_2": "Pendekatan saya dalam pengembangan berpusat pada kode yang bersih dan arsitektur yang andal. Saya tidak hanya membuat fitur; saya merancang sistem yang mudah dipelihara yang dapat berkembang seiring pertumbuhan bisnis dan memenuhi standar keamanan yang ketat.",
+      "paragraph_3": "Saya percaya proyek yang sukses dibangun atas dasar komunikasi yang jelas, pemikiran kritis, dan eksekusi yang terstruktur. Baik bekerja secara mandiri maupun berkolaborasi dalam tim, tujuan saya selalu untuk memberikan performa optimal dan nilai bisnis yang terukur.",
       "paragraph_4": "Salam hangat,"
     },
     "career": {
@@ -164,7 +192,7 @@
   },
   "ContactPage": {
     "title": "Kontak",
-    "description": "Mari saling terhubung.",
+    "description": "Mari bekerja sama atau diskusikan proyek Anda selanjutnya.",
     "error": "Gagal mengirim pesan.",
     "no_data": "Informasi kontak tidak tersedia.",
     "social_media": {
@@ -191,11 +219,14 @@
       }
     },
     "form": {
-      "title": "Atau kirimkan saya pesan",
+      "title": "Atau kirimkan saya pesan secara langsung",
       "input_name": "Nama",
       "input_email": "Email",
       "input_message": "Pesan",
-      "button": "Kirim Email"
+      "button": "Kirim Email",
+      "button_sending": "Mengirim pesan Anda...",
+      "button_success": "Pesan Anda telah berhasil dikirim!",
+      "button_error": "Gagal mengirim email. Silakan coba lagi."
     }
   },
   "SmartTalkPage": {

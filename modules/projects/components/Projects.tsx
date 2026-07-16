@@ -2,7 +2,7 @@
 
 import useSWR from "swr";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 import ProjectSkeleton from "./ProjectSkeleton";
 import ProjectCard from "./ProjectCard";
@@ -12,7 +12,8 @@ import { fetcher } from "@/services/fetcher";
 import { ProjectItem } from "@/common/types/projects";
 
 const Projects = () => {
-  const { data, isLoading, error } = useSWR("/api/projects", fetcher);
+  const locale = useLocale();
+  const { data, isLoading, error } = useSWR(`/api/projects?locale=${locale}`, fetcher);
 
   const t = useTranslations("ProjectsPage");
 

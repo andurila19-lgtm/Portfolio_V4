@@ -137,7 +137,7 @@ const AchievementCard = ({
                     </motion.div>
                   </div>
 
-                  <div className="w-90 hidden flex-col border-l border-neutral-200 py-4 pl-8 pr-20 dark:border-neutral-800 md:flex">
+                  <div className="w-96 hidden flex-col border-l border-neutral-200 py-4 pl-8 pr-20 dark:border-neutral-800 md:flex">
                     <h2 className="text-lg font-bold text-neutral-900 dark:text-white">
                       {name}
                     </h2>

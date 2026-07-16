@@ -16,8 +16,8 @@ interface ProjectDetailPageProps {
   };
 }
 
-const getProjectDetail = async (slug: string): Promise<ProjectItem> => {
-  const projects = await getProjectsDataBySlug(slug);
+const getProjectDetail = async (slug: string, locale: string): Promise<ProjectItem> => {
+  const projects = await getProjectsDataBySlug(slug, locale);
   const contents = loadMdxFiles();
   const content = contents.find((item) => item.slug === slug);
   const response = { ...projects, content: content?.content };
@@ -27,9 +27,9 @@ const getProjectDetail = async (slug: string): Promise<ProjectItem> => {
 export const generateMetadata = async ({
   params,
 }: ProjectDetailPageProps): Promise<Metadata> => {
-  const project = await getProjectDetail(params?.slug);
   const locale = params.locale || "en";
-
+  const project = await getProjectDetail(params?.slug, locale);
+  
   return {
     title: `${project.title} ${METADATA.exTitle}`,
     description: project.description,
@@ -49,7 +49,7 @@ export const generateMetadata = async ({
 };
 
 const ProjectDetailPage = async ({ params }: ProjectDetailPageProps) => {
-  const data = await getProjectDetail(params?.slug);
+  const data = await getProjectDetail(params?.slug, params?.locale || "en");
 
   return (
     <Container data-aos="fade-up">

@@ -55,6 +55,7 @@ const IntlToggle = () => {
         {locales.map((locale, index) => (
           <motion.button
             key={locale.value}
+            aria-label={`Switch language to ${locale.value === "en" ? "English" : "Indonesian"}`}
             className="relative z-10 flex h-8 w-10 items-center justify-center transition duration-200"
             onClick={() => handleLocaleChange(locale.value)}
             whileHover={{ scale: isPending ? 1 : 1.15 }}
@@ -75,6 +76,7 @@ const IntlToggle = () => {
       </div>
 
       <button
+        aria-label="Switch language"
         className="flex items-center gap-2 rounded-full border-[1.5px] border-neutral-300 bg-neutral-100 p-1 transition duration-200 hover:scale-110 dark:border-neutral-700 dark:bg-neutral-800 lg:hidden"
         onClick={() =>
           handleLocaleChange(locales[(currentIndex + 1) % locales.length].value)

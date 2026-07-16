@@ -1,5 +1,7 @@
 import Image from "@/common/components/elements/Image";
 import { useTranslations } from "next-intl";
+import Resume from "./Resume";
+import Portfolio from "./Portfolio";
 
 const Story = () => {
   const t = useTranslations("AboutPage");
@@ -19,6 +21,12 @@ const Story = () => {
         width={100}
         height={100}
       />
+      {/* 
+      <div className="flex flex-wrap gap-4 pt-4">
+        <Resume />
+        <Portfolio />
+      </div>
+      */}
     </section>
   );
 };
