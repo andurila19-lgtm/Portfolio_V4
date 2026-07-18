@@ -3,54 +3,63 @@
     "id": 27,
     "name": "AI Agents and Agentic AI Architecture in Python",
     "issuing_organization": "Vanderbilt University",
-    "slug": "1"
+    "slug": "1",
+    "issue_date": "2026-01-11"
   },
   {
     "id": 28,
-    "name": "AI Agents and Agentic AI with Python & Generative AI",
-    "issuing_organization": "Vanderbilt University",
-    "slug": "2"
+    "name": "Crash Course on Python",
+    "issuing_organization": "Google",
+    "slug": "2",
+    "issue_date": "2026-01-11"
   },
   {
     "id": 29,
-    "name": "HTML: How to Build a Website",
-    "issuing_organization": "University of London",
-    "slug": "3"
+    "name": "OpenAI GPTs: Creating Your Own Custom AI Assistants",
+    "issuing_organization": "Vanderbilt University",
+    "slug": "3",
+    "issue_date": "2026-01-11"
   },
   {
     "id": 30,
-    "name": "Data-driven websites: JSON, APIs and Templates",
+    "name": "HTML: How to Build a Website",
     "issuing_organization": "University of London",
-    "slug": "4"
-  },
-  {
-    "id": 31,
-    "name": "Cloud Computing Specialization",
-    "issuing_organization": "Coursera",
-    "slug": "cloud"
+    "slug": "4",
+    "issue_date": "2026-01-11"
   },
   {
     "id": 32,
-    "name": "Dasar Pemrograman Web",
+    "name": "Belajar Dasar Cloud dan Gen AI di AWS",
     "issuing_organization": "Dicoding",
-    "slug": "dasar"
+    "slug": "dasar",
+    "issue_date": "2025-09-27"
   },
   {
     "id": 33,
-    "name": "AI Agents and Agentic AI Architecture in Python",
+    "name": "AI Agents and Agentic AI with Python & Generative AI",
     "issuing_organization": "Vanderbilt University",
-    "slug": "5"
+    "slug": "5",
+    "issue_date": "2026-01-11"
   },
   {
     "id": 34,
-    "name": "Data-driven websites: JSON, APIs and Templates",
+    "name": "CSS: Web Page Layout - Usability and Accessibility",
     "issuing_organization": "University of London",
-    "slug": "6"
+    "slug": "6",
+    "issue_date": "2026-01-11"
   },
   {
     "id": 35,
-    "name": "HTML: How to Build a Website",
+    "name": "Data-driven websites: JSON, APIs and Templates",
     "issuing_organization": "University of London",
-    "slug": "7"
+    "slug": "7",
+    "issue_date": "2026-01-11"
+  },
+  {
+    "id": 1,
+    "name": "Belajar Dasar AI",
+    "issuing_organization": "Dicoding",
+    "slug": "ai",
+    "issue_date": "2025-09-27"
   }
 ]
