@@ -10,7 +10,7 @@ interface WhatsAppButtonProps {
 }
 
 const WhatsAppButton = ({
-  phoneNumber = "6281326318155", // User's active WhatsApp number
+  phoneNumber = "6285190830010", // User's active WhatsApp number
   message = "Halo Anduril, saya melihat portofolio Anda di anduril.web.id dan ingin berkonsultasi mengenai proyek pembuatan website/aplikasi.",
   floating = true,
 }: WhatsAppButtonProps) => {
