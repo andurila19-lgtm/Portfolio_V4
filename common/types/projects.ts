@@ -4,6 +4,11 @@ export type ProjectItem = {
   slug: string;
   description: string;
   image: string;
+  category?: string;
+  role?: string;
+  problem?: string;
+  solution?: string;
+  result?: string;
   link_demo?: string | null;
   link_github?: string | null;
   stacks: string[];
@@ -14,4 +19,5 @@ export type ProjectItem = {
 
 export type ProjectItemProps = {
   projects: ProjectItem[];
-}
+};
+

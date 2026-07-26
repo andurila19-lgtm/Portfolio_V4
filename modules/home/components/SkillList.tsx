@@ -33,6 +33,17 @@ const SkillList = () => {
     })
     .filter((group) => group.skills.length > 0);
 
+  const categoryDescriptions: Record<string, string> = {
+    frontend: "Teknologi antarmuka pengguna yang responsif, terstruktur, dan berfokus pada aksesibilitas & UX.",
+    backend: "Arsitektur server-side, RESTful API, otentikasi multi-role, dan logika bisnis berskala tinggi.",
+    languages: "Bahasa pemrograman inti untuk komputasi frontend, backend, dan analisa keamanan.",
+    database: "Sistem manajemen basis data relasional & ORM untuk pengelolaan data yang konsisten.",
+    devops: "Versi kontrol, pengelolaan repositori kode, dan otomatisasi deployment.",
+    cloud: "Infrastruktur cloud hosting berkecepatan tinggi dengan integrasi CDN global.",
+    cybersecurity: "Proteksi standar OWASP Top 10, sanitasi data, dan pengujian celah keamanan sistem.",
+    tools: "Perkakas kerja produktivitas pengembangan, pengujian API, dan manajemen proyek.",
+  };
+
   return (
     <section className="space-y-6">
       <div className="space-y-2">
@@ -42,12 +53,20 @@ const SkillList = () => {
         </SectionSubHeading>
       </div>
 
-      <div className="space-y-10 pt-4">
+      <div className="space-y-8 pt-4">
         {groupedSkills.map((group) => (
-          <div key={group.key} className="space-y-4">
-            <h3 className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-800 pb-2">
-              {group.label}
-            </h3>
+          <div key={group.key} className="space-y-3">
+            <div className="border-b border-neutral-200 dark:border-neutral-800 pb-2">
+              <h3 className="text-sm font-bold text-neutral-800 dark:text-neutral-200">
+                {group.label}
+              </h3>
+              {categoryDescriptions[group.key] && (
+                <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
+                  {categoryDescriptions[group.key]}
+                </p>
+              )}
+            </div>
+
             <div className="flex flex-wrap gap-x-6 gap-y-[2.8em] pb-6 pt-2">
               {group.skills.map((skill, index) => (
                 <GlassIcon
@@ -64,5 +83,6 @@ const SkillList = () => {
     </section>
   );
 };
+
 
 export default SkillList;

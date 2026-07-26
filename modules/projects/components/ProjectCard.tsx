@@ -3,7 +3,7 @@ import { HiOutlineArrowSmRight as ViewIcon } from "react-icons/hi";
 import { useTranslations } from "next-intl";
 import { TbPinnedFilled as PinIcon } from "react-icons/tb";
 import { BsGithub as GithubIcon } from "react-icons/bs";
-import { FiExternalLink as LinkIcon } from "react-icons/fi";
+import { FiExternalLink as LinkIcon, FiBookOpen } from "react-icons/fi";
 
 import Image from "@/common/components/elements/Image";
 import SpotlightCard from "@/common/components/elements/SpotlightCard";
@@ -15,6 +15,11 @@ const ProjectCard = ({
   slug,
   description,
   image,
+  category,
+  role,
+  problem,
+  solution,
+  result,
   stacks,
   is_featured,
   link_demo,
@@ -22,83 +27,132 @@ const ProjectCard = ({
 }: ProjectItem) => {
   const t = useTranslations("ProjectsPage");
 
-  const trimmedContent =
-    description.slice(0, 85) + (description.length > 85 ? "..." : "");
-
   return (
-    <Link href={`/projects/${slug}`}>
-      <SpotlightCard className="group relative cursor-pointer">
+    <SpotlightCard className="group relative flex flex-col justify-between h-full rounded-2xl cursor-pointer">
+      <div>
         {is_featured && (
-          <div className="absolute right-0 top-0 z-10 flex items-center gap-x-1 rounded-bl-lg rounded-tr-lg bg-primary px-2 py-1 text-sm font-medium text-neutral-900">
-            <PinIcon size={15} />
+          <div className="absolute right-0 top-0 z-10 flex items-center gap-x-1 rounded-bl-lg rounded-tr-xl bg-primary px-2.5 py-1 text-xs font-bold text-neutral-900 shadow-sm">
+            <PinIcon size={14} />
             <span>Featured</span>
           </div>
         )}
-        <div className="relative">
+
+        <div className="relative overflow-hidden rounded-t-2xl">
           <Image
             src={image}
             alt={title}
             width={450}
             height={200}
-            className="h-[200px] w-full rounded-t-xl object-cover"
+            className="h-[200px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
-          <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center gap-1 rounded-t-xl bg-black text-sm font-medium text-neutral-50 opacity-0 transition-opacity duration-300 group-hover:opacity-80">
-            <span>{t("view_project")}</span>
+          <Link
+            href={`/projects/${slug}`}
+            className="absolute left-0 top-0 flex h-full w-full items-center justify-center gap-1.5 bg-black/75 text-sm font-semibold text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          >
+            <span>Case Study & Detail</span>
             <ViewIcon size={20} />
-          </div>
+          </Link>
         </div>
-        <div className="space-y-2 p-5">
-          <h3 className="cursor-pointer text-neutral-700 transition-all duration-300 group-hover:text-primary dark:text-neutral-300">
+
+        <div className="space-y-3.5 p-5">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            {category && (
+              <span className="inline-block rounded-md bg-amber-500/10 px-2 py-0.5 text-[11px] font-semibold text-amber-600 dark:bg-amber-400/20 dark:text-amber-300">
+                {category}
+              </span>
+            )}
+            {role && (
+              <span className="text-[11px] font-medium text-neutral-500 dark:text-neutral-400">
+                Role: {role}
+              </span>
+            )}
+          </div>
+
+          <h3 className="text-lg font-bold text-neutral-900 transition-all duration-300 group-hover:text-primary dark:text-neutral-100">
             {title}
           </h3>
-          <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
-            {trimmedContent}
+
+          <p className="text-xs leading-relaxed text-neutral-600 dark:text-neutral-300">
+            {description}
           </p>
-          <div className="flex flex-wrap items-center gap-3 pt-2">
+
+          {/* Problem, Solution & Result Brief */}
+          {(problem || solution || result) && (
+            <div className="space-y-1.5 rounded-xl border border-neutral-100 bg-neutral-50/80 p-3 text-xs dark:border-neutral-800 dark:bg-neutral-900/50">
+              {problem && (
+                <p className="text-neutral-600 dark:text-neutral-400">
+                  <strong className="text-neutral-800 dark:text-neutral-200">Masalah: </strong>
+                  {problem}
+                </p>
+              )}
+              {solution && (
+                <p className="text-neutral-600 dark:text-neutral-400">
+                  <strong className="text-neutral-800 dark:text-neutral-200">Solusi: </strong>
+                  {solution}
+                </p>
+              )}
+              {result && (
+                <p className="text-emerald-600 dark:text-emerald-400 font-medium">
+                  <strong>Hasil: </strong>
+                  {result}
+                </p>
+              )}
+            </div>
+          )}
+
+          {/* Tech Stack Icons */}
+          <div className="flex flex-wrap items-center gap-2.5 pt-1">
             {stacks.map((stack: string, index: number) => {
               const stackData = STACKS[stack];
-
               if (!stackData) return null;
-
               return (
-                <div key={index} className={`${stackData.color}`}>
+                <div key={index} className={`${stackData.color}`} title={stack}>
                   {stackData.icon}
                 </div>
               );
             })}
           </div>
-          {(link_demo || link_github) && (
-            <div className="flex items-center gap-2 border-t border-neutral-200 pt-3 dark:border-neutral-700">
-              {link_demo && (
-                <a
-                  href={link_demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="inline-flex items-center gap-1.5 rounded-lg bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary transition-all duration-300 hover:bg-primary hover:text-neutral-900"
-                >
-                  <LinkIcon size={14} />
-                  <span>{t("live_demo_text")}</span>
-                </a>
-              )}
-              {link_github && (
-                <a
-                  href={link_github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="inline-flex items-center gap-1.5 rounded-lg bg-neutral-200/50 px-3 py-1.5 text-xs font-medium text-neutral-700 transition-all duration-300 hover:bg-neutral-300 dark:bg-neutral-700/50 dark:text-neutral-300 dark:hover:bg-neutral-600"
-                >
-                  <GithubIcon size={14} />
-                  <span>{t("source_code_text")}</span>
-                </a>
-              )}
-            </div>
+        </div>
+      </div>
+
+      {/* Action Buttons */}
+      <div className="flex flex-wrap items-center justify-between gap-2 border-t border-neutral-200 p-4 dark:border-neutral-800">
+        <div className="flex items-center gap-2">
+          {link_demo && (
+            <a
+              href={link_demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary transition-all duration-300 hover:bg-primary hover:text-neutral-900"
+            >
+              <LinkIcon size={14} />
+              <span>{t("live_demo_text")}</span>
+            </a>
+          )}
+          {link_github && (
+            <a
+              href={link_github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-neutral-100 px-3 py-1.5 text-xs font-medium text-neutral-700 transition-all duration-300 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+            >
+              <GithubIcon size={14} />
+              <span>{t("source_code_text")}</span>
+            </a>
           )}
         </div>
-      </SpotlightCard>
-    </Link>
+
+        <Link
+          href={`/projects/${slug}`}
+          className="inline-flex items-center gap-1.5 rounded-lg bg-neutral-900 px-3 py-1.5 text-xs font-medium text-white transition-all duration-300 hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200"
+        >
+          <FiBookOpen size={13} />
+          <span>Case Study</span>
+        </Link>
+      </div>
+    </SpotlightCard>
   );
 };
 
 export default ProjectCard;
+

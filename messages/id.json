@@ -4,57 +4,123 @@
     "role": "Full-Stack Developer & Cyber Security Enthusiast",
     "location": "Berdomisili di Madiun, Indonesia 🇮🇩",
     "location_type": "Onsite & Remote",
-    "cta_projects": "Lihat Proyek",
+    "cta_hire": "Hire Me / Konsultasi",
+    "cta_projects": "Lihat Portfolio",
     "cta_contact": "Hubungi Saya",
     "cta_whatsapp": "Chat WhatsApp",
+    "badges": {
+      "responsive": "Responsive Design",
+      "seo": "SEO Friendly",
+      "fast": "Fast Loading",
+      "modern": "Modern UI",
+      "secure": "Secure Development"
+    },
+    "stats": {
+      "projects": "Proyek Selesai",
+      "experience": "Tahun Pengalaman",
+      "tech": "Teknologi Dikuasai",
+      "satisfaction": "Kepuasan Klien"
+    },
+    "credibility": {
+      "title": "Pengalaman & Domain Industri",
+      "subtitle": "Pengalaman merancang dan merilis solusi digital di berbagai sektor bisnis."
+    },
+    "why_me": {
+      "title": "Mengapa Bekerja Sama Dengan Saya",
+      "subtitle": "Komitmen penuh terhadap kualitas kode, kecepatan, keamanan, dan kepuasan bisnis."
+    },
+    "testimonials": {
+      "title": "Apa Kata Klien & Rekan Kerja",
+      "subtitle": "Ulasan langsung dari pemilik bisnis, pendiri startup, dan rekan profesional."
+    },
+    "faq": {
+      "title": "Pertanyaan Yang Sering Diajukan (FAQ)",
+      "subtitle": "Jawaban transparan atas pertanyaan utama sebelum kita memulai proyek bersama."
+    },
+    "cta_banner": {
+      "title": "Mari Bangun Website Anda Bersama Saya",
+      "subtitle": "Siap mengubah ide bisnis Anda menjadi aplikasi web profesional berkinerja tinggi? Mari berdiskusi sekarang.",
+      "response_time": "Estimasi waktu respon: < 2 jam"
+    },
     "featured_projects": {
       "title": "Proyek Unggulan",
       "subtitle": "Kumpulan hasil karya dengan dampak nyata untuk bisnis dan pengguna.",
       "view_all": "Lihat Semua Proyek"
     },
     "work_process": {
-      "title": "Cara Kita Bekerja Sama",
-      "subtitle": "Proses transparan & terstruktur dari ide hingga rilis produksi.",
-      "step_1_title": "1. Konsultasi & Diskusi",
-      "step_1_desc": "Menganalisis kebutuhan bisnis, menentukan target audience, dan menyusun arsitektur fitur.",
-      "step_2_title": "2. Desain & Prototipe",
-      "step_2_desc": "Merancang UI/UX yang responsif, modern, dan mudah digunakan oleh pengguna akhir.",
-      "step_3_title": "3. Pengembangan Cepat",
-      "step_3_desc": "Proses penulisan kode berstandar tinggi, aman (OWASP), dan optimal untuk mesin pencari (SEO).",
-      "step_4_title": "4. Peluncuran & Dukungan",
-      "step_4_desc": "Deployment ke server produksi serta jaminan pemeliharaan & perbaikan bug gratis pasca-rilis."
+      "title": "Alur Pengerjaan Proyek",
+      "subtitle": "Proses transparan 8 tahap terstruktur dari konsultasi ide hingga maintenance pasca-rilis.",
+      "step_1_title": "1. Konsultasi & Briefing",
+      "step_1_desc": "Mendiskusikan kebutuhan bisnis, menentukan target audience, dan scope proyek.",
+      "step_2_title": "2. Analisis & Riset",
+      "step_2_desc": "Riset kompetitor, analisis kebutuhan fitur, dan perancangan arsitektur data.",
+      "step_3_title": "3. Perencanaan & Arsitektur",
+      "step_3_desc": "Menyusun wireframe, struktur database, dan roadmap pengembangan.",
+      "step_4_title": "4. Desain UI/UX & Prototipe",
+      "step_4_desc": "Merancang UI modern, responsif, intuitif, dan mengutamakan konversi pengguna.",
+      "step_5_title": "5. Development & Coding",
+      "step_5_desc": "Menulis kode bersih, aman (standar OWASP), modular, dan SEO-friendly.",
+      "step_6_title": "6. Testing & Quality Assurance",
+      "step_6_desc": "Pengujian fungsionalitas, kompatibilitas lintas perangkat, dan audit kecepatan.",
+      "step_7_title": "7. Deployment & Go-Live",
+      "step_7_desc": "Konfigurasi server, integrasi SSL/Domain, dan rilis ke lingkungan produksi.",
+      "step_8_title": "8. Maintenance & Support",
+      "step_8_desc": "Jaminan garansi perbaikan bug gratis dan dukungan teknis secara berkala."
     },
     "resume": {
       "paragraph_1": "Saya membangun aplikasi web yang aman, berkinerja tinggi, dan scalable. Menjembatani arsitektur backend yang kokoh dengan antarmuka frontend yang bersih, saya memastikan logika aplikasi dan keamanan sistem berjalan beriringan.",
       "paragraph_2": "Berbekal latar belakang dalam pengembangan full-stack dan analisis keamanan, saya berfokus pada penulisan kode yang mudah dipelihara, optimasi performa basis data, serta penerapan protokol keamanan standar industri untuk melindungi data pengguna dan aset bisnis."
     },
     "skills": {
-      "title": "Keahlian & Teknologi",
-      "sub_title": "Keahlian profesional saya dikelompokkan berdasarkan bidang.",
+      "title": "Keahlian & Arsitektur Teknologi",
+      "sub_title": "Teknologi profesional yang dikelompokkan secara terstruktur berdasarkan peran teknis.",
       "frontend": "Frontend Development",
-      "backend": "Backend Development",
+      "backend": "Backend & API",
       "languages": "Bahasa Pemrograman",
-      "database": "Sistem Basis Data",
-      "devops": "DevOps",
+      "database": "Database & ORM",
+      "devops": "DevOps & Cloud",
       "cloud": "Layanan Cloud",
-      "cybersecurity": "Keamanan Siber",
-      "tools": "Tools & Lingkungan Kerja"
+      "cybersecurity": "Keamanan Siber (OWASP)",
+      "tools": "Tools & Productivity"
     },
     "services": {
-      "title": "Jasa & Layanan Solusi",
-      "subtitle": "Jasa pembuatan website dan aplikasi profesional yang dirancang khusus untuk meningkatkan omzet dan kredibilitas bisnis Anda.",
-      "cta": "Mulai Diskusi Proyek",
+      "title": "Jasa & Layanan Solusi Website",
+      "subtitle": "Layanan pembuatan dan pengoptimalan platform web profesional yang dirancang khusus untuk meningkatkan reputasi dan penjualan bisnis Anda.",
+      "cta": "Konsultasi Layanan Ini",
+      "company_profile": {
+        "title": "Website Company Profile",
+        "desc": "Website profil perusahaan profesional yang elegan, SEO-friendly, dan cepat untuk membangun kepercayaan klien.",
+        "turnaround": "3 - 7 Hari Kerja"
+      },
+      "landing_page": {
+        "title": "Landing Page Berkonversi Tinggi",
+        "desc": "Halaman penjualan responsif dengan copy & UI berdaya pikat tinggi untuk memaksimalkan angka penjualan produk/jasa Anda.",
+        "turnaround": "2 - 5 Hari Kerja"
+      },
+      "pos_dashboard": {
+        "title": "Dashboard & Management System",
+        "desc": "Aplikasi manajemen internal, Sistem POS (Kasir), inventaris, dan analitik data bisnis secara real-time.",
+        "turnaround": "7 - 14 Hari Kerja"
+      },
       "web_dev": {
-        "title": "Pembuatan Website & Aplikasi Custom",
-        "desc": "Pembuatan Company Profile, Landing Page, dan aplikasi web interaktif berkecepatan tinggi yang dirancang untuk mengonversi pengunjung menjadi klien."
+        "title": "Web Application Custom",
+        "desc": "Aplikasi web kompleks berskala enterprise dengan fitur custom, otentikasi multi-role, dan performa tinggi.",
+        "turnaround": "10 - 21 Hari Kerja"
       },
-      "ecommerce": {
-        "title": "E-Commerce & Toko Online",
-        "desc": "Toko online modern dengan integrasi checkout WhatsApp, kalkulasi biaya otomatis, integrasi kurir, dan dashboard manajemen yang mudah digunakan."
+      "maintenance": {
+        "title": "Maintenance & Bug Fix",
+        "desc": "Layanan perawatan berkala, perbaikan bug, pembaruan versi, dan audit performa agar situs selalu optimal.",
+        "turnaround": "Fleksibel / Bulanan"
       },
-      "security": {
-        "title": "Audit Keamanan & Optimasi Performa",
-        "desc": "Pemeriksaan celah keamanan (vulnerability assessment), proteksi standar OWASP Top 10, optimasi database, dan peningkatan kecepatan website."
+      "seo_speed": {
+        "title": "SEO & Performance Optimization",
+        "desc": "Optimasi Core Web Vitals, peningkatan skor Lighthouse, metadata terstruktur (JSON-LD), dan ranking Google.",
+        "turnaround": "3 - 5 Hari Kerja"
+      },
+      "api_security": {
+        "title": "API Integration & Backend Security",
+        "desc": "Pengembangan RESTful API, integrasi payment gateway, serta audit keamanan standar OWASP Top 10.",
+        "turnaround": "5 - 10 Hari Kerja"
       }
     },
     "bento": {

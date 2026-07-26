@@ -3,7 +3,18 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
-import { FiCode, FiShoppingCart, FiShield, FiArrowRight } from "react-icons/fi";
+import {
+  FiGlobe,
+  FiTrendingUp,
+  FiGrid,
+  FiCode,
+  FiTool,
+  FiZap,
+  FiLock,
+  FiArrowRight,
+  FiClock,
+} from "react-icons/fi";
+import { BsWhatsapp } from "react-icons/bs";
 
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
@@ -11,51 +22,115 @@ import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 const Services = () => {
   const t = useTranslations("HomePage");
 
+  const phoneNumber = "6289523315624";
+
   const servicesData = [
     {
-      id: "web-dev",
-      icon: <FiCode className="text-3xl text-primary" />,
-      titleId: "services.web_dev.title",
-      descId: "services.web_dev.desc",
-      features: [
-        "Single Page & Multi-Page Apps",
-        "SEO-Friendly Architectures",
-        "Responsive & Fluid UI/UX",
-        "Next.js / React / Laravel",
+      id: "company-profile",
+      icon: <FiGlobe className="text-3xl text-amber-500" />,
+      titleKey: "services.company_profile.title",
+      descKey: "services.company_profile.desc",
+      turnaroundKey: "services.company_profile.turnaround",
+      benefits: [
+        "Desain Profesional & Modern",
+        "SEO On-Page & Schema Metadata",
+        "100% Responsif di Semua Layar",
+        "Formulir Kontak & Integrasi Medsos",
       ],
+      whatsappMsg: "Halo Anduril, saya berminat dengan jasa Pembuatan Website Company Profile.",
     },
     {
-      id: "ecommerce",
-      icon: <FiShoppingCart className="text-3xl text-primary" />,
-      titleId: "services.ecommerce.title",
-      descId: "services.ecommerce.desc",
-      features: [
-        "WhatsApp Orders Integration",
-        "Dynamic Product Catalogs",
-        "Secure Payment Gateways",
-        "Admin Inventory Dashboards",
+      id: "landing-page",
+      icon: <FiTrendingUp className="text-3xl text-emerald-500" />,
+      titleKey: "services.landing_page.title",
+      descKey: "services.landing_page.desc",
+      turnaroundKey: "services.landing_page.turnaround",
+      benefits: [
+        "Copywriting Berdaya Pikat Tinggi",
+        "CTA Strategis untuk Konversi Pembeli",
+        "Kecepatan Loading Sangat Tinggi",
+        "Integrasi Pixel & Analitik",
       ],
+      whatsappMsg: "Halo Anduril, saya berminat dengan jasa Pembuatan Landing Page.",
     },
     {
-      id: "security",
-      icon: <FiShield className="text-3xl text-primary" />,
-      titleId: "services.security.title",
-      descId: "services.security.desc",
-      features: [
-        "Vulnerability Assessments",
-        "OWASP Top 10 Protections",
-        "Database Queries Optimization",
-        "Core Web Vitals Speed Boost",
+      id: "pos-dashboard",
+      icon: <FiGrid className="text-3xl text-blue-500" />,
+      titleKey: "services.pos_dashboard.title",
+      descKey: "services.pos_dashboard.desc",
+      turnaroundKey: "services.pos_dashboard.turnaround",
+      benefits: [
+        "Transaksi Kasir Cepat (POS)",
+        "Manajemen Stok Produk & Inventaris",
+        "Laporan Omzet & Analisis Real-Time",
+        "Role-Based Access Control (RBAC)",
       ],
+      whatsappMsg: "Halo Anduril, saya berminat dengan jasa Dashboard & System POS.",
+    },
+    {
+      id: "web-app",
+      icon: <FiCode className="text-3xl text-purple-500" />,
+      titleKey: "services.web_dev.title",
+      descKey: "services.web_dev.desc",
+      turnaroundKey: "services.web_dev.turnaround",
+      benefits: [
+        "Arsitektur Next.js / React / Node",
+        "Struktur Database Scalable (Postgres)",
+        "Fitur Custom Sesuai Kebutuhan Bisnis",
+        "Arsitektur Kode Clean & Modular",
+      ],
+      whatsappMsg: "Halo Anduril, saya berminat dengan jasa Pembuatan Web Application Custom.",
+    },
+    {
+      id: "maintenance",
+      icon: <FiTool className="text-3xl text-pink-500" />,
+      titleKey: "services.maintenance.title",
+      descKey: "services.maintenance.desc",
+      turnaroundKey: "services.maintenance.turnaround",
+      benefits: [
+        "Pemeriksaan Routine & Backup Data",
+        "Perbaikan Bug & Issue Teknis",
+        "Update Library & Security Patch",
+        "Dukungan Konsultasi Teknis",
+      ],
+      whatsappMsg: "Halo Anduril, saya berminat dengan jasa Maintenance & Perbaikan Bug Website.",
+    },
+    {
+      id: "seo-speed",
+      icon: <FiZap className="text-3xl text-amber-400" />,
+      titleKey: "services.seo_speed.title",
+      descKey: "services.seo_speed.desc",
+      turnaroundKey: "services.seo_speed.turnaround",
+      benefits: [
+        "Optimasi Core Web Vitals (Lighthouse 90+)",
+        "Peningkatan Kecepatan Loading Gambar",
+        "Sitemap, Robots.txt & Structural Data",
+        "Ranking Mesin Pencari Google",
+      ],
+      whatsappMsg: "Halo Anduril, saya berminat dengan jasa Optimasi SEO & Speed Website.",
+    },
+    {
+      id: "api-security",
+      icon: <FiLock className="text-3xl text-indigo-500" />,
+      titleKey: "services.api_security.title",
+      descKey: "services.api_security.desc",
+      turnaroundKey: "services.api_security.turnaround",
+      benefits: [
+        "Pengembangan RESTful / GraphQL API",
+        "Integrasi Payment Gateway & WhatsApp",
+        "Proteksi Standar OWASP Top 10",
+        "Enkripsi Data & Auth Security",
+      ],
+      whatsappMsg: "Halo Anduril, saya berminat dengan jasa Integrasi API & Keamanan Backend.",
     },
   ];
 
   return (
     <section className="space-y-6">
       <div className="space-y-2">
-        <SectionHeading 
-          title={t("services.title")} 
-          icon={<FiCode className="text-neutral-700 dark:text-neutral-300" />} 
+        <SectionHeading
+          title={t("services.title")}
+          icon={<FiCode className="text-neutral-700 dark:text-neutral-300" />}
         />
         <SectionSubHeading>
           <p className="text-neutral-500 dark:text-neutral-400">
@@ -64,47 +139,82 @@ const Services = () => {
         </SectionSubHeading>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-        {servicesData.map((service) => (
-          <motion.div
-            key={service.id}
-            className="flex flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-neutral-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900/50 hover:dark:border-neutral-700"
-            whileHover={{ y: -4 }}
-          >
-            <div className="space-y-4">
-              <div className="inline-flex items-center justify-center rounded-xl bg-neutral-50 p-3 dark:bg-neutral-800">
-                {service.icon}
-              </div>
-              <div className="space-y-2">
-                <h3 className="text-lg font-semibold text-neutral-800 dark:text-neutral-100">
-                  {t(service.titleId)}
-                </h3>
-                <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
-                  {t(service.descId)}
-                </p>
-              </div>
-            </div>
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {servicesData.map((service, index) => {
+          const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+            service.whatsappMsg,
+          )}`;
 
-            <div className="mt-6 pt-4 border-t border-neutral-100 dark:border-neutral-800/80">
-              <ul className="space-y-2">
-                {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-2 text-xs text-neutral-600 dark:text-neutral-400">
-                    <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
-        ))}
+          return (
+            <motion.div
+              key={service.id}
+              className="flex flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-neutral-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900/50 hover:dark:border-neutral-700"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+              whileHover={{ y: -4 }}
+            >
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="inline-flex items-center justify-center rounded-xl bg-neutral-100 p-3 dark:bg-neutral-800">
+                    {service.icon}
+                  </div>
+                  <div className="inline-flex items-center gap-1 rounded-full bg-neutral-100 px-2.5 py-1 text-[11px] font-semibold text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">
+                    <FiClock size={12} className="text-primary" />
+                    <span>{t(service.turnaroundKey)}</span>
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="text-base font-bold text-neutral-800 dark:text-neutral-100">
+                    {t(service.titleKey)}
+                  </h3>
+                  <p className="text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
+                    {t(service.descKey)}
+                  </p>
+                </div>
+
+                <div className="pt-2 border-t border-neutral-100 dark:border-neutral-800/80">
+                  <span className="text-[11px] font-semibold tracking-wider uppercase text-neutral-400 dark:text-neutral-500">
+                    Manfaat & Fitur:
+                  </span>
+                  <ul className="mt-2 space-y-1.5">
+                    {service.benefits.map((benefit, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-center gap-2 text-xs text-neutral-600 dark:text-neutral-400"
+                      >
+                        <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-neutral-100 dark:border-neutral-800/80">
+                <a
+                  href={waUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 w-full rounded-xl bg-neutral-100 px-4 py-2.5 text-xs font-semibold text-neutral-800 transition-all duration-300 hover:bg-emerald-500 hover:text-white dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-emerald-600"
+                >
+                  <BsWhatsapp size={14} />
+                  <span>{t("services.cta")}</span>
+                </a>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
 
       <div className="flex justify-center pt-4">
         <Link
           href="/contact"
-          className="group flex items-center gap-2 rounded-xl bg-neutral-900 px-6 py-3 text-sm font-medium text-white shadow-md transition-all duration-300 hover:bg-neutral-800 hover:shadow-lg dark:bg-neutral-100 dark:text-neutral-900 hover:dark:bg-neutral-200"
+          className="group flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-neutral-900 shadow-md transition-all duration-300 hover:bg-primary-400 hover:shadow-lg"
         >
-          <span>{t("services.cta")}</span>
+          <span>Mulai Konsultasi Proyek Anda</span>
           <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
       </div>
@@ -113,3 +223,4 @@ const Services = () => {
 };
 
 export default Services;
+

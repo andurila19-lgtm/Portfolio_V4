@@ -4,57 +4,123 @@
     "role": "Full-Stack Developer & Cyber Security Enthusiast",
     "location": "Based in Madiun, Indonesia 🇮🇩",
     "location_type": "Onsite & Remote",
-    "cta_projects": "View Projects",
+    "cta_hire": "Hire Me / Consult",
+    "cta_projects": "View Portfolio",
     "cta_contact": "Contact Me",
     "cta_whatsapp": "Chat WhatsApp",
+    "badges": {
+      "responsive": "Responsive Design",
+      "seo": "SEO Friendly",
+      "fast": "Fast Loading",
+      "modern": "Modern UI",
+      "secure": "Secure Development"
+    },
+    "stats": {
+      "projects": "Projects Completed",
+      "experience": "Years Experience",
+      "tech": "Tech Stack Mastered",
+      "satisfaction": "Client Satisfaction"
+    },
+    "credibility": {
+      "title": "Experience & Industry Domains",
+      "subtitle": "Track record in building and launching digital solutions across diverse business sectors."
+    },
+    "why_me": {
+      "title": "Why Work With Me",
+      "subtitle": "Uncompromising commitment to code quality, speed, security, and business ROI."
+    },
+    "testimonials": {
+      "title": "What Clients & Peers Say",
+      "subtitle": "Direct feedback from business owners, startup founders, and professional colleagues."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions (FAQ)",
+      "subtitle": "Transparent answers to key questions before starting our project together."
+    },
+    "cta_banner": {
+      "title": "Let's Build Your Website Together",
+      "subtitle": "Ready to turn your business idea into a high-converting, high-performance web application? Let's talk today.",
+      "response_time": "Estimated response time: < 2 hours"
+    },
     "featured_projects": {
       "title": "Featured Projects",
       "subtitle": "Selected work engineered with high business impact and seamless UX.",
       "view_all": "View All Projects"
     },
     "work_process": {
-      "title": "How We Work Together",
-      "subtitle": "A transparent & structured process from concept to production release.",
-      "step_1_title": "1. Discovery & Strategy",
-      "step_1_desc": "Analyze business goals, define target audience, and outline application architecture.",
-      "step_2_title": "2. Design & Prototype",
-      "step_2_desc": "Craft responsive, intuitive, and modern interfaces tailored to your brand identity.",
-      "step_3_title": "3. Rapid Development",
-      "step_3_desc": "Clean, secure (OWASP-compliant), and SEO-optimized codebase engineered for scale.",
-      "step_4_title": "4. Launch & Support",
-      "step_4_desc": "Smooth production deployment with post-launch bug fixes & maintenance support."
+      "title": "Project Execution Workflow",
+      "subtitle": "A transparent 8-stage process from initial consultation to post-launch maintenance.",
+      "step_1_title": "1. Discovery & Consultation",
+      "step_1_desc": "Discuss business requirements, target audience, and project scope.",
+      "step_2_title": "2. Analysis & Research",
+      "step_2_desc": "Competitor research, feature mapping, and data architecture design.",
+      "step_3_title": "3. Planning & Architecture",
+      "step_3_desc": "Drafting wireframes, schema design, and technical development roadmap.",
+      "step_4_title": "4. UI/UX Design & Prototype",
+      "step_4_desc": "Designing modern, intuitive, responsive, and conversion-focused interfaces.",
+      "step_5_title": "5. Development & Coding",
+      "step_5_desc": "Writing clean, OWASP-compliant, modular, and SEO-friendly code.",
+      "step_6_title": "6. Testing & Quality Assurance",
+      "step_6_desc": "Functional testing, cross-device compatibility, and performance audit.",
+      "step_7_title": "7. Deployment & Go-Live",
+      "step_7_desc": "Server configuration, SSL/Domain integration, and production release.",
+      "step_8_title": "8. Maintenance & Support",
+      "step_8_desc": "Free post-launch bug fixing guarantee and ongoing technical support."
     },
     "resume": {
       "paragraph_1": "I build secure, high-performance, and scalable web applications. Bridging the gap between robust backend architecture and clean frontend interfaces, I ensure that application logic and system security go hand in hand.",
       "paragraph_2": "With a background in both full-stack development and security analysis, I focus on writing maintainable code, optimizing database performance, and implementing industry-standard security protocols to protect user data and business assets."
     },
     "skills": {
-      "title": "Skills & Tech Stack",
-      "sub_title": "My professional skills grouped by domain.",
+      "title": "Skills & Tech Architecture",
+      "sub_title": "Professional stack categorized by technical domain.",
       "frontend": "Frontend Development",
-      "backend": "Backend Development",
+      "backend": "Backend & API",
       "languages": "Programming Languages",
-      "database": "Database Systems",
-      "devops": "DevOps",
+      "database": "Database & ORM",
+      "devops": "DevOps & Cloud",
       "cloud": "Cloud Services",
-      "cybersecurity": "Cyber Security",
-      "tools": "Tools & Environments"
+      "cybersecurity": "Cyber Security (OWASP)",
+      "tools": "Tools & Productivity"
     },
     "services": {
-      "title": "Services & Solutions",
-      "subtitle": "Professional web and application development services tailored to grow your business.",
-      "cta": "Get a Free Proposal",
+      "title": "Services & Web Solutions",
+      "subtitle": "Professional web development and optimization services tailored to boost your business reputation and sales.",
+      "cta": "Inquire About This Service",
+      "company_profile": {
+        "title": "Company Profile Website",
+        "desc": "Elegant, fast, and SEO-friendly corporate website designed to establish client trust and brand authority.",
+        "turnaround": "3 - 7 Business Days"
+      },
+      "landing_page": {
+        "title": "High-Converting Landing Page",
+        "desc": "Responsive sales page with persuasive copy and UI tailored to maximize product/service sales.",
+        "turnaround": "2 - 5 Business Days"
+      },
+      "pos_dashboard": {
+        "title": "Dashboard & Management System",
+        "desc": "Internal operations apps, POS cashier systems, inventory control, and real-time business analytics.",
+        "turnaround": "7 - 14 Business Days"
+      },
       "web_dev": {
-        "title": "Custom Web & App Development",
-        "desc": "High-performance company profiles, landing pages, and interactive web applications designed to convert visitors into loyal clients."
+        "title": "Custom Web Application",
+        "desc": "Complex enterprise-scale web application featuring custom logic, multi-role auth, and high performance.",
+        "turnaround": "10 - 21 Business Days"
       },
-      "ecommerce": {
-        "title": "E-Commerce & Digital Storefronts",
-        "desc": "Seamless online stores integrated with WhatsApp checkouts, payment systems, and responsive admin dashboard management."
+      "maintenance": {
+        "title": "Maintenance & Bug Fix",
+        "desc": "Routine system health checks, bug fixes, version updates, and continuous speed optimization.",
+        "turnaround": "Flexible / Monthly"
       },
-      "security": {
-        "title": "Performance & Security Auditing",
-        "desc": "Ensure your systems are bulletproof against vulnerabilities, optimize server latency, and boost database queries for speed."
+      "seo_speed": {
+        "title": "SEO & Performance Optimization",
+        "desc": "Core Web Vitals tuning, Lighthouse score optimization, JSON-LD schema, and Google ranking boost.",
+        "turnaround": "3 - 5 Business Days"
+      },
+      "api_security": {
+        "title": "API Integration & Backend Security",
+        "desc": "RESTful API development, payment gateway integration, and OWASP Top 10 security audit.",
+        "turnaround": "5 - 10 Business Days"
       }
     },
     "bento": {

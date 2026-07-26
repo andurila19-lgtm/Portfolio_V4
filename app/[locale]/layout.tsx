@@ -76,9 +76,63 @@ const RootLayout = async ({
 
   const messages = await getMessages();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://anduril.web.id/#person",
+        "name": "Anduril Ahmad",
+        "url": "https://anduril.web.id",
+        "jobTitle": "Senior Full-Stack Developer & Cyber Security Specialist",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Anduril Digital Solutions"
+        },
+        "sameAs": [
+          "https://github.com/andurila19-lgtm",
+          "https://linkedin.com/in/andurilahmad"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Madiun",
+          "addressRegion": "Jawa Timur",
+          "addressCountry": "ID"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://anduril.web.id/#website",
+        "url": "https://anduril.web.id",
+        "name": "Anduril Ahmad — Full-Stack Developer & Cyber Security Specialist",
+        "publisher": {
+          "@id": "https://anduril.web.id/#person"
+        },
+        "inLanguage": ["id-ID", "en-US"]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://anduril.web.id/#service",
+        "name": "Anduril Web & App Development Services",
+        "url": "https://anduril.web.id",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Madiun",
+          "addressCountry": "ID"
+        }
+      }
+    ]
+  };
+
   return (
     <html lang={locale} suppressHydrationWarning={true}>
-      <head />
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={inter.className}>
         <Script
           defer
