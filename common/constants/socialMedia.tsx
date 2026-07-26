@@ -46,7 +46,7 @@ export const SOCIAL_MEDIA: SocialMediaProps[] = [
     description:
       "Connect for collaboration or explore my professional experience.",
     name: "linkedin",
-    href: "https://www.linkedin.com/in/anduril-ahmad-silvera-burhani-837492387/",
+    href: "https://www.linkedin.com/in/andurilahmad",
     icon: <LinkedinIcon size={iconSize} />,
     backgroundIcon: <LinkedinIcon size={backgroundIconSize} />,
     textColor: "text-sky-300",
