@@ -6,6 +6,24 @@
     "location_type": "Onsite & Remote",
     "cta_projects": "View Projects",
     "cta_contact": "Contact Me",
+    "cta_whatsapp": "Chat WhatsApp",
+    "featured_projects": {
+      "title": "Featured Projects",
+      "subtitle": "Selected work engineered with high business impact and seamless UX.",
+      "view_all": "View All Projects"
+    },
+    "work_process": {
+      "title": "How We Work Together",
+      "subtitle": "A transparent & structured process from concept to production release.",
+      "step_1_title": "1. Discovery & Strategy",
+      "step_1_desc": "Analyze business goals, define target audience, and outline application architecture.",
+      "step_2_title": "2. Design & Prototype",
+      "step_2_desc": "Craft responsive, intuitive, and modern interfaces tailored to your brand identity.",
+      "step_3_title": "3. Rapid Development",
+      "step_3_desc": "Clean, secure (OWASP-compliant), and SEO-optimized codebase engineered for scale.",
+      "step_4_title": "4. Launch & Support",
+      "step_4_desc": "Smooth production deployment with post-launch bug fixes & maintenance support."
+    },
     "resume": {
       "paragraph_1": "I build secure, high-performance, and scalable web applications. Bridging the gap between robust backend architecture and clean frontend interfaces, I ensure that application logic and system security go hand in hand.",
       "paragraph_2": "With a background in both full-stack development and security analysis, I focus on writing maintainable code, optimizing database performance, and implementing industry-standard security protocols to protect user data and business assets."

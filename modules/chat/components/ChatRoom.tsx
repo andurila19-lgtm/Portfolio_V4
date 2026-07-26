@@ -3,7 +3,7 @@
 import useSWR from "swr";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSession } from "next-auth/react";
 
 import ChatAuth from "./ChatAuth";
@@ -28,7 +28,7 @@ export const ChatRoom = ({ isWidget = false }: { isWidget?: boolean }) => {
 
   const { data: session } = useSession();
 
-  const supabase = createClient();
+  const supabase = useMemo(() => createClient(), []);
 
   const notif = useNotif();
 

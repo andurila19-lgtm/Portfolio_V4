@@ -6,6 +6,24 @@
     "location_type": "Onsite & Remote",
     "cta_projects": "Lihat Proyek",
     "cta_contact": "Hubungi Saya",
+    "cta_whatsapp": "Chat WhatsApp",
+    "featured_projects": {
+      "title": "Proyek Unggulan",
+      "subtitle": "Kumpulan hasil karya dengan dampak nyata untuk bisnis dan pengguna.",
+      "view_all": "Lihat Semua Proyek"
+    },
+    "work_process": {
+      "title": "Cara Kita Bekerja Sama",
+      "subtitle": "Proses transparan & terstruktur dari ide hingga rilis produksi.",
+      "step_1_title": "1. Konsultasi & Diskusi",
+      "step_1_desc": "Menganalisis kebutuhan bisnis, menentukan target audience, dan menyusun arsitektur fitur.",
+      "step_2_title": "2. Desain & Prototipe",
+      "step_2_desc": "Merancang UI/UX yang responsif, modern, dan mudah digunakan oleh pengguna akhir.",
+      "step_3_title": "3. Pengembangan Cepat",
+      "step_3_desc": "Proses penulisan kode berstandar tinggi, aman (OWASP), dan optimal untuk mesin pencari (SEO).",
+      "step_4_title": "4. Peluncuran & Dukungan",
+      "step_4_desc": "Deployment ke server produksi serta jaminan pemeliharaan & perbaikan bug gratis pasca-rilis."
+    },
     "resume": {
       "paragraph_1": "Saya membangun aplikasi web yang aman, berkinerja tinggi, dan scalable. Menjembatani arsitektur backend yang kokoh dengan antarmuka frontend yang bersih, saya memastikan logika aplikasi dan keamanan sistem berjalan beriringan.",
       "paragraph_2": "Berbekal latar belakang dalam pengembangan full-stack dan analisis keamanan, saya berfokus pada penulisan kode yang mudah dipelihara, optimasi performa basis data, serta penerapan protokol keamanan standar industri untuk melindungi data pengguna dan aset bisnis."

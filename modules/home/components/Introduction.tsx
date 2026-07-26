@@ -2,6 +2,9 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { HiOutlineArrowSmRight as ArrowIcon } from "react-icons/hi";
 
+import WhatsAppButton from "@/common/components/elements/WhatsAppButton";
+import Resume from "@/modules/about/components/Resume";
+
 const Introduction = () => {
   const t = useTranslations("HomePage");
 
@@ -31,7 +34,7 @@ const Introduction = () => {
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-4 pt-2">
+        <div className="flex flex-wrap items-center gap-3 pt-2">
           <Link
             href="/projects"
             className="group flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-neutral-900 shadow-md transition duration-300 hover:scale-105 hover:bg-primary-400"
@@ -39,6 +42,8 @@ const Introduction = () => {
             <span>{t("cta_projects")}</span>
             <ArrowIcon className="transition-transform group-hover:translate-x-1" size={18} />
           </Link>
+          <Resume />
+          <WhatsAppButton floating={false} />
           <Link
             href="/contact"
             className="flex items-center gap-2 rounded-lg border border-neutral-300 bg-transparent px-4 py-2.5 text-sm font-medium text-neutral-700 transition duration-300 hover:bg-neutral-100 hover:text-neutral-900 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"

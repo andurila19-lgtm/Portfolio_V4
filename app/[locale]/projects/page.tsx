@@ -14,13 +14,30 @@ export async function generateMetadata({
   params: { locale },
 }: ProjectsPageProps): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "ProjectsPage" });
+  const title = `${t("title")} ${METADATA.exTitle}`;
+  const description = t("description");
 
   return {
-    title: `${t("title")} ${METADATA.exTitle}`,
-    description: t("description"),
-    keywords: "portfolio frontend developer, software engineer jambi",
+    title,
+    description,
+    keywords: "portfolio, software engineer, web developer, projects, anduril ahmad",
+    openGraph: {
+      title,
+      description,
+      images: [{ url: METADATA.profile, alt: title }],
+      url: `${METADATA.openGraph.url}/${locale}/projects`,
+      siteName: METADATA.openGraph.siteName,
+      locale: locale === "id" ? "id_ID" : "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [METADATA.profile],
+    },
     alternates: {
-      canonical: `${process.env.DOMAIN}/${locale}/projects`,
+      canonical: `${process.env.DOMAIN || "https://anduril.web.id"}/${locale}/projects`,
     },
   };
 }

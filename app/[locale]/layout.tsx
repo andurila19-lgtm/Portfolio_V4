@@ -37,13 +37,27 @@ export const metadata: Metadata = {
     url: METADATA.openGraph.url,
   },
   openGraph: {
-    images: METADATA.profile,
+    title: METADATA.creator,
+    description: METADATA.description,
+    images: [
+      {
+        url: METADATA.profile,
+        alt: METADATA.creator,
+      },
+    ],
     url: METADATA.openGraph.url,
     siteName: METADATA.openGraph.siteName,
     locale: METADATA.openGraph.locale,
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: METADATA.creator,
+    description: METADATA.description,
+    images: [METADATA.profile],
+  },
 };
+
 
 interface RootLayoutProps {
   children: React.ReactNode;

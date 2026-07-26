@@ -50,7 +50,7 @@ export const POST = async (request: Request) => {
     await transporter.sendMail({
       from: `"${name}" <${process.env.NODEMAILER_EMAIL}>`,
       replyTo: email,
-      to: "satriaaxel7703@gmail.com",
+      to: "andurila19@gmail.com",
       subject: `🚀 Contact Form: ${name}`,
       text: `${message} | Dikirim oleh: ${email}`,
       html: htmlTemplate,

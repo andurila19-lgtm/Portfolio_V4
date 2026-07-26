@@ -21,12 +21,10 @@ const Story = () => {
         width={100}
         height={100}
       />
-      {/* 
       <div className="flex flex-wrap gap-4 pt-4">
         <Resume />
         <Portfolio />
       </div>
-      */}
     </section>
   );
 };

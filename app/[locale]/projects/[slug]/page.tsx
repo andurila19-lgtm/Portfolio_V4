@@ -34,16 +34,29 @@ export const generateMetadata = async ({
     title: `${project.title} ${METADATA.exTitle}`,
     description: project.description,
     openGraph: {
-      images: project.image,
-      url: `${METADATA.openGraph.url}/${project.slug}`,
+      title: `${project.title} ${METADATA.exTitle}`,
+      description: project.description,
+      images: [
+        {
+          url: project.image,
+          alt: project.title,
+        },
+      ],
+      url: `${METADATA.openGraph.url}/${locale}/projects/${project.slug}`,
       siteName: METADATA.openGraph.siteName,
       locale: locale === "id" ? "id_ID" : "en_US",
       type: "article",
       authors: [METADATA.creator],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} ${METADATA.exTitle}`,
+      description: project.description,
+      images: [project.image],
+    },
     keywords: project.title,
     alternates: {
-      canonical: `${process.env.DOMAIN}/${locale}/projects/${params.slug}`,
+      canonical: `${process.env.DOMAIN || "https://anduril.web.id"}/${locale}/projects/${params.slug}`,
     },
   };
 };
