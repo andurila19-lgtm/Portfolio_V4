@@ -9,6 +9,10 @@ interface GetAchievementsDataProps {
 
 export const getCustomAchievements = (): any[] => {
   try {
+    const tmpPath = path.join("/tmp", "custom_achievements.json");
+    if (fs.existsSync(tmpPath)) {
+      return JSON.parse(fs.readFileSync(tmpPath, "utf-8"));
+    }
     const customPath = path.join(process.cwd(), "contents", "custom_achievements.json");
     if (fs.existsSync(customPath)) {
       const data = fs.readFileSync(customPath, "utf-8");

@@ -95,6 +95,10 @@ export const LOCAL_PROJECTS = [
 
 export const getCustomProjects = (): any[] => {
   try {
+    const tmpPath = path.join("/tmp", "custom_projects.json");
+    if (fs.existsSync(tmpPath)) {
+      return JSON.parse(fs.readFileSync(tmpPath, "utf-8"));
+    }
     const filePath = path.join(process.cwd(), "contents", "custom_projects.json");
     if (fs.existsSync(filePath)) {
       const data = fs.readFileSync(filePath, "utf-8");

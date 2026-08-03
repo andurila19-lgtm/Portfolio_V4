@@ -2,9 +2,24 @@ import { type NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 import { getProjectsData, getCustomProjects } from "@/services/projects";
-import { revalidatePath, revalidateTag } from "next/cache";
+import { revalidatePath } from "next/cache";
 
-const CUSTOM_JSON_PATH = path.join(process.cwd(), "contents", "custom_projects.json");
+const PRIMARY_PATH = path.join(process.cwd(), "contents", "custom_projects.json");
+const TMP_PATH = path.join("/tmp", "custom_projects.json");
+
+function saveCustomProjects(data: any[]) {
+  const jsonStr = JSON.stringify(data, null, 2);
+  try {
+    fs.writeFileSync(PRIMARY_PATH, jsonStr, "utf-8");
+  } catch (e) {
+    console.warn("Primary path read-only, saving to /tmp:", e);
+  }
+  try {
+    fs.writeFileSync(TMP_PATH, jsonStr, "utf-8");
+  } catch (e) {
+    console.warn("Could not save to /tmp:", e);
+  }
+}
 
 export async function GET(req: NextRequest) {
   try {
@@ -37,7 +52,7 @@ export async function POST(req: NextRequest) {
       ...existingCustom.filter((p) => p.slug !== newProject.slug),
     ];
 
-    fs.writeFileSync(CUSTOM_JSON_PATH, JSON.stringify(updatedCustom, null, 2), "utf-8");
+    saveCustomProjects(updatedCustom);
 
     revalidatePath("/projects");
     revalidatePath("/id/projects");
@@ -70,7 +85,7 @@ export async function DELETE(req: NextRequest) {
     const existingCustom = getCustomProjects();
     const filteredCustom = existingCustom.filter((p) => p.slug !== slug);
 
-    fs.writeFileSync(CUSTOM_JSON_PATH, JSON.stringify(filteredCustom, null, 2), "utf-8");
+    saveCustomProjects(filteredCustom);
 
     revalidatePath("/projects");
     revalidatePath("/id/projects");

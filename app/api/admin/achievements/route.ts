@@ -4,7 +4,22 @@ import path from "path";
 import { getAchievementsData, getCustomAchievements } from "@/services/achievements";
 import { revalidatePath } from "next/cache";
 
-const CUSTOM_ACH_PATH = path.join(process.cwd(), "contents", "custom_achievements.json");
+const PRIMARY_PATH = path.join(process.cwd(), "contents", "custom_achievements.json");
+const TMP_PATH = path.join("/tmp", "custom_achievements.json");
+
+function saveCustomAchievements(data: any[]) {
+  const jsonStr = JSON.stringify(data, null, 2);
+  try {
+    fs.writeFileSync(PRIMARY_PATH, jsonStr, "utf-8");
+  } catch (e) {
+    console.warn("Primary path read-only, saving to /tmp:", e);
+  }
+  try {
+    fs.writeFileSync(TMP_PATH, jsonStr, "utf-8");
+  } catch (e) {
+    console.warn("Could not save to /tmp:", e);
+  }
+}
 
 export async function GET(req: NextRequest) {
   try {
@@ -42,7 +57,7 @@ export async function POST(req: NextRequest) {
       ...existingCustom,
     ];
 
-    fs.writeFileSync(CUSTOM_ACH_PATH, JSON.stringify(updatedCustom, null, 2), "utf-8");
+    saveCustomAchievements(updatedCustom);
 
     revalidatePath("/achievements");
     revalidatePath("/id/achievements");
@@ -78,7 +93,7 @@ export async function DELETE(req: NextRequest) {
       (a) => String(a.id) !== String(idStr) && a.slug !== slug
     );
 
-    fs.writeFileSync(CUSTOM_ACH_PATH, JSON.stringify(filteredCustom, null, 2), "utf-8");
+    saveCustomAchievements(filteredCustom);
 
     revalidatePath("/achievements");
     revalidatePath("/id/achievements");
