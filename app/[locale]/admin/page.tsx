@@ -347,7 +347,7 @@ export default function AdminDashboardPage() {
             <div className="py-12 text-center text-sm text-neutral-500">Memuat data proyek...</div>
           ) : projects.length === 0 ? (
             <div className="rounded-2xl border border-dashed border-neutral-300 p-12 text-center text-neutral-500 dark:border-neutral-800">
-              Belum ada proyek. Klik "Tambah Proyek" di atas.
+              Belum ada proyek. Klik &quot;Tambah Proyek&quot; di atas.
             </div>
           ) : (
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -416,7 +416,7 @@ export default function AdminDashboardPage() {
             <div className="py-12 text-center text-sm text-neutral-500">Memuat sertifikat...</div>
           ) : achievements.length === 0 ? (
             <div className="rounded-2xl border border-dashed border-neutral-300 p-12 text-center text-neutral-500 dark:border-neutral-800">
-              Belum ada sertifikat. Klik "Tambah Sertifikat" di atas.
+              Belum ada sertifikat. Klik &quot;Tambah Sertifikat&quot; di atas.
             </div>
           ) : (
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 sm:grid-cols-3">
