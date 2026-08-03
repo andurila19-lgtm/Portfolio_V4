@@ -31,14 +31,6 @@ const Introduction = () => {
   return (
     <section className="space-y-6 bg-cover bg-no-repeat">
       <div className="space-y-3">
-        <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3.5 py-1 text-xs font-semibold text-primary dark:bg-primary/20">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75"></span>
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500"></span>
-          </span>
-          <span>Available for Hire & Freelance Projects</span>
-        </div>
-
         <h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 sm:text-4xl">
           {t("intro")}
         </h1>

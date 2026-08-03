@@ -8,10 +8,10 @@ import "../globals.css";
 
 import Layouts from "@/common/components/layouts";
 import ThemeProviderContext from "@/common/stores/theme";
-import NextAuthProvider from "@/SessionProvider";
+import NextAuthProvider from "@/common/providers/SessionProvider";
 import { METADATA } from "@/common/constants/metadata";
 import { inter } from "@/common/styles/fonts";
-import SkeletonThemeProvider from "@/SkeletonThemeProvider";
+import SkeletonThemeProvider from "@/common/providers/SkeletonThemeProvider";
 import { routing } from "@/i18n/routing";
 
 export function generateStaticParams() {

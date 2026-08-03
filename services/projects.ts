@@ -1,3 +1,5 @@
+import fs from "fs";
+import path from "path";
 import { createClient } from "@/common/utils/server";
 
 export const LOCAL_PROJECTS = [
@@ -91,7 +93,21 @@ export const LOCAL_PROJECTS = [
   },
 ];
 
+export const getCustomProjects = (): any[] => {
+  try {
+    const filePath = path.join(process.cwd(), "contents", "custom_projects.json");
+    if (fs.existsSync(filePath)) {
+      const data = fs.readFileSync(filePath, "utf-8");
+      return JSON.parse(data);
+    }
+  } catch (err) {
+    console.error("Error reading custom_projects.json:", err);
+  }
+  return [];
+};
+
 export const getProjectsData = async (locale?: string) => {
+  const customProjects = getCustomProjects();
   const supabase = createClient();
   let dbData: any[] = [];
 
@@ -104,10 +120,13 @@ export const getProjectsData = async (locale?: string) => {
     console.error("Supabase fetch projects error:", error?.message || error);
   }
 
+  const customSlugs = new Set(customProjects.map((p) => p.slug));
   const dbSlugs = new Set(dbData.map((p) => p.slug));
+
   const mergedProjects = [
-    ...dbData,
-    ...LOCAL_PROJECTS.filter((lp) => !dbSlugs.has(lp.slug)),
+    ...customProjects,
+    ...dbData.filter((p) => !customSlugs.has(p.slug)),
+    ...LOCAL_PROJECTS.filter((lp) => !customSlugs.has(lp.slug) && !dbSlugs.has(lp.slug)),
   ];
 
   return mergedProjects.map((item) => {
@@ -120,29 +139,29 @@ export const getProjectsData = async (locale?: string) => {
       ? item.stacks
       : localMatch?.stacks || [];
 
-    const description = localMatch
+    const description = item.description || (localMatch
       ? (locale === "id" ? localMatch.description_id : localMatch.description_en)
-      : item.description;
+      : item.description);
 
-    const category = localMatch
+    const category = item.category || (localMatch
       ? (locale === "id" ? localMatch.category_id : localMatch.category_en)
-      : item.category || "Web Application";
+      : item.category || "Web Application");
 
-    const role = localMatch
+    const role = item.role || (localMatch
       ? (locale === "id" ? localMatch.role_id : localMatch.role_en)
-      : item.role || "Full-Stack Developer";
+      : item.role || "Full-Stack Developer");
 
-    const problem = localMatch
+    const problem = item.problem || (localMatch
       ? (locale === "id" ? localMatch.problem_id : localMatch.problem_en)
-      : item.problem;
+      : item.problem);
 
-    const solution = localMatch
+    const solution = item.solution || (localMatch
       ? (locale === "id" ? localMatch.solution_id : localMatch.solution_en)
-      : item.solution;
+      : item.solution);
 
-    const result = localMatch
+    const result = item.result || (localMatch
       ? (locale === "id" ? localMatch.result_id : localMatch.result_en)
-      : item.result;
+      : item.result);
 
     return {
       ...item,
@@ -153,7 +172,7 @@ export const getProjectsData = async (locale?: string) => {
       problem,
       solution,
       result,
-      image: imageData?.publicUrl || "",
+      image: item.image || imageData?.publicUrl || "",
     };
   });
 };
