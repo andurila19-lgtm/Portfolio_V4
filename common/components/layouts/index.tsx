@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 import ChatButton from "../../../modules/chat/components/ChatButton";
+import { consoleGreeting } from "@/common/utils/consoleGreeting";
 
 import Sidebar from "./sidebar";
 
@@ -34,6 +35,8 @@ const Layouts = ({ children }: LayoutsProps) => {
       duration: 800,
       delay: 50,
     });
+
+    consoleGreeting();
   }, []);
   return (
     <div className="mx-auto max-w-7xl lg:px-12">
