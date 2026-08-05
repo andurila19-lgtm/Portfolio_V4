@@ -3,6 +3,7 @@ import {
   BsInstagram as InstagramIcon,
   BsLinkedin as LinkedinIcon,
   BsTiktok as TiktokIcon,
+  BsWhatsapp as WhatsappIcon,
 } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
 
@@ -12,6 +13,20 @@ const iconSize = 35;
 const backgroundIconSize = 275;
 
 export const SOCIAL_MEDIA: SocialMediaProps[] = [
+  {
+    title: "Instant Chat",
+    description: "Chat directly via WhatsApp for quick consultation and fast responses.",
+    name: "whatsapp",
+    href: "https://wa.me/6285190830010?text=Halo%20Anduril,%20saya%20tertarik%20untuk%20konsultasi%20pembuatan%20website.",
+    icon: <WhatsappIcon size={iconSize} />,
+    backgroundIcon: <WhatsappIcon size={backgroundIconSize} />,
+    textColor: "text-emerald-300",
+    backgroundColor: "bg-emerald-300",
+    borderColor: "border-emerald-300",
+    backgroundGradientColor: "bg-gradient-to-b from-emerald-600 to-emerald-900",
+    colSpan: "md:col-span-2",
+    isShow: true,
+  },
   {
     title: "Stay in Touch",
     description: "Reach out via email for any inquiries or collaborations.",
@@ -23,7 +38,7 @@ export const SOCIAL_MEDIA: SocialMediaProps[] = [
     backgroundColor: "bg-red-300",
     borderColor: "border-red-300",
     backgroundGradientColor: "bg-gradient-to-b from-red-700 to-red-900",
-    colSpan: "md:col-span-2",
+    colSpan: "md:col-span-1",
     isShow: true,
   },
   {
