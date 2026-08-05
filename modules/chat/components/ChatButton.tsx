@@ -12,16 +12,9 @@ const ChatButton = () => {
   const { isOpen, toggleChat } = useChatStore();
   const [isHover, setIsHover] = useState(false);
 
-  const router = useRouter();
-
-  const isMobile = useIsMobile();
-
-  const handleClick = () => {
-    if (isMobile) {
-      router.push("/chat");
-    } else {
-      toggleChat();
-    }
+  const handleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    toggleChat();
   };
 
   return (
@@ -29,7 +22,7 @@ const ChatButton = () => {
       <button
         type="button"
         aria-label="Open Smart Chat"
-        className="fixed bottom-6 right-6 z-50 cursor-pointer rounded-full border-2 border-neutral-300 bg-gradient-to-br from-neutral-300 to-neutral-100 p-3 text-neutral-700 drop-shadow-xl transition duration-300 hover:scale-105 hover:to-neutral-50 active:scale-95 dark:border-neutral-600 dark:from-neutral-700 dark:to-neutral-800 dark:text-neutral-100 hover:dark:to-neutral-900"
+        className="fixed bottom-6 right-6 z-[9999] cursor-pointer rounded-full border-2 border-neutral-300 bg-gradient-to-br from-neutral-300 to-neutral-100 p-3 text-neutral-700 drop-shadow-xl transition duration-300 hover:scale-105 hover:to-neutral-50 active:scale-95 dark:border-neutral-600 dark:from-neutral-700 dark:to-neutral-800 dark:text-neutral-100 hover:dark:to-neutral-900"
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
         onClick={handleClick}
@@ -37,7 +30,7 @@ const ChatButton = () => {
       >
         {isHover ? <ChatIconHover size={23} /> : <ChatIcon size={23} />}
       </button>
-      {!isMobile && isOpen && <ChatWidget />}
+      {isOpen && <ChatWidget />}
     </>
   );
 };

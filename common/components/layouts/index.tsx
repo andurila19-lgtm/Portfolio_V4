@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/i18n/navigation";
 
 import ChatButton from "../../../modules/chat/components/ChatButton";
 import { consoleGreeting } from "@/common/utils/consoleGreeting";
