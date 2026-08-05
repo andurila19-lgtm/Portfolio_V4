@@ -44,7 +44,7 @@ export const POST = async (request: Request) => {
         </div>
 
         <footer style="margin-top: 30px; font-size: 12px; color: #aaa; text-align: center;">
-          Pesan ini dikirim via sistem otomatis Portfolio Satria.
+          Pesan ini dikirim via sistem otomatis Anduril Ahmad.
         </footer>
       </div>
     `;
