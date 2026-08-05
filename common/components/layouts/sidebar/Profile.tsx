@@ -49,21 +49,23 @@ const Profile = () => {
   return (
     <div
       className={clsx(
-        "fixed z-20 w-full bg-neutral-50 p-5 shadow-sm dark:border-b dark:border-neutral-800 dark:bg-neutral-900 lg:relative lg:border-none lg:!bg-transparent lg:p-0 xl:shadow-none",
-        isOpen && "fixed inset-0 z-50 h-[100dvh] overflow-y-auto pb-10 bg-neutral-50 dark:bg-neutral-900",
+        "sticky top-0 z-40 w-full bg-neutral-50/90 p-4 shadow-sm backdrop-blur-md dark:border-b dark:border-neutral-800 dark:bg-neutral-900/90 lg:relative lg:top-auto lg:z-auto lg:border-none lg:!bg-transparent lg:p-0 xl:shadow-none",
+        isOpen && "fixed inset-0 z-50 flex flex-col h-[100dvh] !bg-neutral-50 dark:!bg-neutral-900 p-4 overflow-hidden shadow-none rounded-none border-none",
       )}
     >
-      <div className="flex items-center justify-between md:px-2 lg:flex-col lg:space-y-4">
+      <div className={clsx(
+        "flex items-center justify-between md:px-2 lg:flex-col lg:space-y-4 shrink-0",
+        isOpen && "pb-3 border-b border-neutral-200 dark:border-neutral-800"
+      )}>
         <ProfileHeader expandMenu={isOpen} imageSize={imageSize} />
         {isMobile && (
           <div
             className={clsx(
-              "mt-1 flex items-center gap-5 lg:hidden",
-              isOpen &&
-                "h-[130px] flex-col-reverse !items-end justify-between pb-1",
+              "mt-1 flex items-center gap-4 lg:hidden",
+              isOpen && "flex-row-reverse items-center justify-end gap-3",
             )}
           >
-            <div className="flex gap-4">
+            <div className="flex gap-2">
               <IntlToggle />
               <ThemeToggle />
             </div>
@@ -73,7 +75,13 @@ const Profile = () => {
       </div>
 
       {isMobile && (
-        <AnimatePresence>{isOpen && <MobileMenu />}</AnimatePresence>
+        <AnimatePresence>
+          {isOpen && (
+            <div className="flex-1 overflow-y-auto pt-2 pb-16">
+              <MobileMenu />
+            </div>
+          )}
+        </AnimatePresence>
       )}
     </div>
   );
