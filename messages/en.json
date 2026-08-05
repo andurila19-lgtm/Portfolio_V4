@@ -121,6 +121,11 @@
         "title": "API Integration & Backend Systems",
         "desc": "RESTful API development, payment gateway integration, and modern backend system integration.",
         "turnaround": "5 - 10 Business Days"
+      },
+      "devops": {
+        "title": "DevOps & CI/CD (Docker, GitHub)",
+        "desc": "Automated builds, testing, Docker containerization, and automated deployments via GitHub Actions.",
+        "turnaround": "3 - 10 Business Days"
       }
     },
     "bento": {

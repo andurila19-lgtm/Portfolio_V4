@@ -12,6 +12,7 @@ import {
   FiTool,
   FiZap,
   FiTrendingUp,
+  FiServer,
   FiClock,
   FiArrowRight,
   FiCheck,
@@ -27,6 +28,7 @@ const iconMap: Record<string, JSX.Element> = {
   FiTool: <FiTool className="text-3xl text-pink-500" />,
   FiZap: <FiZap className="text-3xl text-amber-400" />,
   FiTrendingUp: <FiTrendingUp className="text-3xl text-emerald-500" />,
+  FiServer: <FiServer className="text-3xl text-cyan-500" />,
 };
 
 const ServicesModule = () => {

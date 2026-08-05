@@ -121,6 +121,11 @@
         "title": "API Integration & Backend Systems",
         "desc": "Pengembangan RESTful API, integrasi payment gateway, serta integrasi sistem backend modern.",
         "turnaround": "5 - 10 Hari Kerja"
+      },
+      "devops": {
+        "title": "DevOps & CI/CD (Docker, GitHub)",
+        "desc": "Otomatisasi build, testing, kontainerisasi Docker, dan deployment otomatis via GitHub Actions.",
+        "turnaround": "3 - 10 Hari Kerja"
       }
     },
     "bento": {

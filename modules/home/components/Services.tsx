@@ -11,6 +11,7 @@ import {
   FiTool,
   FiZap,
   FiLock,
+  FiServer,
   FiArrowRight,
   FiClock,
 } from "react-icons/fi";
@@ -122,6 +123,20 @@ const Services = () => {
         "Enkripsi Data & Auth Security",
       ],
       whatsappMsg: "Halo Anduril, saya berminat dengan jasa Integrasi API & Keamanan Backend.",
+    },
+    {
+      id: "devops",
+      icon: <FiServer className="text-3xl text-cyan-500" />,
+      titleKey: "services.devops.title",
+      descKey: "services.devops.desc",
+      turnaroundKey: "services.devops.turnaround",
+      benefits: [
+        "Kontainerisasi Docker & Image Portabel",
+        "Pipeline CI/CD Otomatis GitHub Actions",
+        "Deployment VPS Cloud / Vercel / Nginx",
+        "Zero-Downtime Release & Health Check",
+      ],
+      whatsappMsg: "Halo Anduril, saya berminat dengan jasa DevOps & CI/CD Pipeline.",
     },
   ];
 

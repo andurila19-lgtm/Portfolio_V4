@@ -962,6 +962,134 @@ const RAW_SERVICES_DATA = [
       ],
     },
   },
+  {
+    slug: "devops",
+    iconName: "FiServer",
+    techStack: ["Docker", "GitHub Actions", "Vercel", "Cloudflare", "Nginx", "Linux"],
+    whatsappMsg: "Halo Anduril, saya berminat dengan jasa DevOps & CI/CD Pipeline.",
+    en: {
+      title: "DevOps & CI/CD (Docker, GitHub)",
+      tagline: "Automate your build, test, and deployment pipeline with Docker containers and GitHub Actions.",
+      summary:
+        "Anduril DevOps & CI/CD service streamlines your software delivery lifecycle using Docker containerization, GitHub Actions workflows, automated testing, and zero-downtime cloud deployments on Vercel, Cloudflare, or custom VPS infrastructure.",
+      turnaround: "3 - 10 Days",
+      category: "Infrastructure & Automation",
+      overview:
+        "Manual deployments are slow, error-prone, and unsustainable as your codebase grows. We architect robust CI/CD pipelines using GitHub Actions that automatically build, test, and deploy your applications inside Docker containers to production—eliminating human error and enabling continuous delivery with every git push.",
+      benefits: [
+        "Automated build, test, and deploy pipelines triggered on every git push",
+        "Docker containerization ensuring consistent environments across dev, staging, and production",
+        "Zero-downtime deployments with rolling updates and health checks",
+        "Infrastructure-as-Code (IaC) for reproducible, version-controlled server setups",
+      ],
+      features: [
+        {
+          title: "Docker Containerization",
+          desc: "Package your application, dependencies, and runtime into portable Docker images for consistent deployment anywhere.",
+        },
+        {
+          title: "GitHub Actions CI/CD Pipelines",
+          desc: "Automated workflows that lint, test, build, and deploy your code on every push or pull request to main branch.",
+        },
+        {
+          title: "Cloud Deployment & Hosting",
+          desc: "Deploy to Vercel, Cloudflare Pages, AWS, DigitalOcean, or custom Linux VPS with Nginx reverse proxy.",
+        },
+        {
+          title: "Environment Management",
+          desc: "Secure environment variable management, staging vs production isolation, and secrets rotation.",
+        },
+      ],
+      comparison: {
+        title: "Automated CI/CD Pipeline vs Manual Deployment",
+        headers: ["Criteria", "Anduril CI/CD Pipeline", "Manual FTP / SSH Deploy"],
+        rows: [
+          ["Deployment Speed", "Automatic in seconds on git push", "Manual upload taking 15-30+ minutes"],
+          ["Human Error Risk", "Near-zero with automated testing gates", "High risk of missing files or configs"],
+          ["Rollback Capability", "Instant rollback to previous version", "Complex manual restoration process"],
+          ["Consistency", "Identical Docker containers everywhere", "Works on my machine syndrome"],
+        ],
+      },
+      faqs: [
+        {
+          question: "What is Docker and why do I need it?",
+          answer:
+            "Docker packages your entire application (code, dependencies, runtime) into a portable container that runs identically on any server. This eliminates the 'works on my machine' problem and ensures your app behaves the same in development, staging, and production.",
+        },
+        {
+          question: "Can you set up CI/CD for an existing project?",
+          answer:
+            "Yes! We can integrate GitHub Actions CI/CD pipelines into any existing repository—whether it's a Next.js app, Node.js API, or Python backend. We'll configure automated testing, building, and deployment without disrupting your current workflow.",
+        },
+        {
+          question: "Which cloud providers do you support for deployment?",
+          answer:
+            "We support Vercel, Cloudflare Pages, AWS (EC2/ECS), DigitalOcean, Google Cloud Platform, and any custom Linux VPS with Nginx or Caddy as reverse proxy.",
+        },
+      ],
+    },
+    id: {
+      title: "DevOps & CI/CD (Docker, GitHub)",
+      tagline: "Otomatisasi pipeline build, test, dan deployment menggunakan Docker container dan GitHub Actions.",
+      summary:
+        "Layanan DevOps & CI/CD dari Anduril mempercepat siklus pengiriman perangkat lunak Anda menggunakan kontainerisasi Docker, alur kerja GitHub Actions, pengujian otomatis, dan deployment cloud tanpa downtime di Vercel, Cloudflare, atau VPS kustom.",
+      turnaround: "3 - 10 Hari Kerja",
+      category: "Infrastruktur & Otomatisasi",
+      overview:
+        "Deployment manual itu lambat, rawan error, dan tidak berkelanjutan seiring berkembangnya basis kode Anda. Kami merancang pipeline CI/CD menggunakan GitHub Actions yang secara otomatis membangun, menguji, dan mendeploy aplikasi Anda di dalam Docker container ke produksi—menghilangkan kesalahan manusia dan memungkinkan pengiriman berkelanjutan dengan setiap git push.",
+      benefits: [
+        "Pipeline build, test, dan deploy otomatis yang dipicu setiap git push",
+        "Kontainerisasi Docker menjamin lingkungan konsisten di dev, staging, dan produksi",
+        "Deployment tanpa downtime dengan rolling update dan health check otomatis",
+        "Infrastructure-as-Code (IaC) untuk setup server yang dapat direproduksi dan dikontrol versinya",
+      ],
+      features: [
+        {
+          title: "Kontainerisasi Docker",
+          desc: "Mengemas aplikasi, dependensi, dan runtime ke dalam Docker image portabel untuk deployment konsisten di mana saja.",
+        },
+        {
+          title: "Pipeline CI/CD GitHub Actions",
+          desc: "Alur kerja otomatis yang melakukan lint, test, build, dan deploy kode Anda pada setiap push atau pull request ke branch utama.",
+        },
+        {
+          title: "Deployment & Hosting Cloud",
+          desc: "Deploy ke Vercel, Cloudflare Pages, AWS, DigitalOcean, atau VPS Linux kustom dengan Nginx reverse proxy.",
+        },
+        {
+          title: "Manajemen Environment",
+          desc: "Pengelolaan environment variable yang aman, isolasi staging vs produksi, dan rotasi secrets.",
+        },
+      ],
+      comparison: {
+        title: "Perbandingan Pipeline CI/CD Otomatis vs Deployment Manual",
+        headers: ["Kriteria", "Pipeline CI/CD Anduril", "Deploy Manual FTP / SSH"],
+        rows: [
+          ["Kecepatan Deploy", "Otomatis dalam hitungan detik via git push", "Upload manual memakan waktu 15-30+ menit"],
+          ["Risiko Human Error", "Mendekati nol berkat gate pengujian otomatis", "Risiko tinggi file atau konfigurasi terlewat"],
+          ["Kemampuan Rollback", "Rollback instan ke versi sebelumnya", "Proses restorasi manual yang kompleks"],
+          ["Konsistensi", "Docker container identik di semua server", "Sindrom 'di laptop saya bisa jalan'"],
+        ],
+      },
+      faqs: [
+        {
+          question: "Apa itu Docker dan mengapa saya membutuhkannya?",
+          answer:
+            "Docker mengemas seluruh aplikasi Anda (kode, dependensi, runtime) ke dalam container portabel yang berjalan identik di server mana pun. Ini menghilangkan masalah 'di laptop saya bisa jalan' dan memastikan aplikasi berperilaku sama di lingkungan development, staging, dan produksi.",
+        },
+        {
+          question: "Apakah bisa setup CI/CD untuk proyek yang sudah berjalan?",
+          answer:
+            "Ya! Kami dapat mengintegrasikan pipeline CI/CD GitHub Actions ke repository yang sudah ada—baik itu aplikasi Next.js, API Node.js, maupun backend Python. Kami akan mengonfigurasi pengujian, build, dan deployment otomatis tanpa mengganggu alur kerja Anda saat ini.",
+        },
+        {
+          question: "Cloud provider apa saja yang didukung untuk deployment?",
+          answer:
+            "Kami mendukung Vercel, Cloudflare Pages, AWS (EC2/ECS), DigitalOcean, Google Cloud Platform, dan VPS Linux kustom dengan Nginx atau Caddy sebagai reverse proxy.",
+        },
+      ],
+    },
+  },
 ];
 
 export const getServicesList = (locale: string = "en"): ServiceItem[] => {
