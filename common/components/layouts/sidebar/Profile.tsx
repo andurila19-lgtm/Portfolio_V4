@@ -49,7 +49,7 @@ const Profile = () => {
   return (
     <div
       className={clsx(
-        "sticky top-0 z-40 w-full bg-neutral-50/90 p-4 shadow-sm backdrop-blur-md dark:border-b dark:border-neutral-800 dark:bg-neutral-900/90 lg:relative lg:top-auto lg:z-auto lg:border-none lg:!bg-transparent lg:p-0 xl:shadow-none",
+        "fixed top-0 left-0 right-0 z-40 w-full bg-neutral-50/90 p-4 shadow-sm backdrop-blur-md dark:border-b dark:border-neutral-800 dark:bg-neutral-900/90 lg:relative lg:top-auto lg:z-auto lg:border-none lg:!bg-transparent lg:p-0 xl:shadow-none",
         isOpen && "fixed inset-0 z-50 flex flex-col h-[100dvh] !bg-neutral-50 dark:!bg-neutral-900 p-4 overflow-hidden shadow-none rounded-none border-none",
       )}
     >
