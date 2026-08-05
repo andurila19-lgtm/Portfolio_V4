@@ -6,7 +6,7 @@ import { RiChatSmile3Line as ChatIconHover } from "react-icons/ri";
 import useChatStore from "@/common/stores/chat";
 import ChatWidget from "./ChatWidget";
 import useIsMobile from "@/hooks/useIsMobile";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 
 const ChatButton = () => {
   const { isOpen, toggleChat } = useChatStore();
