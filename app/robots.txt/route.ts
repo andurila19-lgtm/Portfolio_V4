@@ -5,6 +5,18 @@ export async function GET() {
 Allow: /
 Disallow: /api/
 
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
 Sitemap: https://anduril.web.id/sitemap.xml`;
 
     return new NextResponse(robots, {

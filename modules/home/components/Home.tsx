@@ -1,10 +1,13 @@
 import Breakline from "@/common/components/elements/Breakline";
 import WhatsAppButton from "@/common/components/elements/WhatsAppButton";
+import SchemaMarkup from "@/common/components/elements/SchemaMarkup";
 
 import Introduction from "./Introduction";
 import CredibilitySection from "./CredibilitySection";
-import FeaturedProjects from "./FeaturedProjects";
 import Services from "./Services";
+import FeaturedProjects from "./FeaturedProjects";
+import FeaturedCaseStudies from "./FeaturedCaseStudies";
+import PricingOverview from "./PricingOverview";
 import WhyChooseMe from "./WhyChooseMe";
 import WorkProcess from "./WorkProcess";
 import SkillList from "./SkillList";
@@ -15,13 +18,18 @@ import CTABanner from "./CTABanner";
 const Home = () => {
   return (
     <>
+      <SchemaMarkup type="Organization" />
       <Introduction />
+      <Breakline className="my-8" />
+      <Services />
       <Breakline className="my-8" />
       <CredibilitySection />
       <Breakline className="my-8" />
       <FeaturedProjects />
       <Breakline className="my-8" />
-      <Services />
+      <FeaturedCaseStudies />
+      <Breakline className="my-8" />
+      <PricingOverview />
       <Breakline className="my-8" />
       <WhyChooseMe />
       <Breakline className="my-8" />

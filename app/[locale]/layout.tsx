@@ -84,7 +84,7 @@ const RootLayout = async ({
         "@id": "https://anduril.web.id/#person",
         "name": "Anduril Ahmad",
         "url": "https://anduril.web.id",
-        "jobTitle": "Senior Full-Stack Developer & Cyber Security Specialist",
+        "jobTitle": "Software Engineer, Full-Stack Developer & AI Engineer",
         "worksFor": {
           "@type": "Organization",
           "name": "Anduril Digital Solutions"
@@ -104,7 +104,7 @@ const RootLayout = async ({
         "@type": "WebSite",
         "@id": "https://anduril.web.id/#website",
         "url": "https://anduril.web.id",
-        "name": "Anduril Ahmad — Full-Stack Developer & Cyber Security Specialist",
+        "name": "Anduril Ahmad — Software Engineer, Full-Stack Developer & AI Engineer",
         "publisher": {
           "@id": "https://anduril.web.id/#person"
         },

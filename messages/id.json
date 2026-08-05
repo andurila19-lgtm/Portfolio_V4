@@ -1,7 +1,7 @@
 {
   "HomePage": {
     "intro": "Halo, Saya Anduril Ahmad",
-    "role": "Full-Stack Developer & Cyber Security Enthusiast",
+    "role": "Software Engineer, Full-Stack Developer & AI Engineer",
     "location": "Berdomisili di Madiun, Indonesia 🇮🇩",
     "location_type": "Onsite & Remote",
     "cta_hire": "Hire Me / Konsultasi",
@@ -13,7 +13,7 @@
       "seo": "SEO Friendly",
       "fast": "Fast Loading",
       "modern": "Modern UI",
-      "secure": "Secure Development"
+      "secure": "AI Powered"
     },
     "stats": {
       "projects": "Proyek Selesai",
@@ -27,7 +27,7 @@
     },
     "why_me": {
       "title": "Mengapa Bekerja Sama Dengan Saya",
-      "subtitle": "Komitmen penuh terhadap kualitas kode, kecepatan, keamanan, dan kepuasan bisnis."
+      "subtitle": "Komitmen penuh terhadap kualitas kode, kecepatan, inovasi AI, dan kepuasan bisnis."
     },
     "testimonials": {
       "title": "Apa Kata Klien & Rekan Kerja",
@@ -59,7 +59,7 @@
       "step_4_title": "4. Desain UI/UX & Prototipe",
       "step_4_desc": "Merancang UI modern, responsif, intuitif, dan mengutamakan konversi pengguna.",
       "step_5_title": "5. Development & Coding",
-      "step_5_desc": "Menulis kode bersih, aman (standar OWASP), modular, dan SEO-friendly.",
+      "step_5_desc": "Menulis kode bersih, terstruktur, modular, dan SEO-friendly.",
       "step_6_title": "6. Testing & Quality Assurance",
       "step_6_desc": "Pengujian fungsionalitas, kompatibilitas lintas perangkat, dan audit kecepatan.",
       "step_7_title": "7. Deployment & Go-Live",
@@ -68,8 +68,8 @@
       "step_8_desc": "Jaminan garansi perbaikan bug gratis dan dukungan teknis secara berkala."
     },
     "resume": {
-      "paragraph_1": "Saya membangun aplikasi web yang aman, berkinerja tinggi, dan scalable. Menjembatani arsitektur backend yang kokoh dengan antarmuka frontend yang bersih, saya memastikan logika aplikasi dan keamanan sistem berjalan beriringan.",
-      "paragraph_2": "Berbekal latar belakang dalam pengembangan full-stack dan analisis keamanan, saya berfokus pada penulisan kode yang mudah dipelihara, optimasi performa basis data, serta penerapan protokol keamanan standar industri untuk melindungi data pengguna dan aset bisnis."
+      "paragraph_1": "Saya membangun aplikasi web modern, berkinerja tinggi, dan scalable. Menjembatani arsitektur backend yang kokoh dengan antarmuka frontend yang intuitif serta integrasi AI modern.",
+      "paragraph_2": "Berbekal latar belakang dalam Software Engineering, Full-Stack Development, dan AI Engineering, saya berfokus pada penulisan kode yang bersih, optimasi basis data, serta penerapan teknologi mutakhir untuk mendorong nilai bisnis terukur."
     },
     "skills": {
       "title": "Keahlian & Arsitektur Teknologi",
@@ -80,7 +80,7 @@
       "database": "Database & ORM",
       "devops": "DevOps & Cloud",
       "cloud": "Layanan Cloud",
-      "cybersecurity": "Keamanan Siber (OWASP)",
+      "cybersecurity": "AI & Machine Learning",
       "tools": "Tools & Productivity"
     },
     "services": {
@@ -118,8 +118,8 @@
         "turnaround": "3 - 5 Hari Kerja"
       },
       "api_security": {
-        "title": "API Integration & Backend Security",
-        "desc": "Pengembangan RESTful API, integrasi payment gateway, serta audit keamanan standar OWASP Top 10.",
+        "title": "API Integration & Backend Systems",
+        "desc": "Pengembangan RESTful API, integrasi payment gateway, serta integrasi sistem backend modern.",
         "turnaround": "5 - 10 Hari Kerja"
       }
     },
@@ -134,7 +134,7 @@
     "title": "Tentang",
     "description": "Pengenalan singkat mengenai latar belakang dan alur kerja saya.",
     "resume": {
-      "paragraph_1": "Saya Anduril Ahmad, seorang Full-Stack Developer dan peminat Keamanan Siber yang berbasis di Madiun, Indonesia. Saya spesialis dalam membangun platform web yang aman, bersih, dan efisien yang menghadirkan pengalaman pengguna yang lancar sekaligus melindungi data sensitif.",
+      "paragraph_1": "Saya Anduril Ahmad, seorang Software Engineer, Full-Stack Developer, dan AI Engineer yang berbasis di Madiun, Indonesia. Saya spesialis dalam membangun platform web dan sistem AI yang bersih, efisien, dan responsif yang menghadirkan pengalaman pengguna yang lancar.",
       "paragraph_2": "Pendekatan saya dalam pengembangan berpusat pada kode yang bersih dan arsitektur yang andal. Saya tidak hanya membuat fitur; saya merancang sistem yang mudah dipelihara yang dapat berkembang seiring pertumbuhan bisnis dan memenuhi standar keamanan yang ketat.",
       "paragraph_3": "Saya percaya proyek yang sukses dibangun atas dasar komunikasi yang jelas, pemikiran kritis, dan eksekusi yang terstruktur. Baik bekerja secara mandiri maupun berkolaborasi dalam tim, tujuan saya selalu untuk memberikan performa optimal dan nilai bisnis yang terukur.",
       "paragraph_4": "Salam hangat,"
@@ -331,13 +331,18 @@
   },
   "Navigation": {
     "Home": "Beranda",
+    "Services": "Layanan",
+    "Industries": "Industri",
+    "Portfolio": "Portofolio",
+    "Case Studies": "Studi Kasus",
+    "Pricing": "Harga",
+    "Blog": "Blog",
+    "FAQ": "FAQ",
     "About": "Tentang",
-    "Contents": "Medsos",
+    "Contact": "Kontak",
     "Achievements": "Pencapaian",
-    "Projects": "Proyek",
     "Dashboard": "Dasbor",
     "Chat Room": "Ruang Obrolan",
-    "Contact": "Kontak",
     "Smart Talk": "Smart Talk"
   },
   "NotFoundPage": {

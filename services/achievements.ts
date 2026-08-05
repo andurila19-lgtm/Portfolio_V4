@@ -95,5 +95,5 @@ export const getAchivementTypes = async () => {
 };
 
 export const getAchivementCategories = async () => {
-  return ["All", "Cloud & AI", "Web Development", "Cyber Security"];
+  return ["All", "Cloud & AI", "Web Development", "Software Engineering"];
 };

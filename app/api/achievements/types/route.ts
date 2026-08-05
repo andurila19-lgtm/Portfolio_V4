@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAchivementTypes } from "@/services/achievements";
 
+export const dynamic = "force-dynamic";
+
 export const GET = async (req: NextRequest) => {
   try {
     const data = await getAchivementTypes();

@@ -1,7 +1,7 @@
 {
   "HomePage": {
     "intro": "Hi, I'm Anduril Ahmad",
-    "role": "Full-Stack Developer & Cyber Security Enthusiast",
+    "role": "Software Engineer, Full-Stack Developer & AI Engineer",
     "location": "Based in Madiun, Indonesia 🇮🇩",
     "location_type": "Onsite & Remote",
     "cta_hire": "Hire Me / Consult",
@@ -13,7 +13,7 @@
       "seo": "SEO Friendly",
       "fast": "Fast Loading",
       "modern": "Modern UI",
-      "secure": "Secure Development"
+      "secure": "AI Powered"
     },
     "stats": {
       "projects": "Projects Completed",
@@ -27,7 +27,7 @@
     },
     "why_me": {
       "title": "Why Work With Me",
-      "subtitle": "Uncompromising commitment to code quality, speed, security, and business ROI."
+      "subtitle": "Uncompromising commitment to code quality, speed, AI innovation, and business ROI."
     },
     "testimonials": {
       "title": "What Clients & Peers Say",
@@ -59,7 +59,7 @@
       "step_4_title": "4. UI/UX Design & Prototype",
       "step_4_desc": "Designing modern, intuitive, responsive, and conversion-focused interfaces.",
       "step_5_title": "5. Development & Coding",
-      "step_5_desc": "Writing clean, OWASP-compliant, modular, and SEO-friendly code.",
+      "step_5_desc": "Writing clean, structured, modular, and SEO-friendly code.",
       "step_6_title": "6. Testing & Quality Assurance",
       "step_6_desc": "Functional testing, cross-device compatibility, and performance audit.",
       "step_7_title": "7. Deployment & Go-Live",
@@ -68,8 +68,8 @@
       "step_8_desc": "Free post-launch bug fixing guarantee and ongoing technical support."
     },
     "resume": {
-      "paragraph_1": "I build secure, high-performance, and scalable web applications. Bridging the gap between robust backend architecture and clean frontend interfaces, I ensure that application logic and system security go hand in hand.",
-      "paragraph_2": "With a background in both full-stack development and security analysis, I focus on writing maintainable code, optimizing database performance, and implementing industry-standard security protocols to protect user data and business assets."
+      "paragraph_1": "I build modern, high-performance, and scalable web applications and AI solutions. Bridging robust backend architecture with clean frontend interfaces and cutting-edge AI integrations.",
+      "paragraph_2": "With a strong foundation in Software Engineering, Full-Stack Development, and AI Engineering, I focus on writing maintainable code, optimizing database performance, and building modern systems to drive measurable business value."
     },
     "skills": {
       "title": "Skills & Tech Architecture",
@@ -80,7 +80,7 @@
       "database": "Database & ORM",
       "devops": "DevOps & Cloud",
       "cloud": "Cloud Services",
-      "cybersecurity": "Cyber Security (OWASP)",
+      "cybersecurity": "AI & Machine Learning",
       "tools": "Tools & Productivity"
     },
     "services": {
@@ -118,8 +118,8 @@
         "turnaround": "3 - 5 Business Days"
       },
       "api_security": {
-        "title": "API Integration & Backend Security",
-        "desc": "RESTful API development, payment gateway integration, and OWASP Top 10 security audit.",
+        "title": "API Integration & Backend Systems",
+        "desc": "RESTful API development, payment gateway integration, and modern backend system integration.",
         "turnaround": "5 - 10 Business Days"
       }
     },
@@ -134,7 +134,7 @@
     "title": "About",
     "description": "A brief introduction to my background and workflow.",
     "resume": {
-      "paragraph_1": "I am Anduril Ahmad, a Full-Stack Developer and Cyber Security Enthusiast based in Madiun, Indonesia. I specialize in building secure, clean, and efficient web platforms that deliver smooth user experiences while protecting sensitive data.",
+      "paragraph_1": "I am Anduril Ahmad, a Software Engineer, Full-Stack Developer, and AI Engineer based in Madiun, Indonesia. I specialize in building clean, efficient, and intelligent web platforms that deliver smooth user experiences.",
       "paragraph_2": "My approach to development is centered on clean code and reliable architecture. I don't just build features; I design maintainable systems that scale with business growth and satisfy rigorous security standards.",
       "paragraph_3": "I believe successful projects are built on clear communication, critical thinking, and structured execution. Whether working independently or collaborating in a team, my goal is always to deliver optimal performance and measurable business value.",
       "paragraph_4": "Best regards,"
@@ -331,13 +331,18 @@
   },
   "Navigation": {
     "Home": "Home",
+    "Services": "Services",
+    "Industries": "Industries",
+    "Portfolio": "Portfolio",
+    "Case Studies": "Case Studies",
+    "Pricing": "Pricing",
+    "Blog": "Blog",
+    "FAQ": "FAQ",
     "About": "About",
-    "Contents": "Medsos",
+    "Contact": "Contact",
     "Achievements": "Achievements",
-    "Projects": "Projects",
     "Dashboard": "Dashboard",
     "Chat Room": "Chat Room",
-    "Contact": "Contact",
     "Smart Talk": "Smart Talk"
   },
   "NotFoundPage": {

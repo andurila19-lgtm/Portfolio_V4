@@ -28,7 +28,7 @@ const FeaturedProjects = () => {
       if (!a.is_featured && b.is_featured) return 1;
       return b.id - a.id;
     })
-    .slice(0, 2); // Show top 2 featured projects on Homepage
+    .slice(0, 2);
 
   if (error) return null;
 

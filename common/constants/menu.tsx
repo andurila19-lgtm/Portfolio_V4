@@ -5,6 +5,13 @@ import {
   BiCategory as DashboardIcon,
   BiBook as ContactIcon,
 } from "react-icons/bi";
+import {
+  FiGrid as ServicesIcon,
+  FiBriefcase as IndustryIcon,
+  FiFileText as CaseStudyIcon,
+  FiTag as PricingIcon,
+  FiHelpCircle as FAQIcon,
+} from "react-icons/fi";
 import { IoPhonePortraitOutline as ContentIcon } from "react-icons/io5";
 import { PiChatTeardropDotsBold as ChatRoomIcon } from "react-icons/pi";
 import { PiCertificate as AchievementIcon } from "react-icons/pi";
@@ -24,6 +31,62 @@ export const MENU_ITEMS: MenuItemProps[] = [
     eventName: "Pages: Home",
   },
   {
+    title: "Services",
+    href: "/services",
+    icon: <ServicesIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: "Pages: Services",
+  },
+  {
+    title: "Industries",
+    href: "/industries",
+    icon: <IndustryIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: "Pages: Industries",
+  },
+  {
+    title: "Portfolio",
+    href: "/projects",
+    icon: <ProjectIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: "Pages: Portfolio",
+  },
+  {
+    title: "Case Studies",
+    href: "/case-studies",
+    icon: <CaseStudyIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: "Pages: Case Studies",
+  },
+  {
+    title: "Pricing",
+    href: "/pricing",
+    icon: <PricingIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: "Pages: Pricing",
+  },
+  {
+    title: "Blog",
+    href: "/contents",
+    icon: <ContentIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: "Pages: Blog",
+  },
+  {
+    title: "FAQ",
+    href: "/faq",
+    icon: <FAQIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: "Pages: FAQ",
+  },
+  {
     title: "About",
     href: "/about",
     icon: <AboutIcon size={iconSize} />,
@@ -32,12 +95,12 @@ export const MENU_ITEMS: MenuItemProps[] = [
     eventName: "Pages: About",
   },
   {
-    title: "Contents",
-    href: "/contents",
-    icon: <ContentIcon size={iconSize} />,
+    title: "Contact",
+    href: "/contact",
+    icon: <ContactIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: "Pages: Contents",
+    eventName: "Pages: Contact",
   },
   {
     title: "Achievements",
@@ -46,14 +109,6 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: "Pages: Achievements",
-  },
-  {
-    title: "Projects",
-    href: "/projects",
-    icon: <ProjectIcon size={iconSize} />,
-    isShow: true,
-    isExternal: false,
-    eventName: "Pages: Projects",
   },
   {
     title: "Dashboard",
@@ -70,14 +125,6 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: "Pages: Chat Room",
-  },
-  {
-    title: "Contact",
-    href: "/contact",
-    icon: <ContactIcon size={iconSize} />,
-    isShow: true,
-    isExternal: false,
-    eventName: "Pages: Contact",
   },
   {
     title: "Smart Talk",

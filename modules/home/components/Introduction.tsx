@@ -20,10 +20,9 @@ const Introduction = () => {
     t("badges.secure"),
   ];
 
-  // TODO: Sesuaikan statistik angka jika ada pembaruan data proyek real terbaru.
   const stats = [
-    { value: 10, suffix: "+", label: t("stats.projects") },
-    { value: 3, suffix: "+", label: t("stats.experience") },
+    { value: 4, suffix: "", label: t("stats.projects") },
+    { value: 4, suffix: "+", label: t("stats.experience") },
     { value: 15, suffix: "+", label: t("stats.tech") },
     { value: 100, suffix: "%", label: t("stats.satisfaction") },
   ];
@@ -39,7 +38,6 @@ const Introduction = () => {
         </p>
       </div>
 
-      {/* Badges Section */}
       <div className="flex flex-wrap gap-2.5 pt-1">
         {badges.map((badge, idx) => (
           <div
@@ -66,7 +64,6 @@ const Introduction = () => {
           ))}
         </div>
 
-        {/* CTA Buttons */}
         <div className="flex flex-wrap items-center gap-3 pt-2">
           <Link
             href="/contact"
@@ -88,7 +85,6 @@ const Introduction = () => {
           <WhatsAppButton floating={false} />
         </div>
 
-        {/* Statistics Counter */}
         <div className="grid grid-cols-2 gap-4 rounded-2xl border border-neutral-200 bg-neutral-50/60 p-4 dark:border-neutral-800 dark:bg-neutral-900/40 sm:grid-cols-4 sm:p-5">
           {stats.map((stat, idx) => (
             <div key={idx} className="space-y-1 text-center sm:text-left">
