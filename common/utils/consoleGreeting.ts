@@ -2,7 +2,11 @@
  * Console Easter Egg — Anduril Digital Agency
  * Displays a styled greeting in the browser console for curious developers.
  */
+let hasLogged = false;
+
 export const consoleGreeting = () => {
+  if (hasLogged) return;
+  hasLogged = true;
   const asciiArt = `
 %c
      █████╗ ███╗   ██╗██████╗ ██╗   ██╗██████╗ ██╗██╗     
