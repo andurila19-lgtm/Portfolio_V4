@@ -14,7 +14,7 @@ const IndustryDetailModule = ({ industry }: IndustryDetailModuleProps) => {
   const locale = useLocale();
   const isId = locale === "id";
 
-  const whatsappUrl = `https://wa.me/6289523315624?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/6285190830010?text=${encodeURIComponent(
     `Halo Anduril, saya ingin berkonsultasi mengenai solusi website untuk industri ${industry.title}.`
   )}`;
 

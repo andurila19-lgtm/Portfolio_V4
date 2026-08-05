@@ -143,7 +143,7 @@ const PricingModule = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const locale = useLocale();
   const isId = locale === "id";
-  const phoneNumber = "6289523315624";
+  const phoneNumber = "6285190830010";
   const { packages, faqs, guarantees } = getPricingData(locale);
 
   return (

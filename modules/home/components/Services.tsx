@@ -23,7 +23,7 @@ import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 const Services = () => {
   const t = useTranslations("HomePage");
 
-  const phoneNumber = "6289523315624";
+  const phoneNumber = "6285190830010";
 
   const servicesData = [
     {

@@ -30,14 +30,32 @@ export const generateMetadata = async ({
     return { title: `Industry Not Found ${METADATA.exTitle}` };
   }
 
+  const pageUrl = `${METADATA.openGraph.url}/${locale}/industries/${industry.slug}`;
+
   return {
     title: `${industry.title} ${METADATA.exTitle}`,
     description: industry.overview,
     openGraph: {
       title: `${industry.title} ${METADATA.exTitle}`,
       description: industry.overview,
-      url: `${METADATA.openGraph.url}/${locale}/industries/${industry.slug}`,
+      url: pageUrl,
       siteName: METADATA.openGraph.siteName,
+      locale: locale === "id" ? "id_ID" : "en_US",
+      type: "article",
+      images: [
+        {
+          url: `${METADATA.openGraph.url}/images/anduril.jpg`,
+          width: 1200,
+          height: 630,
+          alt: industry.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${industry.title} ${METADATA.exTitle}`,
+      description: industry.overview,
+      images: [`${METADATA.openGraph.url}/images/anduril.jpg`],
     },
   };
 };

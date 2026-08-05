@@ -7,7 +7,7 @@ import { FiMail, FiMapPin, FiClock, FiArrowRight } from "react-icons/fi";
 
 const CTABanner = () => {
   const t = useTranslations("HomePage");
-  const whatsappUrl = "https://wa.me/6289523315624?text=Halo%20Anduril,%20saya%20tertarik%20untuk%20konsultasi%20pembuatan%20website.";
+  const whatsappUrl = "https://wa.me/6285190830010?text=Halo%20Anduril,%20saya%20tertarik%20untuk%20konsultasi%20pembuatan%20website.";
 
   return (
     <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-neutral-900 via-neutral-950 to-black p-8 text-white shadow-xl dark:border dark:border-neutral-800 sm:p-10">

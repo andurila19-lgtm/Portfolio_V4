@@ -96,7 +96,7 @@ const getPricingTiersData = (locale: string) => {
 const PricingOverview = () => {
   const locale = useLocale();
   const isId = locale === "id";
-  const phoneNumber = "6289523315624";
+  const phoneNumber = "6285190830010";
   const pricingTiers = getPricingTiersData(locale);
 
   return (

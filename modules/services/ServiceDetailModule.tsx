@@ -17,7 +17,7 @@ const ServiceDetailModule = ({ service }: ServiceDetailModuleProps) => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const locale = useLocale();
   const isId = locale === "id";
-  const phoneNumber = "6289523315624";
+  const phoneNumber = "6285190830010";
   const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(service.whatsappMsg)}`;
 
   return (
