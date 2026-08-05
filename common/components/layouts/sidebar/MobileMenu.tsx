@@ -10,10 +10,10 @@ const MobileMenu = () => {
   const filteredMenu = MENU_ITEMS?.filter((item) => item?.isShow);
   return (
     <motion.div
-      className="my-3 flex max-h-[calc(100vh-180px)] flex-col overflow-y-auto"
-      initial={{ y: -100 }}
+      className="my-3 flex flex-col pb-14"
+      initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.2 }}
     >
       <div>
         <Breakline />

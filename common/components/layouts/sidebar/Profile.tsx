@@ -50,7 +50,7 @@ const Profile = () => {
     <div
       className={clsx(
         "fixed z-20 w-full bg-neutral-50 p-5 shadow-sm dark:border-b dark:border-neutral-800 dark:bg-neutral-900 lg:relative lg:border-none lg:!bg-transparent lg:p-0 xl:shadow-none",
-        isOpen && "pb-0",
+        isOpen && "fixed inset-0 z-50 h-[100dvh] overflow-y-auto pb-10 bg-neutral-50 dark:bg-neutral-900",
       )}
     >
       <div className="flex items-center justify-between md:px-2 lg:flex-col lg:space-y-4">
