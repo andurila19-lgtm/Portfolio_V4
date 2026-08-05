@@ -54,6 +54,7 @@ const ChatList = ({
 
   useEffect(() => {
     const handleResize = () => {
+      if (typeof window === "undefined") return;
       const newHeight = isWidget ? '500px' : `${window.innerHeight - 360}px`;
       setChatListHeight(newHeight);
     };
