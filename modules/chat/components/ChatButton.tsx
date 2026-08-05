@@ -16,8 +16,7 @@ const ChatButton = () => {
 
   const isMobile = useIsMobile();
 
-  const handleClick = (e: React.MouseEvent | React.TouchEvent) => {
-    e.preventDefault();
+  const handleClick = () => {
     if (isMobile) {
       router.push("/chat");
     } else {

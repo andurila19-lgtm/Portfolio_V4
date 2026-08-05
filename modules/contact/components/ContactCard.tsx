@@ -32,9 +32,15 @@ const ContactCard = ({
         className={`${textColor} z-10 flex flex-col justify-between gap-y-2`}
       >
         <h4 className="text-lg font-semibold tracking-wide">
-          {t(`social_media.${name}.title`)}
+          {t.has(`social_media.${name}.title`)
+            ? t(`social_media.${name}.title`)
+            : title}
         </h4>
-        <p className="pb-2 text-xs">{t(`social_media.${name}.description`)}</p>
+        <p className="pb-2 text-xs">
+          {t.has(`social_media.${name}.description`)
+            ? t(`social_media.${name}.description`)
+            : description}
+        </p>
         <button
           className={`${backgroundColor} rounded-md bg-opacity-85 px-4 py-2 transition duration-300 hover:scale-105 hover:bg-opacity-100 md:w-max`}
         >

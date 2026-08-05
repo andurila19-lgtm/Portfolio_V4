@@ -286,6 +286,10 @@
     "no_data": "No contact information available.",
     "social_media": {
       "title": "Find me on social media",
+      "whatsapp": {
+        "title": "Instant Chat",
+        "description": "Chat directly via WhatsApp for quick consultation and fast responses."
+      },
       "gmail": {
         "title": "Stay in Touch",
         "description": "Reach out via email for inquiries or collaborations."

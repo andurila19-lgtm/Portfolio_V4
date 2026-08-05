@@ -1,5 +1,5 @@
 import { useSession, signOut } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 import { FiMinimize2 as MinimizeIcon } from "react-icons/fi";
 import { HiOutlineLogout as SignOutIcon } from "react-icons/hi";
 import { PiChatTeardropDotsBold as ChatRoomIcon } from "react-icons/pi";
