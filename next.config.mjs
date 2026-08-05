@@ -48,7 +48,7 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cloud.umami.is https://*.umami.is https://static.cloudflareinsights.com https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://*.supabase.co https://*.supabase.in https://avatars.githubusercontent.com; connect-src 'self' https://*.supabase.co https://*.supabase.in https://cloud.umami.is https://*.umami.is https://gateway.umami.is https://api.github.com https://api.monkeytype.com https://vercel.live wss://*.vercel.live https://static.cloudflareinsights.com; frame-src 'none'; upgrade-insecure-requests",
+              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cloud.umami.is https://*.umami.is https://static.cloudflareinsights.com https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://*.supabase.co https://*.supabase.in https://avatars.githubusercontent.com; connect-src 'self' https://*.supabase.co https://*.supabase.in https://cloud.umami.is https://*.umami.is https://gateway.umami.is https://api.github.com https://api.monkeytype.com https://vercel.live wss://*.vercel.live https://static.cloudflareinsights.com; frame-src 'self' https://vercel.live; upgrade-insecure-requests",
           },
         ],
       },
