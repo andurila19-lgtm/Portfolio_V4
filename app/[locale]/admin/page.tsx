@@ -6,6 +6,7 @@ import Container from "@/common/components/elements/Container";
 import PageHeading from "@/common/components/elements/PageHeading";
 import {
   FiPlus,
+  FiEdit,
   FiTrash2,
   FiLogOut,
   FiGlobe,
@@ -26,14 +27,16 @@ export default function AdminDashboardPage() {
   const [loading, setLoading] = useState(true);
   const [uploadingImage, setUploadingImage] = useState(false);
 
-  // Modals
+  // Modals & Edit Mode
   const [showProjectModal, setShowProjectModal] = useState(false);
+  const [editingProjectSlug, setEditingProjectSlug] = useState<string | null>(null);
   const [showAchModal, setShowAchModal] = useState(false);
+  const [editingAchId, setEditingAchId] = useState<any | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [notification, setNotification] = useState("");
 
-  // Project Form
-  const [projectForm, setProjectForm] = useState({
+  // Initial Form States
+  const initialProjectForm = {
     title: "",
     slug: "",
     category_id: "Web Application",
@@ -53,19 +56,72 @@ export default function AdminDashboardPage() {
     link_demo: "",
     link_github: "",
     is_featured: false,
-  });
+  };
 
-  // Certificate Form
-  const [achForm, setAchForm] = useState({
+  const initialAchForm = {
     name: "",
     issuing_organization: "",
     issue_date: new Date().toISOString().split("T")[0],
     category: "Certificate",
     image: "",
     credential_url: "",
-  });
+  };
+
+  const [projectForm, setProjectForm] = useState(initialProjectForm);
+  const [achForm, setAchForm] = useState(initialAchForm);
 
   const router = useRouter();
+
+  const handleOpenAddProject = () => {
+    setEditingProjectSlug(null);
+    setProjectForm(initialProjectForm);
+    setShowProjectModal(true);
+  };
+
+  const handleOpenAddAch = () => {
+    setEditingAchId(null);
+    setAchForm(initialAchForm);
+    setShowAchModal(true);
+  };
+
+  const handleEditProject = (item: any) => {
+    setEditingProjectSlug(item.slug);
+    setProjectForm({
+      title: item.title || "",
+      slug: item.slug || "",
+      category_id: item.category_id || item.category || "Web Application",
+      category_en: item.category_en || item.category || "Web Application",
+      role_id: item.role_id || item.role || "Full-Stack Developer",
+      role_en: item.role_en || item.role || "Full-Stack Developer",
+      description_id: item.description_id || item.description || "",
+      description_en: item.description_en || item.description || "",
+      problem_id: item.problem_id || item.problem || "",
+      problem_en: item.problem_en || item.problem || "",
+      solution_id: item.solution_id || item.solution || "",
+      solution_en: item.solution_en || item.solution || "",
+      result_id: item.result_id || item.result || "",
+      result_en: item.result_en || item.result || "",
+      stacksText: Array.isArray(item.stacks) ? item.stacks.join(", ") : item.stacks || "React.js, Next.js",
+      image: item.image || "",
+      link_demo: item.link_demo || "",
+      link_github: item.link_github || "",
+      is_featured: Boolean(item.is_featured),
+    });
+    setShowProjectModal(true);
+  };
+
+  const handleEditAch = (item: any) => {
+    setEditingAchId(item.id || item.slug);
+    setAchForm({
+      name: item.name || "",
+      issuing_organization: item.issuing_organization || "",
+      issue_date: item.issue_date || new Date().toISOString().split("T")[0],
+      category: item.category || "Certificate",
+      image: item.image || "",
+      credential_url: item.credential_url || "",
+    });
+    setShowAchModal(true);
+  };
 
   const fetchProjects = async () => {
     try {
@@ -144,7 +200,7 @@ export default function AdminDashboardPage() {
     setProjectForm((prev) => ({
       ...prev,
       title: val,
-      slug: slugified,
+      slug: editingProjectSlug ? prev.slug : slugified,
     }));
   };
 
@@ -163,13 +219,13 @@ export default function AdminDashboardPage() {
       role_id: projectForm.role_id,
       role_en: projectForm.role_en,
       description_id: projectForm.description_id || projectForm.title,
-      description_en: projectForm.description_en || projectForm.title,
+      description_en: projectForm.description_en || projectForm.description_id || projectForm.title,
       problem_id: projectForm.problem_id,
-      problem_en: projectForm.problem_en,
+      problem_en: projectForm.problem_en || projectForm.problem_id,
       solution_id: projectForm.solution_id,
-      solution_en: projectForm.solution_en,
+      solution_en: projectForm.solution_en || projectForm.solution_id,
       result_id: projectForm.result_id,
-      result_en: projectForm.result_en,
+      result_en: projectForm.result_en || projectForm.result_id,
       stacks,
       image: projectForm.image,
       link_demo: projectForm.link_demo || null,
@@ -190,7 +246,7 @@ export default function AdminDashboardPage() {
         throw new Error(errData.message || "Gagal menyimpan proyek");
       }
 
-      setNotification("Proyek baru berhasil ditambahkan!");
+      setNotification(editingProjectSlug ? "Proyek berhasil diperbarui!" : "Proyek baru berhasil ditambahkan!");
       setShowProjectModal(false);
       fetchProjects();
     } catch (err: any) {
@@ -209,7 +265,10 @@ export default function AdminDashboardPage() {
       const res = await fetch("/api/admin/achievements", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(achForm),
+        body: JSON.stringify({
+          ...achForm,
+          id: editingAchId || undefined,
+        }),
       });
 
       if (!res.ok) {
@@ -217,18 +276,9 @@ export default function AdminDashboardPage() {
         throw new Error(errData.message || "Gagal menyimpan sertifikat");
       }
 
-      setNotification("Sertifikat baru berhasil ditambahkan!");
+      setNotification(editingAchId ? "Sertifikat berhasil diperbarui!" : "Sertifikat baru berhasil ditambahkan!");
       setShowAchModal(false);
       fetchAchievements();
-
-      setAchForm({
-        name: "",
-        issuing_organization: "",
-        issue_date: new Date().toISOString().split("T")[0],
-        category: "Certificate",
-        image: "",
-        credential_url: "",
-      });
     } catch (err: any) {
       alert(err.message || "Error saat menyimpan");
     } finally {
@@ -280,7 +330,7 @@ export default function AdminDashboardPage() {
         <div className="flex items-center gap-2">
           {activeTab === "projects" ? (
             <button
-              onClick={() => setShowProjectModal(true)}
+              onClick={handleOpenAddProject}
               className="flex items-center gap-2 rounded-xl bg-amber-500 px-4 py-2.5 text-sm font-bold text-neutral-950 shadow-md transition hover:bg-amber-400"
             >
               <FiPlus size={18} />
@@ -288,7 +338,7 @@ export default function AdminDashboardPage() {
             </button>
           ) : (
             <button
-              onClick={() => setShowAchModal(true)}
+              onClick={handleOpenAddAch}
               className="flex items-center gap-2 rounded-xl bg-amber-500 px-4 py-2.5 text-sm font-bold text-neutral-950 shadow-md transition hover:bg-amber-400"
             >
               <FiPlus size={18} />
@@ -395,12 +445,21 @@ export default function AdminDashboardPage() {
                         </a>
                       )}
                     </div>
-                    <button
-                      onClick={() => handleDeleteProject(item.slug, item.title)}
-                      className="flex items-center gap-1.5 rounded-lg border border-red-500/20 bg-red-500/10 px-2.5 py-1 text-xs font-semibold text-red-500 hover:bg-red-500/20"
-                    >
-                      <FiTrash2 size={13} /> Hapus
-                    </button>
+
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => handleEditProject(item)}
+                        className="flex items-center gap-1 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-xs font-semibold text-amber-500 hover:bg-amber-500/20"
+                      >
+                        <FiEdit size={13} /> Edit
+                      </button>
+                      <button
+                        onClick={() => handleDeleteProject(item.slug, item.title)}
+                        className="flex items-center gap-1 rounded-lg border border-red-500/20 bg-red-500/10 px-2.5 py-1 text-xs font-semibold text-red-500 hover:bg-red-500/20"
+                      >
+                        <FiTrash2 size={13} /> Hapus
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -453,12 +512,20 @@ export default function AdminDashboardPage() {
                       <span className="text-xs text-neutral-400">Tanpa Link</span>
                     )}
 
-                    <button
-                      onClick={() => handleDeleteAch(item.id, item.name)}
-                      className="flex items-center gap-1.5 rounded-lg border border-red-500/20 bg-red-500/10 px-2.5 py-1 text-xs font-semibold text-red-500 hover:bg-red-500/20"
-                    >
-                      <FiTrash2 size={13} /> Hapus
-                    </button>
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => handleEditAch(item)}
+                        className="flex items-center gap-1 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2 py-1 text-xs font-semibold text-amber-500 hover:bg-amber-500/20"
+                      >
+                        <FiEdit size={13} /> Edit
+                      </button>
+                      <button
+                        onClick={() => handleDeleteAch(item.id, item.name)}
+                        className="flex items-center gap-1 rounded-lg border border-red-500/20 bg-red-500/10 px-2 py-1 text-xs font-semibold text-red-500 hover:bg-red-500/20"
+                      >
+                        <FiTrash2 size={13} /> Hapus
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -467,13 +534,15 @@ export default function AdminDashboardPage() {
         </div>
       )}
 
-      {/* Modal Add Project */}
+      {/* Modal Add / Edit Project */}
       {showProjectModal && (
         <div className="fixed inset-0 z-[999] flex items-start sm:items-center justify-center bg-black/75 p-4 pt-10 sm:pt-4 backdrop-blur-sm overflow-y-auto">
           <div className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-neutral-200 bg-white p-6 shadow-2xl dark:border-neutral-800 dark:bg-neutral-900">
             <div className="mb-4 flex items-center justify-between border-b pb-3 dark:border-neutral-800">
-              <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">Tambah Proyek Baru</h3>
-              <button onClick={() => setShowProjectModal(false)} className="text-neutral-400">✕</button>
+              <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">
+                {editingProjectSlug ? "Edit Proyek Portofolio" : "Tambah Proyek Baru"}
+              </h3>
+              <button onClick={() => setShowProjectModal(false)} className="text-neutral-400 hover:text-neutral-200">✕</button>
             </div>
             <form onSubmit={handleProjectSubmit} className="space-y-4">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -509,6 +578,41 @@ export default function AdminDashboardPage() {
                   placeholder="Ringkasan proyek..."
                   className="w-full rounded-xl border border-neutral-300 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-amber-500 dark:border-neutral-700 dark:bg-neutral-800"
                 />
+              </div>
+
+              {/* Problem, Solution, Result Inputs */}
+              <div className="space-y-3 rounded-xl border border-neutral-200 bg-neutral-50/50 p-3.5 dark:border-neutral-800 dark:bg-neutral-800/40">
+                <span className="text-xs font-bold text-amber-500">Studi Kasus Proyek (Case Study Details)</span>
+                <div>
+                  <label className="mb-1 block text-[11px] font-semibold text-neutral-600 dark:text-neutral-400">Problem (Tantangan)</label>
+                  <input
+                    type="text"
+                    value={projectForm.problem_id}
+                    onChange={(e) => setProjectForm({ ...projectForm, problem_id: e.target.value })}
+                    placeholder="Contoh: Pencatatan kasir manual rentan kesalahan..."
+                    className="w-full rounded-lg border border-neutral-300 bg-white px-3 py-1.5 text-xs outline-none focus:border-amber-500 dark:border-neutral-700 dark:bg-neutral-900"
+                  />
+                </div>
+                <div>
+                  <label className="mb-1 block text-[11px] font-semibold text-neutral-600 dark:text-neutral-400">Solution (Solusi yang Dibangun)</label>
+                  <input
+                    type="text"
+                    value={projectForm.solution_id}
+                    onChange={(e) => setProjectForm({ ...projectForm, solution_id: e.target.value })}
+                    placeholder="Contoh: Mengembangkan aplikasi POS real-time..."
+                    className="w-full rounded-lg border border-neutral-300 bg-white px-3 py-1.5 text-xs outline-none focus:border-amber-500 dark:border-neutral-700 dark:bg-neutral-900"
+                  />
+                </div>
+                <div>
+                  <label className="mb-1 block text-[11px] font-semibold text-neutral-600 dark:text-neutral-400">Result (Hasil/Dampak)</label>
+                  <input
+                    type="text"
+                    value={projectForm.result_id}
+                    onChange={(e) => setProjectForm({ ...projectForm, result_id: e.target.value })}
+                    placeholder="Contoh: Memotong waktu transaksi 60%..."
+                    className="w-full rounded-lg border border-neutral-300 bg-white px-3 py-1.5 text-xs outline-none focus:border-amber-500 dark:border-neutral-700 dark:bg-neutral-900"
+                  />
+                </div>
               </div>
 
               <div>
@@ -581,10 +685,23 @@ export default function AdminDashboardPage() {
                 </div>
               </div>
 
+              <div className="flex items-center gap-2 pt-1">
+                <input
+                  type="checkbox"
+                  id="is_featured"
+                  checked={projectForm.is_featured}
+                  onChange={(e) => setProjectForm({ ...projectForm, is_featured: e.target.checked })}
+                  className="h-4 w-4 rounded border-neutral-300 text-amber-500 focus:ring-amber-500"
+                />
+                <label htmlFor="is_featured" className="text-xs font-semibold text-neutral-700 dark:text-neutral-300">
+                  Tampilkan sebagai Featured Project di Beranda
+                </label>
+              </div>
+
               <div className="flex justify-end gap-2 pt-3">
                 <button type="button" onClick={() => setShowProjectModal(false)} className="rounded-xl border px-4 py-2 text-sm font-semibold">Batal</button>
                 <button type="submit" disabled={submitting || uploadingImage} className="rounded-xl bg-amber-500 px-5 py-2 text-sm font-bold text-neutral-950 hover:bg-amber-400 disabled:opacity-50">
-                  {submitting ? "Menyimpan..." : "Simpan Proyek"}
+                  {submitting ? "Menyimpan..." : editingProjectSlug ? "Perbarui Proyek" : "Simpan Proyek"}
                 </button>
               </div>
             </form>
@@ -592,13 +709,15 @@ export default function AdminDashboardPage() {
         </div>
       )}
 
-      {/* Modal Add Achievement / Certificate */}
+      {/* Modal Add / Edit Achievement / Certificate */}
       {showAchModal && (
         <div className="fixed inset-0 z-[999] flex items-start sm:items-center justify-center bg-black/75 p-4 pt-10 sm:pt-4 backdrop-blur-sm overflow-y-auto">
           <div className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-neutral-200 bg-white p-6 shadow-2xl dark:border-neutral-800 dark:bg-neutral-900">
             <div className="mb-4 flex items-center justify-between border-b pb-3 dark:border-neutral-800">
-              <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">Tambah Sertifikat Baru</h3>
-              <button onClick={() => setShowAchModal(false)} className="text-neutral-400">✕</button>
+              <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">
+                {editingAchId ? "Edit Sertifikat / Award" : "Tambah Sertifikat Baru"}
+              </h3>
+              <button onClick={() => setShowAchModal(false)} className="text-neutral-400 hover:text-neutral-200">✕</button>
             </div>
             <form onSubmit={handleAchSubmit} className="space-y-4">
               <div>
@@ -689,7 +808,7 @@ export default function AdminDashboardPage() {
               <div className="flex justify-end gap-2 pt-3">
                 <button type="button" onClick={() => setShowAchModal(false)} className="rounded-xl border px-4 py-2 text-sm font-semibold">Batal</button>
                 <button type="submit" disabled={submitting || uploadingImage} className="rounded-xl bg-amber-500 px-5 py-2 text-sm font-bold text-neutral-950 hover:bg-amber-400 disabled:opacity-50">
-                  {submitting ? "Menyimpan..." : "Simpan Sertifikat"}
+                  {submitting ? "Menyimpan..." : editingAchId ? "Perbarui Sertifikat" : "Simpan Sertifikat"}
                 </button>
               </div>
             </form>

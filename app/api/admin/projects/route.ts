@@ -2,6 +2,7 @@ import { type NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 import { getProjectsData, getCustomProjects } from "@/services/projects";
+import { createClient } from "@/common/utils/server";
 import { revalidatePath } from "next/cache";
 
 const PRIMARY_PATH = path.join(process.cwd(), "contents", "custom_projects.json");
@@ -42,16 +43,28 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: "Judul dan Slug wajib diisi!" }, { status: 400 });
     }
 
+    const projectPayload = {
+      ...newProject,
+      is_show: true,
+      updated_at: new Date().toISOString(),
+    };
+
+    // 1. Try persisting to Supabase
+    try {
+      const supabase = createClient();
+      if (supabase) {
+        await supabase.from("projects").upsert(projectPayload, { onConflict: "slug" });
+      }
+    } catch (sbErr) {
+      console.warn("Supabase projects upsert error:", sbErr);
+    }
+
+    // 2. Local JSON fallback
     const existingCustom = getCustomProjects();
     const updatedCustom = [
-      {
-        id: Date.now(),
-        ...newProject,
-        is_show: true,
-      },
+      { id: newProject.id || Date.now(), ...projectPayload },
       ...existingCustom.filter((p) => p.slug !== newProject.slug),
     ];
-
     saveCustomProjects(updatedCustom);
 
     revalidatePath("/projects");
@@ -60,12 +73,16 @@ export async function POST(req: NextRequest) {
     revalidatePath("/");
 
     return NextResponse.json(
-      { message: "Proyek berhasil disimpan!", project: newProject },
+      { message: "Proyek berhasil disimpan!", project: projectPayload },
       { status: 201 }
     );
   } catch (err: any) {
     return NextResponse.json({ message: err?.message }, { status: 500 });
   }
+}
+
+export async function PUT(req: NextRequest) {
+  return POST(req);
 }
 
 export async function DELETE(req: NextRequest) {
@@ -82,9 +99,19 @@ export async function DELETE(req: NextRequest) {
       return NextResponse.json({ message: "Slug wajib disertakan" }, { status: 400 });
     }
 
+    // 1. Delete from Supabase
+    try {
+      const supabase = createClient();
+      if (supabase) {
+        await supabase.from("projects").delete().eq("slug", slug);
+      }
+    } catch (sbErr) {
+      console.warn("Supabase projects delete error:", sbErr);
+    }
+
+    // 2. Local JSON fallback
     const existingCustom = getCustomProjects();
     const filteredCustom = existingCustom.filter((p) => p.slug !== slug);
-
     saveCustomProjects(filteredCustom);
 
     revalidatePath("/projects");
@@ -97,3 +124,4 @@ export async function DELETE(req: NextRequest) {
     return NextResponse.json({ message: err?.message }, { status: 500 });
   }
 }
+

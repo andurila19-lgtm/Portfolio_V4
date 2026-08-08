@@ -11,27 +11,11 @@ import ThemeToggle from "./ThemeToggle";
 import IntlToggle from "./IntlToggle";
 
 const Profile = () => {
-  const [width, setWidth] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-
+  const [mounted, setMounted] = useState(false);
   const { isOpen, toggleMenu } = useMenu();
 
-  const imageSize = isMobile ? 40 : 100;
-
   useEffect(() => {
-    setWidth(window.innerWidth);
-    setIsMobile(window.innerWidth < 769);
-
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-      setIsMobile(window.innerWidth < 769);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    setMounted(true);
   }, []);
 
   useEffect(() => {
@@ -46,6 +30,8 @@ const Profile = () => {
     };
   }, [isOpen]);
 
+  const imageSize = isOpen ? 80 : 40;
+
   return (
     <div
       className={clsx(
@@ -58,31 +44,27 @@ const Profile = () => {
         isOpen && "pb-3 border-b border-neutral-200 dark:border-neutral-800"
       )}>
         <ProfileHeader expandMenu={isOpen} imageSize={imageSize} />
-        {isMobile && (
-          <div
-            className={clsx(
-              "mt-1 flex items-center gap-4 lg:hidden",
-              isOpen && "flex-row-reverse items-center justify-end gap-3",
-            )}
-          >
-            <div className="flex gap-2">
-              <IntlToggle />
-              <ThemeToggle />
-            </div>
-            <MobileMenuButton expandMenu={isOpen} setExpandMenu={toggleMenu} />
+        <div
+          className={clsx(
+            "mt-1 flex items-center gap-4 lg:hidden",
+            isOpen && "flex-row-reverse items-center justify-end gap-3",
+          )}
+        >
+          <div className="flex gap-2">
+            <IntlToggle />
+            <ThemeToggle />
           </div>
-        )}
+          <MobileMenuButton expandMenu={isOpen} setExpandMenu={toggleMenu} />
+        </div>
       </div>
 
-      {isMobile && (
-        <AnimatePresence>
-          {isOpen && (
-            <div className="flex-1 overflow-y-auto pt-2 pb-16">
-              <MobileMenu />
-            </div>
-          )}
-        </AnimatePresence>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <div className="flex-1 overflow-y-auto pt-2 pb-16 lg:hidden">
+            <MobileMenu />
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

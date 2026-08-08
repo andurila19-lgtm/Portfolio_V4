@@ -1,7 +1,6 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { usePathname } from "@/i18n/navigation";
@@ -31,9 +30,11 @@ const Layouts = ({ children }: LayoutsProps) => {
       });
     }
 
-    AOS.init({
-      duration: 800,
-      delay: 50,
+    import("aos").then((AOS) => {
+      AOS.default.init({
+        duration: 800,
+        delay: 50,
+      });
     });
 
     consoleGreeting();
@@ -42,7 +43,7 @@ const Layouts = ({ children }: LayoutsProps) => {
     <div className="mx-auto max-w-7xl lg:px-12">
       <div className="mx-auto flex flex-col lg:flex-row lg:gap-5 lg:py-4">
         <Sidebar />
-        <main className="max-w-[854px] transition-all duration-300 lg:w-4/5">
+        <main role="main" className="max-w-[854px] transition-all duration-300 lg:w-4/5">
           {children}
         </main>
       </div>

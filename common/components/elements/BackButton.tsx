@@ -42,9 +42,9 @@ const BackButton = ({ url }: BackButtonProps) => {
           </div>
         </Link>
       ) : (
-        <div className={className} onClick={handleOnClick}>
+        <button type="button" aria-label="Go back" className={className} onClick={handleOnClick}>
           <BackButtonChildComponent />
-        </div>
+        </button>
       )}
     </div>
   );

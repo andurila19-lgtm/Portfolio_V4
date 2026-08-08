@@ -26,6 +26,7 @@ const ProfileHeader = ({ expandMenu, imageSize }: ProfileHeaderProps) => {
         width={expandMenu ? 80 : imageSize}
         height={expandMenu ? 80 : imageSize}
         alt={METADATA.creator}
+        priority={true}
         className="aspect-square border-2 border-neutral-400 object-cover dark:border-neutral-600 lg:hover:scale-105"
         rounded="rounded-full"
       />

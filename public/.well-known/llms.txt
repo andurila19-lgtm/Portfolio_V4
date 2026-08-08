@@ -1,0 +1,31 @@
+# Anduril Ahmad — Software Engineer, Full-Stack Developer & AI Engineer
+
+> Premier Software Engineer & AI Architect specializing in modern high-performance web applications, scalable backend systems, custom e-commerce, POS dashboards, and AI solutions.
+
+## Summary
+- Name: Anduril Ahmad
+- Role: Senior Full-Stack Developer & Software Engineer
+- Location: Madiun, Jawa Timur, Indonesia
+- Website: https://anduril.web.id
+
+## Core Services & Solutions
+- Custom Web Application Development (React.js, Next.js, TypeScript, TailwindCSS)
+- Scalable Backend Architecture & API Development (PostgreSQL, Supabase, Node.js)
+- Point of Sale (POS) & Business Administration Suites
+- E-Commerce & WhatsApp Checkout Integration
+- AI Engineering & Agentic Web Integration
+- Cloud Infrastructure, DevOps & CI/CD Deployment
+
+## Key Portfolio Projects
+- [Hwarin Skin](https://anduril.web.id/en/projects): High-performance e-commerce catalog with instant WhatsApp checkout.
+- [Kasir Modern (KasirPro)](https://anduril.web.id/en/projects): Real-time POS web app with inventory tracking and sales analytics.
+- [SIM Akademik](https://anduril.web.id/en/projects): Multi-role university academic management information system.
+- [Mommy Skincare](https://anduril.web.id/en/projects): Skincare catalog & booking platform.
+
+## Navigation & Contact
+- [Home](https://anduril.web.id)
+- [Projects](https://anduril.web.id/en/projects)
+- [Case Studies](https://anduril.web.id/en/case-studies)
+- [Services](https://anduril.web.id/en/services)
+- [About](https://anduril.web.id/en/about)
+- [Contact](https://anduril.web.id/en/contact)

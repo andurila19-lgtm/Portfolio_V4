@@ -14,7 +14,13 @@ const MobileMenuButton = ({ expandMenu, setExpandMenu }: MobileMenuButtonProps) 
   const menuSpanData = [{ index: 1 }, { index: 2 }, { index: 3 }]
 
   return (
-    <StyledMenu className="flex lg:hidden" onClick={handleMenuToggle}>
+    <StyledMenu
+      type="button"
+      aria-label="Toggle navigation menu"
+      aria-expanded={expandMenu}
+      className="flex lg:hidden"
+      onClick={handleMenuToggle}
+    >
       {menuSpanData.map(item => (
         <StyledMenuSpan
           key={item.index}
@@ -27,13 +33,16 @@ const MobileMenuButton = ({ expandMenu, setExpandMenu }: MobileMenuButtonProps) 
 
 export default MobileMenuButton
 
-const StyledMenu = styled.div`
+const StyledMenu = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 21px;
   width: 26px;
   cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
 `
 
 const StyledMenuSpan = styled.span`

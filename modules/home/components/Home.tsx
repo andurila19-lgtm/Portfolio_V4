@@ -1,19 +1,20 @@
+import dynamic from "next/dynamic";
 import Breakline from "@/common/components/elements/Breakline";
-import WhatsAppButton from "@/common/components/elements/WhatsAppButton";
 import SchemaMarkup from "@/common/components/elements/SchemaMarkup";
-
 import Introduction from "./Introduction";
-import CredibilitySection from "./CredibilitySection";
-import Services from "./Services";
-import FeaturedProjects from "./FeaturedProjects";
-import FeaturedCaseStudies from "./FeaturedCaseStudies";
-import PricingOverview from "./PricingOverview";
-import WhyChooseMe from "./WhyChooseMe";
-import WorkProcess from "./WorkProcess";
-import SkillList from "./SkillList";
-import Testimonials from "./Testimonials";
-import FAQSection from "./FAQSection";
-import CTABanner from "./CTABanner";
+
+const Services = dynamic(() => import("./Services"), { ssr: true });
+const CredibilitySection = dynamic(() => import("./CredibilitySection"), { ssr: true });
+const FeaturedProjects = dynamic(() => import("./FeaturedProjects"), { ssr: true });
+const FeaturedCaseStudies = dynamic(() => import("./FeaturedCaseStudies"), { ssr: true });
+const PricingOverview = dynamic(() => import("./PricingOverview"), { ssr: true });
+const WhyChooseMe = dynamic(() => import("./WhyChooseMe"), { ssr: true });
+const WorkProcess = dynamic(() => import("./WorkProcess"), { ssr: true });
+const SkillList = dynamic(() => import("./SkillList"), { ssr: true });
+const Testimonials = dynamic(() => import("./Testimonials"), { ssr: true });
+const FAQSection = dynamic(() => import("./FAQSection"), { ssr: true });
+const CTABanner = dynamic(() => import("./CTABanner"), { ssr: true });
+const WhatsAppButton = dynamic(() => import("@/common/components/elements/WhatsAppButton"), { ssr: false });
 
 const Home = () => {
   return (
