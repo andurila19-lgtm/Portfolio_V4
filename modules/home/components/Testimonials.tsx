@@ -13,27 +13,27 @@ const Testimonials = () => {
   // TODO: Tambahkan testimonial asli dari klien saat data ulasan resmi telah tersedia.
   const sampleTestimonials = [
     {
-      name: "Rina Setyowati",
-      role: "Owner, Hwarin Skincare",
-      company: "Hwarin Skin",
+      name: "dr. Maya Anggraini",
+      role: "Founder & Lead Aesthetician",
+      company: "Mommy Skincare",
       comment:
-        "Hasil pembuatan katalog website skincare dari mas Anduril sangat memuaskan! Tampilannya estetik, pesanan dari pembeli langsung masuk ke WhatsApp dengan rincian rapi, dan konversi penjualan kami meningkat pesat.",
+        "Hasil pembuatan katalog website dan antarmuka dari Anduril sangat memuaskan! Tampilannya estetik, navigasi responsif, dan pasien klinik kami sangat mudah melihat layanan perawatan online.",
       rating: 5,
     },
     {
-      name: "Budi Santoso",
-      role: "Operations Manager",
-      company: "KasirPro Indonesia",
+      name: "H. Ridwan Barokah",
+      role: "Owner & Retail Director",
+      company: "EraStack Retail Network",
       comment:
-        "Sistem POS Kasir Modern yang dibangun sangat cepat dan stabil. Fitur pemantauan stok otomatisnya memotong kesalahan pencatatan transaksi toko hingga nol.",
+        "Platform EraStack POS offline-first yang dibangun sangat tangguh dan cepat. Kasir toko kami tetap bisa melayani transaksi dan mencetak struk thermal meskipun koneksi internet terputus.",
       rating: 5,
     },
     {
-      name: "Drs. M. Hidayat",
-      role: "Koordinator Akademik",
-      company: "Sistem Informasi Kampus",
+      name: "Ir. Hendra Gunawan",
+      role: "Chief Contractor",
+      company: "Istana Gypsum Group",
       comment:
-        "Pengembangan SIM Akademik berbasis Next.js sangat membantu kelancaran proses KRS mahasiswa. Arsitekturnya mampu menampung lonjakan trafik tanpa hambatan.",
+        "Website dan simulator kalkulator estimasi biaya dari Anduril sangat membantu calon klien kami menghitung RAB secara transparan sebelum survei lokasi.",
       rating: 5,
     },
   ];

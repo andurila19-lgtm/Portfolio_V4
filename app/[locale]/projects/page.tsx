@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
 import Container from "@/common/components/elements/Container";
-import PageHeading from "@/common/components/elements/PageHeading";
 import Projects from "@/modules/projects";
 import { METADATA } from "@/common/constants/metadata";
 
@@ -14,8 +13,8 @@ export async function generateMetadata({
   params: { locale },
 }: ProjectsPageProps): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "ProjectsPage" });
-  const title = `${t("title")} ${METADATA.exTitle}`;
-  const description = t("description");
+  const title = `Projects & Archives ${METADATA.exTitle}`;
+  const description = "Digital archive of creative engineering, professional certifications, and technical projects.";
 
   return {
     title,
@@ -42,12 +41,9 @@ export async function generateMetadata({
   };
 }
 
-const ProjectsPage = async ({ params: { locale } }: ProjectsPageProps) => {
-  const t = await getTranslations({ locale, namespace: "ProjectsPage" });
-
+const ProjectsPage = async () => {
   return (
     <Container data-aos="fade-up">
-      <PageHeading title={t("title")} description={t("description")} />
       <Projects />
     </Container>
   );

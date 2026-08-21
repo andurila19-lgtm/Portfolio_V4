@@ -80,32 +80,6 @@ export const CAREERS: CareerProps[] = [
     isShow: true,
   },
   {
-    position: "Website Developer",
-    company: "PT. HwarinSkinGlow",
-    logo: "/images/careers/hwarin.png",
-    location: "Madiun, Indonesia 🇮🇩",
-    location_type: "Remote",
-    type: "Contract",
-    start_date: "2025-11",
-    end_date: "2026-11",
-    industry: "Beauty & Personal Care",
-    link: "https://hwarinskin.com",
-    responsibilities: [
-      "Designed and developed a secure, responsive catalog and e-commerce web platform.",
-      "Implemented dynamic product list rendering, WhatsApp-direct checkout calculations, and administrative interfaces.",
-      "Conducted security monitoring, API verification, and regular system backups.",
-    ],
-    lessons_learned: [
-      "Gained deep knowledge in secure direct-checkout routing, client-side caching, and search engine metadata configuration.",
-      "Mastered assets optimization and performance monitoring techniques for mobile networks.",
-    ],
-    impact: [
-      "Boosted digital catalog loading speed by 40% through Next.js static site generation and Supabase media compression.",
-      "Streamlined customer checkout routing, decreasing sales-funnel inquiry drop-offs by 15%.",
-    ],
-    isShow: true,
-  },
-  {
     position: "Maintenance Management Website",
     company: "PLN Unit Pelayanan & Jaringan (UPJ) Dolopo",
     logo: "/images/careers/pln.png",

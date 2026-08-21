@@ -11,58 +11,58 @@ const getCaseStudiesData = (locale: string) => {
   const isId = locale === "id";
   return [
     {
-      id: "kasir-pro",
-      title: isId ? "KasirPro — Sistem Kasir POS & Inventaris Real-Time" : "KasirPro — Real-Time POS & Inventory System",
-      category: isId ? "POS & Operasional Bisnis" : "POS & Business Operations",
-      client: isId ? "Retail & Perusahaan Komersial" : "Retail & Commercial Enterprise",
+      id: "erastack",
+      title: isId ? "EraStack — Platform POS Modern Offline-First" : "EraStack — Offline-First Modern POS Platform",
+      category: isId ? "POS & Sistem Operasional" : "POS & Enterprise Operations",
+      client: isId ? "Retail, Minimarket & Usaha Komersial" : "Retail & Commercial Enterprises",
       metrics: isId
         ? [
-            "Memangkas waktu proses transaksi kasir sebesar 60%",
-            "Nol selisih stok inventaris di seluruh cabang",
-            "Laporan pendapatan real-time dengan sinkronisasi data sub-detik",
+            "Operasi transaksi 100% mandiri tanpa koneksi internet",
+            "Penyimpanan database SQLite lokal dengan mutasi stok atomic",
+            "Dukungan printer ESC/POS thermal & USB barcode scanner",
           ]
         : [
-            "Cut cashier transaction processing time by 60%",
-            "Zero inventory discrepancies across multi-branch stock",
-            "Real-time revenue reporting with sub-second data sync",
+            "100% offline operational independence without internet connectivity",
+            "Local SQLite database storage with atomic inventory mutation",
+            "Hardware support for ESC/POS thermal printers & USB barcode scanners",
           ],
-      slug: "kasir-modern",
+      slug: "erastack",
     },
     {
-      id: "hwarin-skin",
-      title: isId ? "Hwarin Skin — Katalog Skincare E-Commerce" : "Hwarin Skin — E-Commerce Skincare Catalog",
-      category: isId ? "E-Commerce & Skincare" : "E-Commerce & Skincare",
-      client: isId ? "Brand Kecantikan & Perawatan Kulit" : "Beauty & Personal Care Brand",
+      id: "istana-gypsum",
+      title: isId ? "Istana Gypsum — Showroom Digital & Kalkulator RAB" : "Istana Gypsum — Digital Showroom & RAB Estimator",
+      category: isId ? "Arsitektur & Material Bangunan" : "Architecture & Building Materials",
+      client: isId ? "Kontraktor & Desain Interior" : "Contractors & Interior Design",
       metrics: isId
         ? [
-            "+40% lebih cepat dari inquiry ke penjualan lewat checkout WhatsApp",
+            "+65% efisiensi konsultasi lewat simulator kalkulator biaya interaktif",
+            "Tabel perbandingan material plafon & partisi terstruktur",
+            "Performa web sub-detik dengan skor Core Web Vitals 98+",
+          ]
+        : [
+            "+65% consultation efficiency via interactive cost estimator simulator",
+            "Structured material comparison tables for gypsum & partitions",
+            "Sub-second web performance with 98+ Core Web Vitals score",
+          ],
+      slug: "istana-gypsum",
+    },
+    {
+      id: "mommy-skincare",
+      title: isId ? "Mommy Skincare — Katalog Layanan & Produk" : "Mommy Skincare — Services & Products Catalog",
+      category: isId ? "Healthcare & Skincare" : "Healthcare & Skincare",
+      client: isId ? "Klinik & Perawatan Kecantikan" : "Aesthetics & Skincare Clinic",
+      metrics: isId
+        ? [
+            "+40% peningkatan kemudahan reservasi dan konsultasi online",
             "Skor performa Lighthouse & Core Web Vitals 95+",
-            "Menghilangkan masalah pemesanan produk habis stok sepenuhnya",
+            "Antarmuka responsif ramah smartphone",
           ]
         : [
-            "+40% faster inquiry-to-sale checkout speed via WhatsApp",
+            "+40% increase in online reservation and consultation ease",
             "95+ Lighthouse Performance & Core Web Vitals score",
-            "Eliminated out-of-stock ordering issues completely",
+            "Mobile-first responsive aesthetic interface",
           ],
-      slug: "HwarinSkin",
-    },
-    {
-      id: "sim-akademik",
-      title: isId ? "SIM Akademik — Sistem Portal Universitas" : "SIM Akademik — University Portal System",
-      category: isId ? "EdTech & Sistem Universitas" : "EdTech & University System",
-      client: isId ? "Institusi Pendidikan Tinggi" : "Higher Education Institute",
-      metrics: isId
-        ? [
-            "Tanpa downtime saat lonjakan pendaftaran KRS mahasiswa",
-            "Kontrol akses multi-peran untuk Super Admin, Dosen & Staf",
-            "Arsitektur ulang database dengan PostgreSQL & Next.js App Router",
-          ]
-        : [
-            "Zero downtime during peak concurrent KRS student enrollment",
-            "Multi-role access control for Super Admin, Dosen & Staff",
-            "Re-architected database with PostgreSQL & Next.js App Router",
-          ],
-      slug: "sim-akademik",
+      slug: "mommy-skincare",
     },
   ];
 };

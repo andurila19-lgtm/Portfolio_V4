@@ -1,7 +1,7 @@
 import Script from "next/script";
 
 interface OrganizationSchemaProps {
-  type: "Organization";
+  type: "Organization" | "Person";
 }
 
 interface FAQSchemaProps {
@@ -40,23 +40,25 @@ type SchemaProps =
 const SchemaMarkup = (props: SchemaProps) => {
   let schemaData: any = {};
 
-  if (props.type === "Organization") {
+  if (props.type === "Organization" || props.type === "Person") {
     schemaData = {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "Anduril",
+      "@type": "Person",
+      name: "Anduril Ahmad",
       url: "https://anduril.web.id",
-      logo: "https://anduril.web.id/images/anduril.jpg",
+      image: "https://anduril.web.id/images/anduril.jpg",
+      jobTitle: "Software Engineer & Full-Stack Developer",
       description:
-        "Anduril is a digital agency specializing in website development, custom web applications, POS dashboards, SaaS products, CMS, maintenance, SEO, and AI optimization.",
+        "Official portfolio of Anduril Ahmad, Software Engineer & Full-Stack Developer specializing in high-performance web applications, Next.js, React, TypeScript, and modern UI/UX engineering.",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Madiun",
         addressCountry: "ID",
       },
       sameAs: [
-        "https://github.com/andurila19-lgtm",
+        "https://github.com/andurila19",
         "https://linkedin.com/in/andurilahmad",
+        "https://instagram.com/rm_andurilahmad",
       ],
       contactPoint: {
         "@type": "ContactPoint",

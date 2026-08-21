@@ -17,10 +17,11 @@
 - Cloud Infrastructure, DevOps & CI/CD Deployment
 
 ## Key Portfolio Projects
-- [Hwarin Skin](https://anduril.web.id/en/projects): High-performance e-commerce catalog with instant WhatsApp checkout.
-- [Kasir Modern (KasirPro)](https://anduril.web.id/en/projects): Real-time POS web app with inventory tracking and sales analytics.
-- [SIM Akademik](https://anduril.web.id/en/projects): Multi-role university academic management information system.
-- [Mommy Skincare](https://anduril.web.id/en/projects): Skincare catalog & booking platform.
+- [EraStack — Offline-First POS](https://anduril.web.id/en/projects): Modern offline-first POS platform with SQLite & ESC/POS printer support.
+- [Istana Gypsum](https://anduril.web.id/en/projects): Digital catalog and interactive cost estimation calculator for gypsum & interior partitions.
+- [Oryon Web Studio](https://anduril.web.id/en/projects): Creative engineering and custom web development platform.
+- [Karya Tim Kontraktor](https://anduril.web.id/en/projects): Architecture & building contractor corporate portfolio.
+- [Mommy Skincare](https://anduril.web.id/en/projects): Skincare catalog & appointment booking platform.
 
 ## Navigation & Contact
 - [Home](https://anduril.web.id)

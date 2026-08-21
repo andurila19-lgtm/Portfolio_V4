@@ -1,19 +1,18 @@
 export const METADATA = {
-  creator: "Anduril",
+  creator: "Anduril Ahmad",
   description:
-    "Anduril is a premier digital agency building modern, high-performance, secure digital experiences: custom web applications, company profiles, CMS, POS dashboards, SaaS, SEO, and AI optimization.",
+    "Official portfolio of Anduril Ahmad, Software Engineer & Full-Stack Developer specializing in high-performance web applications, Next.js, React, TypeScript, and modern UI/UX engineering.",
   keyword:
-    "anduril, digital agency, software engineer, full stack developer, ai engineer, web development, company profile, custom web app, pos dashboard, saas, next.js agency, seo optimization, ai optimization, indonesia software agency",
+    "anduril, anduril ahmad, software engineer, full stack developer, frontend engineer, backend developer, next.js developer, react developer, typescript, web application developer, software engineering portfolio",
   authors: {
-    name: "Anduril",
+    name: "Anduril Ahmad",
     url: process.env.DOMAIN || "https://anduril.web.id",
   },
   openGraph: {
     url: process.env.DOMAIN || "https://anduril.web.id",
-    siteName: "Anduril — Build Modern Digital Experiences",
-    locale: "id-ID",
+    siteName: "Anduril Ahmad | Software Engineer & Full-Stack Developer",
+    locale: "en_US",
   },
-  exTitle: "| Anduril — Digital Agency",
+  exTitle: "| Anduril Ahmad — Software Engineer",
   profile: "/images/anduril.jpg",
 };
-

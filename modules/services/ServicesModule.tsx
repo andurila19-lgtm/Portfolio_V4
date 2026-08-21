@@ -1,113 +1,192 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import {
-  FiCode,
-  FiGlobe,
-  FiLayers,
-  FiGrid,
-  FiCpu,
-  FiTool,
+  FiMonitor,
+  FiDatabase,
   FiZap,
-  FiTrendingUp,
-  FiServer,
-  FiClock,
+  FiLayers,
+  FiCode,
+  FiArrowUpRight,
   FiArrowRight,
-  FiCheck,
 } from "react-icons/fi";
-import { getServicesList, ServiceItem } from "@/common/constants/serviceData";
+import { IoColorPaletteOutline } from "react-icons/io5";
 
-const iconMap: Record<string, JSX.Element> = {
-  FiCode: <FiCode className="text-3xl text-purple-500" />,
-  FiGlobe: <FiGlobe className="text-3xl text-amber-500" />,
-  FiLayers: <FiLayers className="text-3xl text-teal-500" />,
-  FiGrid: <FiGrid className="text-3xl text-blue-500" />,
-  FiCpu: <FiCpu className="text-3xl text-indigo-500" />,
-  FiTool: <FiTool className="text-3xl text-pink-500" />,
-  FiZap: <FiZap className="text-3xl text-amber-400" />,
-  FiTrendingUp: <FiTrendingUp className="text-3xl text-emerald-500" />,
-  FiServer: <FiServer className="text-3xl text-cyan-500" />,
-};
+import PageHeading from "@/common/components/elements/PageHeading";
 
-const ServicesModule = () => {
-  const locale = useLocale();
-  const services = getServicesList(locale);
-  const isId = locale === "id";
+interface ServiceItem {
+  protocol: string;
+  title: string;
+  description: string;
+  icon: JSX.Element;
+  iconBg: string;
+  iconBorder: string;
+  protocolColor: string;
+  hoverBorder: string;
+  hoverGlow: string;
+}
 
+const SERVICES_DATA: ServiceItem[] = [
+  {
+    protocol: "PROTOCOL 01",
+    title: "ADAPTIVE FRONTEND",
+    description:
+      "Pixel-perfect, high-performance interfaces engineered for absolute consistency across every modern display and resolution.",
+    icon: <FiMonitor size={20} className="text-cyan-400" />,
+    iconBg: "bg-cyan-950/40",
+    iconBorder: "border-cyan-500/20",
+    protocolColor: "text-cyan-400",
+    hoverBorder: "hover:border-cyan-500/30",
+    hoverGlow: "hover:shadow-[0_10px_35px_-10px_rgba(34,211,238,0.15)]",
+  },
+  {
+    protocol: "PROTOCOL 02",
+    title: "SCALABLE BACKEND",
+    description:
+      "Robust server-side architecture featuring secure data management and high-throughput API protocols for massive growth.",
+    icon: <FiDatabase size={20} className="text-purple-400" />,
+    iconBg: "bg-purple-950/40",
+    iconBorder: "border-purple-500/20",
+    protocolColor: "text-purple-400",
+    hoverBorder: "hover:border-purple-500/30",
+    hoverGlow: "hover:shadow-[0_10px_35px_-10px_rgba(168,85,247,0.15)]",
+  },
+  {
+    protocol: "PROTOCOL 03",
+    title: "EXPERIENCE DESIGN",
+    description:
+      "Immersive user journeys meticulously crafted with focus on aesthetic elegance, usability and strategic brand cohesion.",
+    icon: <IoColorPaletteOutline size={20} className="text-pink-400" />,
+    iconBg: "bg-pink-950/40",
+    iconBorder: "border-pink-500/20",
+    protocolColor: "text-pink-400",
+    hoverBorder: "hover:border-pink-500/30",
+    hoverGlow: "hover:shadow-[0_10px_35px_-10px_rgba(236,72,153,0.15)]",
+  },
+  {
+    protocol: "PROTOCOL 04",
+    title: "CORE OPTIMIZATION",
+    description:
+      "Refining complex environments for ultra-fast load times, fluid micro-interactions, and superior technical vitals.",
+    icon: <FiZap size={20} className="text-amber-400" />,
+    iconBg: "bg-amber-950/40",
+    iconBorder: "border-amber-500/20",
+    protocolColor: "text-amber-400",
+    hoverBorder: "hover:border-amber-500/30",
+    hoverGlow: "hover:shadow-[0_10px_35px_-10px_rgba(251,191,36,0.15)]",
+  },
+  {
+    protocol: "PROTOCOL 05",
+    title: "FULL-STACK ARCHITECTURE",
+    description:
+      "Comprehensive end-to-end development services—from conceptual intelligence to production scaling and global deployment.",
+    icon: <FiLayers size={20} className="text-emerald-400" />,
+    iconBg: "bg-emerald-950/40",
+    iconBorder: "border-emerald-500/20",
+    protocolColor: "text-emerald-400",
+    hoverBorder: "hover:border-emerald-500/30",
+    hoverGlow: "hover:shadow-[0_10px_35px_-10px_rgba(16,185,129,0.15)]",
+  },
+  {
+    protocol: "PROTOCOL 06",
+    title: "SMART INTEGRATIONS",
+    description:
+      "Seamless harmonization with third-party ecosystems, secure payment channels, and customized API middleware solutions.",
+    icon: <FiCode size={20} className="text-blue-400" />,
+    iconBg: "bg-blue-950/40",
+    iconBorder: "border-blue-500/20",
+    protocolColor: "text-blue-400",
+    hoverBorder: "hover:border-blue-500/30",
+    hoverGlow: "hover:shadow-[0_10px_35px_-10px_rgba(59,130,246,0.15)]",
+  },
+];
+
+export default function ServicesModule() {
   return (
-    <div className="space-y-10">
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
-        {services.map((service: ServiceItem, index: number) => {
-          const icon = iconMap[service.iconName] || <FiCode className="text-3xl text-primary" />;
+    <div className="space-y-8 pt-1 pb-6">
+      {/* Cyber Header */}
+      <div className="space-y-3">
+        <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3.5 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-400">
+          <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+          <span>TECHNICAL PROTOCOLS</span>
+        </div>
 
-          return (
-            <motion.div
-              key={service.slug}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.04 }}
-              whileHover={{ y: -4 }}
-              className="flex flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-4 sm:p-5 md:p-6 shadow-sm transition-all duration-300 hover:border-neutral-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900/50 hover:dark:border-neutral-700"
+        <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
+          SERVICES{" "}
+          <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-purple-400 bg-clip-text text-transparent">
+            & CAPABILITIES.
+          </span>
+        </h1>
+      </div>
+
+      {/* Cyber Grid */}
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+        {SERVICES_DATA.map((service, index) => (
+          <motion.div
+            key={service.protocol}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.35, delay: index * 0.06 }}
+            className={`group relative flex min-h-[260px] flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0c0d14]/90 p-6 shadow-sm backdrop-blur-xl transition-all duration-300 dark:border-white/[0.08] dark:bg-[#0c0d14]/90 ${service.hoverBorder} ${service.hoverGlow} hover:-translate-y-0.5`}
+          >
+            {/* Top Area */}
+            <div className="space-y-4">
+              <div
+                className={`flex h-10 w-10 items-center justify-center rounded-xl border ${service.iconBorder} ${service.iconBg} shadow-inner transition-transform duration-300 group-hover:scale-105`}
+              >
+                {service.icon}
+              </div>
+
+              <h3 className="text-base font-black tracking-wider text-white sm:text-lg">
+                {service.title}
+              </h3>
+
+              <p className="text-xs font-normal leading-relaxed text-slate-400">
+                {service.description}
+              </p>
+            </div>
+
+            {/* Bottom Area */}
+            <div className="mt-6 flex items-center justify-between pt-2">
+              <span
+                className={`font-mono text-[9px] font-bold tracking-[0.25em] uppercase ${service.protocolColor}`}
+              >
+                {service.protocol}
+              </span>
+
+              <Link
+                href="/contact"
+                className="flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-500 transition-all duration-300 group-hover:border-white/20 group-hover:bg-white/[0.08] group-hover:text-white"
+              >
+                <FiArrowUpRight size={14} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* CTA Box */}
+      <div className="rounded-3xl border border-teal-500/30 bg-gradient-to-br from-teal-950/40 via-neutral-900 to-purple-950/40 p-8 text-center backdrop-blur-xl sm:p-10">
+        <div className="mx-auto max-w-xl space-y-4">
+          <h3 className="text-2xl font-black tracking-tight text-white sm:text-3xl">
+            Have a custom requirement?
+          </h3>
+          <p className="text-sm text-slate-400">
+            Let&apos;s discuss your technical architecture and build a tailored solution tailored to your product needs.
+          </p>
+          <div className="pt-2">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-xs font-bold uppercase tracking-wider text-neutral-900 shadow-md transition-all duration-300 hover:scale-105 hover:bg-primary-400"
             >
-              <div className="space-y-3 sm:space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="inline-flex items-center justify-center rounded-xl bg-neutral-100 p-2.5 sm:p-3 dark:bg-neutral-800">
-                    {icon}
-                  </div>
-                  <div className="inline-flex items-center gap-1 rounded-full bg-neutral-100 px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-[11px] font-semibold text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">
-                    <FiClock size={11} className="text-primary" />
-                    <span>{service.turnaround}</span>
-                  </div>
-                </div>
-
-                <div className="space-y-1 sm:space-y-2">
-                  <h2 className="text-base sm:text-lg font-bold text-neutral-800 dark:text-neutral-100">
-                    {service.title}
-                  </h2>
-                  <p className="text-[11px] sm:text-xs font-medium text-neutral-500 dark:text-neutral-400">
-                    {service.tagline}
-                  </p>
-                  <p className="text-[11px] sm:text-xs leading-relaxed text-neutral-600 dark:text-neutral-300 pt-1 line-clamp-2 sm:line-clamp-none">
-                    {service.summary}
-                  </p>
-                </div>
-
-                <div className="pt-2 border-t border-neutral-100 dark:border-neutral-800/80">
-                  <span className="text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-neutral-400 dark:text-neutral-500">
-                    {isId ? "Keunggulan Utama:" : "Core Benefits:"}
-                  </span>
-                  <ul className="mt-1.5 space-y-1 sm:space-y-1.5">
-                    {service.benefits.slice(0, 3).map((benefit, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-center gap-1.5 text-[11px] sm:text-xs text-neutral-600 dark:text-neutral-400"
-                      >
-                        <FiCheck className="text-emerald-500 shrink-0" size={12} />
-                        <span>{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-neutral-100 dark:border-neutral-800/80 flex items-center gap-3">
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="group flex flex-1 items-center justify-center gap-2 rounded-xl bg-primary px-3.5 py-2 sm:py-2.5 text-[11px] sm:text-xs font-bold text-neutral-900 shadow-md transition-all duration-300 hover:bg-primary-400"
-                >
-                  <span>{isId ? "Lihat Detail Layanan & FAQ" : "Explore Service & FAQs"}</span>
-                  <FiArrowRight size={13} className="transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
-              </div>
-            </motion.div>
-          );
-        })}
+              <span>Get in Touch</span>
+              <FiArrowRight size={15} />
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
-};
-
-export default ServicesModule;
+}

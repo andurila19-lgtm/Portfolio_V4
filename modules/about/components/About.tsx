@@ -1,18 +1,10 @@
-import Breakline from "@/common/components/elements/Breakline";
-
-import Story from "./Story";
-import CareerList from "./CareerList";
-import EducationList from "./EducationList";
+import EvolutionLog from "./EvolutionLog";
 
 const About = () => {
   return (
-    <>
-      <Story />
-      <Breakline className="my-8" />
-      <CareerList />
-      <Breakline className="my-8" />
-      <EducationList />
-    </>
+    <div className="w-full">
+      <EvolutionLog />
+    </div>
   );
 };
 

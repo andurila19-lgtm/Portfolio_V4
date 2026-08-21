@@ -84,14 +84,22 @@ const RootLayout = async ({
         "@id": "https://anduril.web.id/#person",
         "name": "Anduril Ahmad",
         "url": "https://anduril.web.id",
-        "jobTitle": "Software Engineer, Full-Stack Developer & AI Engineer",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Anduril Digital Solutions"
-        },
+        "jobTitle": "Software Engineer & Full-Stack Developer",
         "sameAs": [
-          "https://github.com/andurila19-lgtm",
-          "https://linkedin.com/in/andurilahmad"
+          "https://github.com/andurila19",
+          "https://linkedin.com/in/andurilahmad",
+          "https://instagram.com/rm_andurilahmad"
+        ],
+        "knowsAbout": [
+          "Full-Stack Development",
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "PostgreSQL",
+          "Software Architecture",
+          "UI/UX Design Systems"
         ],
         "address": {
           "@type": "PostalAddress",
@@ -104,23 +112,11 @@ const RootLayout = async ({
         "@type": "WebSite",
         "@id": "https://anduril.web.id/#website",
         "url": "https://anduril.web.id",
-        "name": "Anduril Ahmad — Software Engineer, Full-Stack Developer & AI Engineer",
+        "name": "Anduril Ahmad — Software Engineer & Full-Stack Developer Portfolio",
         "publisher": {
           "@id": "https://anduril.web.id/#person"
         },
         "inLanguage": ["id-ID", "en-US"]
-      },
-      {
-        "@type": "ProfessionalService",
-        "@id": "https://anduril.web.id/#service",
-        "name": "Anduril Web & App Development Services",
-        "url": "https://anduril.web.id",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Madiun",
-          "addressCountry": "ID"
-        }
       }
     ]
   };

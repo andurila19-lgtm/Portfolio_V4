@@ -28,7 +28,7 @@ const FeaturedProjects = () => {
       if (!a.is_featured && b.is_featured) return 1;
       return b.id - a.id;
     })
-    .slice(0, 2);
+    .slice(0, 4);
 
   if (error) return null;
 
@@ -48,7 +48,7 @@ const FeaturedProjects = () => {
 
       {isLoading ? (
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {[...Array(2)].map((_, i) => (
+          {[...Array(4)].map((_, i) => (
             <ProjectSkeleton key={i} />
           ))}
         </div>

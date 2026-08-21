@@ -11,7 +11,7 @@ export interface IndustryItem {
 const RAW_INDUSTRIES_DATA = [
   {
     slug: "ecommerce-retail",
-    caseStudyRef: { title: "Hwarin Skin E-Commerce Catalog", slug: "HwarinSkin" },
+    caseStudyRef: { title: "Mommy Skincare Product Catalog", slug: "mommy-skincare" },
     en: {
       title: "E-Commerce & Skincare Retail",
       tagline: "High-converting product catalogs, mobile checkout, and WhatsApp order automation.",
@@ -53,7 +53,7 @@ const RAW_INDUSTRIES_DATA = [
   },
   {
     slug: "pos-commercial",
-    caseStudyRef: { title: "KasirPro Modern POS", slug: "kasir-modern" },
+    caseStudyRef: { title: "EraStack Offline-First POS", slug: "erastack" },
     en: {
       title: "POS & Commercial Enterprise",
       tagline: "Point of Sale cashier systems, inventory control, and multi-branch analytics.",
@@ -95,49 +95,49 @@ const RAW_INDUSTRIES_DATA = [
   },
   {
     slug: "edtech-academic",
-    caseStudyRef: { title: "SIM Akademik Portal", slug: "sim-akademik" },
+    caseStudyRef: { title: "Karya Tim Architecture & Contractor", slug: "karyatim" },
     en: {
-      title: "EdTech & Higher Education",
-      tagline: "High-concurrency academic management systems and university portals.",
+      title: "Contractor & Architecture",
+      tagline: "High-caliber contractor portfolios and commercial architectural showcases.",
       overview:
-        "Scalable academic information systems (SIM) engineered to handle peak concurrent student traffic during course enrollment, grading, and tuition tracking.",
+        "Digital portfolios for architectural design, building contractors, and structural engineering firms.",
       solutions: [
-        "Next.js App Router & PostgreSQL architecture with zero downtime",
-        "Multi-role portals for Super Admin, Dosen, Academic Staff, & Students",
-        "High concurrency KRS registration bottleneck resolution",
-        "Automated academic report generation",
+        "Interactive completed projects portfolio showcase",
+        "Direct RFQ quotation and proposal submission form",
+        "High-performance responsive design across devices",
+        "Optimized asset loading for high-resolution photography",
       ],
       faqs: [
         {
-          question: "How does the portal handle peak traffic during course registration?",
+          question: "How are project portfolios organized?",
           answer:
-            "We use serverless Next.js edge caching and PostgreSQL connection pooling to ensure thousands of simultaneous student logins run smoothly.",
+            "Projects are categorized by commercial, residential, and infrastructure disciplines with interactive galleries.",
         },
       ],
     },
     id: {
-      title: "EdTech & Pendidikan Tinggi",
-      tagline: "Sistem informasi akademik berskala tinggi dan portal universitas.",
+      title: "Kontraktor & Arsitektur Bangunan",
+      tagline: "Portofolio korporat kontraktor dan showcase arsitektur komersial.",
       overview:
-        "Sistem Informasi Akademik (SIM) yang dirancang untuk menangani lonjakan trafik mahasiswa secara bersamaan saat pengisian KRS, penilaian, dan pelacakan pembayaran SPP.",
+        "Platform digital portofolio untuk konsultan arsitektur, kontraktor bangunan, dan jasa rekayasa struktural.",
       solutions: [
-        "Arsitektur Next.js App Router & PostgreSQL tanpa downtime",
-        "Portal multi-peran untuk Super Admin, Dosen, Staf Akademik, & Mahasiswa",
-        "Solusi bottleneck pendaftaran KRS dengan kapasitas pengguna tinggi",
-        "Generasi laporan akademik otomatis",
+        "Showcase portofolio proyek selesai interaktif",
+        "Formulir pengajuan penawaran tender dan RAB langsung",
+        "Desain responsif berkecepatan tinggi di semua perangkat",
+        "Optimasi aset untuk galeri foto resolusi tinggi",
       ],
       faqs: [
         {
-          question: "Bagaimana portal menangani lonjakan trafik saat pengisian KRS?",
+          question: "Bagaimana portofolio proyek dikelompokkan?",
           answer:
-            "Kami menggunakan edge caching serverless Next.js dan connection pooling PostgreSQL untuk memastikan ribuan login mahasiswa berjalan mulus secara bersamaan.",
+            "Proyek dikelompokkan berdasarkan bangunan komersial, residensial, dan renovasi dengan galeri interaktif.",
         },
       ],
     },
   },
   {
     slug: "saas-b2b",
-    caseStudyRef: { title: "Custom SaaS Engine", slug: "kasir-modern" },
+    caseStudyRef: { title: "EraStack POS Architecture", slug: "erastack" },
     en: {
       title: "SaaS & B2B Software",
       tagline: "Subscription software platforms, multi-tenant databases, and API engines.",

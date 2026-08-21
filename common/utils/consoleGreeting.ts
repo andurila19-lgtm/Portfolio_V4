@@ -1,5 +1,5 @@
 /**
- * Console Easter Egg — Anduril Digital Agency
+ * Console Easter Egg — Anduril Ahmad Portfolio
  * Displays a styled greeting in the browser console for curious developers.
  */
 let hasLogged = false;

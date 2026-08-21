@@ -1,15 +1,10 @@
-import Breakline from "@/common/components/elements/Breakline";
-
-import ContactList from "./ContactList";
-import ContactForm from "./ContactForm";
+import ContactModule from "./ContactModule";
 
 const Contact = () => {
   return (
-    <>
-      <ContactList />
-      <Breakline className="my-6" />
-      <ContactForm />
-    </>
+    <div className="w-full">
+      <ContactModule />
+    </div>
   );
 };
 
