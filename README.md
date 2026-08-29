@@ -176,5 +176,5 @@ This project is licensed under the MIT License.
 
 ## 🤝 Contact
 - **Website:** [anduril.web.id](https://anduril.web.id)
-- **Instagram:** [@rm_andurilahmad](https://instagram.com/rm_andurilahmad)
+- **Instagram:** [@anduril.tsx](https://instagram.com/anduril.tsx)
 - **Email:** [andurila19@gmail.com](mailto:andurila19@gmail.com)

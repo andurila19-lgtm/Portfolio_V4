@@ -59,11 +59,6 @@ export const consoleGreeting = () => {
     "color: #fbe400; font-weight: bold; font-size: 11px;",
     "color: #d4d4d4; font-size: 11px;"
   );
-  console.log(
-    "%c💬 WhatsApp   %chttps://wa.me/6285190830010",
-    "color: #fbe400; font-weight: bold; font-size: 11px;",
-    "color: #d4d4d4; font-size: 11px;"
-  );
 
   console.log(
     "%c\n⚡ Dibangun dengan Next.js, TypeScript, Tailwind CSS & Supabase\n",

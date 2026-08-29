@@ -15,7 +15,7 @@ import { SiGmail } from "react-icons/si";
 const CONTENT_LINKS = [
     {
         name: "Instagram",
-        href: "https://www.instagram.com/rm_andurilahmad",
+        href: "https://www.instagram.com/anduril.tsx",
         Icon: InstagramIcon,
         description: "Follow my daily updates and creative journey on Instagram.",
         color: "from-purple-600 via-pink-500 to-orange-400",

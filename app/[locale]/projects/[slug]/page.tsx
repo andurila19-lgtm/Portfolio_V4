@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 import BackButton from "@/common/components/elements/BackButton";
 import Container from "@/common/components/elements/Container";
@@ -7,6 +8,7 @@ import ProjectDetail from "@/modules/projects/components/ProjectDetail";
 import { ProjectItem } from "@/common/types/projects";
 import { METADATA } from "@/common/constants/metadata";
 import { loadMdxFiles } from "@/common/libs/mdx";
+import { LOCAL_PROJECTS } from "@/common/constants/projects";
 import { getProjectsDataBySlug } from "@/services/projects";
 
 interface ProjectDetailPageProps {
@@ -16,8 +18,15 @@ interface ProjectDetailPageProps {
   };
 }
 
-const getProjectDetail = async (slug: string, locale: string): Promise<ProjectItem> => {
+export const generateStaticParams = () => {
+  return LOCAL_PROJECTS.map((project) => ({
+    slug: project.slug,
+  }));
+};
+
+const getProjectDetail = async (slug: string, locale: string): Promise<ProjectItem | null> => {
   const projects = await getProjectsDataBySlug(slug, locale);
+  if (!projects) return null;
   const contents = loadMdxFiles();
   const content = contents.find((item) => item.slug === slug);
   const response = { ...projects, content: content?.content };
@@ -29,7 +38,13 @@ export const generateMetadata = async ({
 }: ProjectDetailPageProps): Promise<Metadata> => {
   const locale = params.locale || "en";
   const project = await getProjectDetail(params?.slug, locale);
-  
+
+  if (!project) {
+    return {
+      title: `Project Not Found ${METADATA.exTitle}`,
+    };
+  }
+
   return {
     title: `${project.title} ${METADATA.exTitle}`,
     description: project.description,
@@ -63,6 +78,10 @@ export const generateMetadata = async ({
 
 const ProjectDetailPage = async ({ params }: ProjectDetailPageProps) => {
   const data = await getProjectDetail(params?.slug, params?.locale || "en");
+
+  if (!data) {
+    notFound();
+  }
 
   return (
     <Container data-aos="fade-up">

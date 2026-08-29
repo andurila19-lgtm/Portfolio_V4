@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { useLocale } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiCheckCircle, FiChevronDown, FiHelpCircle, FiZap, FiShield, FiTag } from "react-icons/fi";
-import { BsWhatsapp } from "react-icons/bs";
+import { FiCheckCircle, FiChevronDown, FiHelpCircle, FiZap, FiShield, FiTag, FiMail } from "react-icons/fi";
 
 const getPricingData = (locale: string) => {
   const isId = locale === "id";
@@ -21,7 +21,7 @@ const getPricingData = (locale: string) => {
             "Frontend Next.js kustom & responsif",
             "Hingga 5 halaman konten terstruktur",
             "Optimasi SEO on-page & metadata Schema",
-            "Integrasi formulir kontak & WhatsApp",
+            "Integrasi formulir kontak & notifikasi otomatis",
             "Optimasi performa Mobile-First (skor 95+)",
             "Garansi perbaikan bug 1 bulan pasca-rilis",
           ]
@@ -29,11 +29,10 @@ const getPricingData = (locale: string) => {
             "Custom responsive Next.js frontend",
             "Up to 5 structured content pages",
             "On-page SEO & Schema metadata",
-            "WhatsApp & contact form integration",
+            "Contact form & notification integration",
             "Mobile-first performance tuning (95+ score)",
             "1-Month post-launch bug warranty",
           ],
-      whatsappMsg: "Halo Anduril, saya berminat dengan paket Starter Corporate (Company Profile).",
     },
     {
       name: isId ? "Aplikasi Web Bisnis & POS" : "Business Web App & POS",
@@ -59,7 +58,6 @@ const getPricingData = (locale: string) => {
             "Lighthouse 95+ Core Web Vitals score",
             "3-Month free maintenance support",
           ],
-      whatsappMsg: "Halo Anduril, saya berminat dengan paket Business Web App & POS.",
     },
     {
       name: isId ? "Enterprise SaaS Kustom" : "Enterprise Custom SaaS",
@@ -84,7 +82,6 @@ const getPricingData = (locale: string) => {
             "AEO & GEO search engine optimization",
             "Dedicated technical lead retainer",
           ],
-      whatsappMsg: "Halo Anduril, saya berminat dengan paket Enterprise Custom SaaS.",
     },
   ];
 
@@ -103,7 +100,7 @@ const getPricingData = (locale: string) => {
         {
           question: "Apakah bisa memesan scope kustom di luar paket yang tersedia?",
           answer:
-            "Ya, tentu. Setiap bisnis memiliki alur kerja unik. Hubungi kami via WhatsApp atau Email untuk mendapatkan penawaran harga yang dirancang khusus sesuai kebutuhan proyek Anda.",
+            "Ya, tentu. Setiap bisnis memiliki alur kerja unik. Hubungi kami via Formulir Kontak atau Email untuk mendapatkan penawaran harga yang dirancang khusus sesuai kebutuhan proyek Anda.",
         },
       ]
     : [
@@ -120,7 +117,7 @@ const getPricingData = (locale: string) => {
         {
           question: "Do you offer custom scopes outside of preset packages?",
           answer:
-            "Yes, absolutely. Every business has unique workflows. Contact us via WhatsApp or Email for a tailored quotation built specifically for your project scope.",
+            "Yes, absolutely. Every business has unique workflows. Contact us via the Contact Form or Email for a tailored quotation built specifically for your project scope.",
         },
       ];
 
@@ -143,14 +140,12 @@ const PricingModule = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const locale = useLocale();
   const isId = locale === "id";
-  const phoneNumber = "6285190830010";
   const { packages, faqs, guarantees } = getPricingData(locale);
 
   return (
     <div className="space-y-12">
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         {packages.map((pkg, idx) => {
-          const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(pkg.whatsappMsg)}`;
           return (
             <motion.div
               key={pkg.name}
@@ -206,19 +201,17 @@ const PricingModule = () => {
               </div>
 
               <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-neutral-100 dark:border-neutral-800/80">
-                <a
-                  href={waUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/contact"
                   className={`flex items-center justify-center gap-2 w-full rounded-xl px-3.5 py-2 sm:py-2.5 text-[11px] sm:text-xs font-bold transition-all duration-300 ${
                     pkg.popular
                       ? "bg-primary text-neutral-900 hover:bg-primary-400 shadow-md"
-                      : "bg-neutral-100 text-neutral-800 hover:bg-emerald-500 hover:text-white dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-emerald-600"
+                      : "bg-neutral-100 text-neutral-800 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
                   }`}
                 >
-                  <BsWhatsapp size={13} />
+                  <FiMail size={13} />
                   <span>{isId ? "Minta Proposal & Penawaran" : "Request Proposal & Quote"}</span>
-                </a>
+                </Link>
               </div>
             </motion.div>
           );

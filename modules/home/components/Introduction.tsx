@@ -3,7 +3,6 @@ import { Link } from "@/i18n/navigation";
 import { HiOutlineArrowSmRight as ArrowIcon, HiCheckCircle } from "react-icons/hi";
 import { FiBriefcase } from "react-icons/fi";
 
-import WhatsAppButton from "@/common/components/elements/WhatsAppButton";
 import Resume from "@/modules/about/components/Resume";
 import CountUp from "@/common/components/elements/CountUp";
 
@@ -82,7 +81,6 @@ const Introduction = () => {
           </Link>
 
           <Resume />
-          <WhatsAppButton floating={false} />
         </div>
 
         <div className="grid grid-cols-2 gap-4 rounded-2xl border border-neutral-200 bg-neutral-50/60 p-4 dark:border-neutral-800 dark:bg-neutral-900/40 sm:grid-cols-4 sm:p-5">

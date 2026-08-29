@@ -88,7 +88,7 @@ const RootLayout = async ({
         "sameAs": [
           "https://github.com/andurila19",
           "https://linkedin.com/in/andurilahmad",
-          "https://instagram.com/rm_andurilahmad"
+          "https://instagram.com/anduril.tsx"
         ],
         "knowsAbout": [
           "Full-Stack Development",

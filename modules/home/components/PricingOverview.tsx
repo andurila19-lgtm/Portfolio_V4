@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { FiTag, FiCheckCircle, FiArrowRight } from "react-icons/fi";
-import { BsWhatsapp } from "react-icons/bs";
+import { FiTag, FiCheckCircle, FiArrowRight, FiMail } from "react-icons/fi";
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 
@@ -24,17 +23,16 @@ const getPricingTiersData = (locale: string) => {
             "Desain Next.js kustom & responsif",
             "Hingga 5 halaman konten terstruktur",
             "Optimasi SEO on-page & metadata Schema",
-            "Integrasi formulir kontak & WhatsApp",
+            "Integrasi formulir kontak & notifikasi",
             "Dukungan pemeliharaan gratis 1 bulan",
           ]
         : [
             "Custom responsive Next.js design",
             "Up to 5 custom structured pages",
             "On-page SEO & Schema metadata",
-            "WhatsApp & contact form integration",
+            "Contact form & notification integration",
             "1-Month free maintenance support",
           ],
-      whatsappMsg: "Halo Anduril, saya tertarik dengan paket Starter Company Profile.",
     },
     {
       name: isId ? "Aplikasi Web Bisnis & POS" : "Business Web App & POS",
@@ -61,7 +59,6 @@ const getPricingTiersData = (locale: string) => {
             "Lighthouse 95+ performance guarantee",
             "3-Month free maintenance support",
           ],
-      whatsappMsg: "Halo Anduril, saya tertarik dengan paket Business Web App & POS.",
     },
     {
       name: isId ? "Enterprise SaaS Kustom" : "Enterprise Custom SaaS",
@@ -88,7 +85,6 @@ const getPricingTiersData = (locale: string) => {
             "AEO & GEO search optimization",
             "Dedicated technical manager retainer",
           ],
-      whatsappMsg: "Halo Anduril, saya tertarik dengan paket Enterprise Custom SaaS.",
     },
   ];
 };
@@ -96,7 +92,6 @@ const getPricingTiersData = (locale: string) => {
 const PricingOverview = () => {
   const locale = useLocale();
   const isId = locale === "id";
-  const phoneNumber = "6285190830010";
   const pricingTiers = getPricingTiersData(locale);
 
   return (
@@ -117,10 +112,6 @@ const PricingOverview = () => {
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
         {pricingTiers.map((tier, index) => {
-          const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-            tier.whatsappMsg
-          )}`;
-
           return (
             <motion.div
               key={tier.name}
@@ -179,19 +170,17 @@ const PricingOverview = () => {
               </div>
 
               <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-neutral-100 dark:border-neutral-800/80 space-y-2">
-                <a
-                  href={waUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/contact"
                   className={`flex items-center justify-center gap-2 w-full rounded-xl px-3.5 py-2 sm:py-2.5 text-[11px] sm:text-xs font-bold transition-all duration-300 ${
                     tier.popular
                       ? "bg-primary text-neutral-900 hover:bg-primary-400 shadow-md"
-                      : "bg-neutral-100 text-neutral-800 hover:bg-emerald-500 hover:text-white dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-emerald-600"
+                      : "bg-neutral-100 text-neutral-800 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
                   }`}
                 >
-                  <BsWhatsapp size={13} />
+                  <FiMail size={13} />
                   <span>{isId ? "Minta Penawaran Harga" : "Request Custom Quote"}</span>
-                </a>
+                </Link>
               </div>
             </motion.div>
           );

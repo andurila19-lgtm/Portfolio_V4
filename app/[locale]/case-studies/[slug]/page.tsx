@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Container from "@/common/components/elements/Container";
 import BackButton from "@/common/components/elements/BackButton";
 import PageHeading from "@/common/components/elements/PageHeading";
@@ -6,6 +7,7 @@ import ProjectDetail from "@/modules/projects/components/ProjectDetail";
 import { ProjectItem } from "@/common/types/projects";
 import { METADATA } from "@/common/constants/metadata";
 import { loadMdxFiles } from "@/common/libs/mdx";
+import { LOCAL_PROJECTS } from "@/common/constants/projects";
 import { getProjectsDataBySlug } from "@/services/projects";
 
 interface CaseStudyDetailPageProps {
@@ -15,8 +17,15 @@ interface CaseStudyDetailPageProps {
   };
 }
 
-const getProjectDetail = async (slug: string, locale: string): Promise<ProjectItem> => {
+export const generateStaticParams = () => {
+  return LOCAL_PROJECTS.map((project) => ({
+    slug: project.slug,
+  }));
+};
+
+const getProjectDetail = async (slug: string, locale: string): Promise<ProjectItem | null> => {
   const projects = await getProjectsDataBySlug(slug, locale);
+  if (!projects) return null;
   const contents = loadMdxFiles();
   const content = contents.find((item) => item.slug === slug);
   const response = { ...projects, content: content?.content };
@@ -28,6 +37,12 @@ export const generateMetadata = async ({
 }: CaseStudyDetailPageProps): Promise<Metadata> => {
   const locale = params.locale || "en";
   const project = await getProjectDetail(params?.slug, locale);
+
+  if (!project) {
+    return {
+      title: `Case Study Not Found ${METADATA.exTitle}`,
+    };
+  }
 
   return {
     title: `${project.title} Case Study ${METADATA.exTitle}`,
@@ -46,6 +61,10 @@ const CaseStudyDetailPage = async ({ params }: CaseStudyDetailPageProps) => {
   const locale = params?.locale || "en";
   const isId = locale === "id";
   const data = await getProjectDetail(params?.slug, locale);
+
+  if (!data) {
+    notFound();
+  }
 
   return (
     <Container data-aos="fade-up">

@@ -21,7 +21,7 @@ const CredibilitySection = () => {
   const domains = [
     {
       title: "E-Commerce & Retail",
-      desc: "Toko online modern, katalog produk skincare, integrasi checkout WhatsApp, & payment gateway.",
+      desc: "Toko online modern, katalog produk skincare, integrasi checkout otomatis, & payment gateway.",
       icon: <FiShoppingBag className="text-amber-500" size={24} />,
       count: "3+ Projects",
     },

@@ -58,7 +58,7 @@ const SchemaMarkup = (props: SchemaProps) => {
       sameAs: [
         "https://github.com/andurila19",
         "https://linkedin.com/in/andurilahmad",
-        "https://instagram.com/rm_andurilahmad",
+        "https://instagram.com/anduril.tsx",
       ],
       contactPoint: {
         "@type": "ContactPoint",

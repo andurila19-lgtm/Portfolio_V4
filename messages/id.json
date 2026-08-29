@@ -7,7 +7,6 @@
     "cta_hire": "Hire Me / Konsultasi",
     "cta_projects": "Lihat Portfolio",
     "cta_contact": "Hubungi Saya",
-    "cta_whatsapp": "Chat WhatsApp",
     "badges": {
       "responsive": "Responsive Design",
       "seo": "SEO Friendly",
@@ -286,10 +285,6 @@
     "no_data": "Informasi kontak tidak tersedia.",
     "social_media": {
       "title": "Temukan saya di media sosial",
-      "whatsapp": {
-        "title": "Chat Langsung",
-        "description": "Obrolan langsung via WhatsApp untuk konsultasi cepat dan respons kilat."
-      },
       "gmail": {
         "title": "Tetap Terhubung",
         "description": "Hubungi saya melalui email untuk pertanyaan atau kolaborasi."

@@ -273,25 +273,67 @@ export default function BentoHero() {
             </Link>
           </div>
 
-          {/* Fanned out interactive cards */}
-          <div className="relative mt-3 flex h-24 items-center justify-end overflow-hidden pr-4 sm:h-28">
-            {/* Card 1 */}
-            <div className="absolute right-[48%] h-20 w-36 rotate-[-10deg] rounded-xl border border-neutral-200 bg-gradient-to-br from-neutral-100 to-neutral-200 p-2.5 shadow-lg transition-all duration-500 group-hover:-translate-y-2 group-hover:rotate-[-14deg] dark:border-neutral-700 dark:from-neutral-800 dark:to-neutral-900 sm:h-24 sm:w-44">
-              <div className="text-[10px] font-bold text-teal-600 dark:text-teal-400">Offline-First POS</div>
-              <div className="text-xs font-bold text-neutral-900 dark:text-white">EraStack POS</div>
-            </div>
+          {/* Fanned out interactive cards with authentic project screenshots */}
+          <div className="relative mt-3 flex h-28 sm:h-32 items-center justify-end overflow-hidden pr-2 sm:pr-4">
+            {/* Card 1: Karya Tim Kontraktor */}
+            <Link
+              href="/projects/karyatim"
+              className="absolute right-[46%] sm:right-[44%] h-24 w-36 sm:h-28 sm:w-44 rotate-[-10deg] rounded-xl border border-neutral-300/80 bg-neutral-900 shadow-xl overflow-hidden transition-all duration-500 hover:z-30 hover:scale-105 group-hover:-translate-y-2 group-hover:rotate-[-13deg] dark:border-neutral-700 block"
+            >
+              <div className="relative h-full w-full">
+                <Image
+                  src="/images/projects/karyatim-1.png"
+                  alt="Karya Tim Kontraktor"
+                  fill
+                  className="object-cover object-top opacity-75 transition-opacity duration-300 group-hover:opacity-95"
+                  sizes="(max-width: 768px) 150px, 200px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-transparent p-2.5 flex flex-col justify-end">
+                  <div className="text-[9px] font-bold uppercase tracking-wider text-amber-400">Architecture</div>
+                  <div className="text-[11px] sm:text-xs font-black text-white truncate leading-tight">Karya Tim</div>
+                </div>
+              </div>
+            </Link>
 
-            {/* Card 2 */}
-            <div className="absolute right-[24%] z-10 h-20 w-36 rotate-[-2deg] rounded-xl border border-neutral-200 bg-gradient-to-br from-neutral-100 to-neutral-200 p-2.5 shadow-lg transition-all duration-500 group-hover:-translate-y-3 group-hover:rotate-[-4deg] dark:border-neutral-700 dark:from-neutral-800 dark:to-neutral-900 sm:h-24 sm:w-44">
-              <div className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400">Architecture</div>
-              <div className="text-xs font-bold text-neutral-900 dark:text-white">Istana Gypsum</div>
-            </div>
+            {/* Card 2: REAKSY Digital */}
+            <Link
+              href="/projects/reaksy-digital"
+              className="absolute right-[23%] sm:right-[22%] z-10 h-24 w-36 sm:h-28 sm:w-44 rotate-[-2deg] rounded-xl border border-neutral-300/80 bg-neutral-900 shadow-xl overflow-hidden transition-all duration-500 hover:z-30 hover:scale-105 group-hover:-translate-y-3 group-hover:rotate-[-3deg] dark:border-neutral-700 block"
+            >
+              <div className="relative h-full w-full">
+                <Image
+                  src="/images/projects/reaksy-digital-1.png"
+                  alt="REAKSY Digital"
+                  fill
+                  className="object-cover object-top opacity-75 transition-opacity duration-300 group-hover:opacity-95"
+                  sizes="(max-width: 768px) 150px, 200px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-transparent p-2.5 flex flex-col justify-end">
+                  <div className="text-[9px] font-bold uppercase tracking-wider text-cyan-400">Software House</div>
+                  <div className="text-[11px] sm:text-xs font-black text-white truncate leading-tight">REAKSY Platform</div>
+                </div>
+              </div>
+            </Link>
 
-            {/* Card 3 */}
-            <div className="absolute right-[0%] z-20 h-20 w-36 rotate-[6deg] rounded-xl border border-neutral-200 bg-gradient-to-br from-teal-50 to-emerald-100 p-2.5 shadow-xl transition-all duration-500 group-hover:-translate-y-2 group-hover:rotate-[3deg] dark:border-teal-800/60 dark:from-teal-950/60 dark:to-neutral-900 sm:h-24 sm:w-44">
-              <div className="text-[10px] font-bold text-teal-600 dark:text-teal-400">Healthcare</div>
-              <div className="text-xs font-bold text-neutral-900 dark:text-white">Mommy Skincare</div>
-            </div>
+            {/* Card 3: Dashboard NEXS Academy */}
+            <Link
+              href="/projects/nexs-academy-dashboard"
+              className="absolute right-[0%] z-20 h-24 w-36 sm:h-28 sm:w-44 rotate-[6deg] rounded-xl border border-teal-500/50 bg-neutral-900 shadow-2xl overflow-hidden transition-all duration-500 hover:z-30 hover:scale-105 group-hover:-translate-y-2 group-hover:rotate-[3deg] dark:border-teal-500/60 block"
+            >
+              <div className="relative h-full w-full">
+                <Image
+                  src="/images/projects/nexs-academy-1.png"
+                  alt="NEXS Academy LMS Dashboard"
+                  fill
+                  className="object-cover object-top opacity-80 transition-opacity duration-300 group-hover:opacity-100"
+                  sizes="(max-width: 768px) 150px, 200px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-transparent p-2.5 flex flex-col justify-end">
+                  <div className="text-[9px] font-bold uppercase tracking-wider text-emerald-400">EdTech & LMS</div>
+                  <div className="text-[11px] sm:text-xs font-black text-white truncate leading-tight">Dashboard NEXS</div>
+                </div>
+              </div>
+            </Link>
           </div>
         </motion.div>
 

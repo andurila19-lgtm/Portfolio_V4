@@ -7,7 +7,6 @@
     "cta_hire": "Hire Me / Consult",
     "cta_projects": "View Portfolio",
     "cta_contact": "Contact Me",
-    "cta_whatsapp": "Chat WhatsApp",
     "badges": {
       "responsive": "Responsive Design",
       "seo": "SEO Friendly",
@@ -286,10 +285,6 @@
     "no_data": "No contact information available.",
     "social_media": {
       "title": "Find me on social media",
-      "whatsapp": {
-        "title": "Instant Chat",
-        "description": "Chat directly via WhatsApp for quick consultation and fast responses."
-      },
       "gmail": {
         "title": "Stay in Touch",
         "description": "Reach out via email for inquiries or collaborations."

@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { useLocale } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { ServiceItem } from "@/common/constants/serviceData";
 import { STACKS } from "@/common/constants/stacks";
 import Tooltip from "@/common/components/elements/Tooltip";
-import { BsWhatsapp } from "react-icons/bs";
-import { FiCheckCircle, FiChevronDown, FiClock, FiHelpCircle, FiInfo } from "react-icons/fi";
+import { FiCheckCircle, FiChevronDown, FiClock, FiHelpCircle, FiInfo, FiMail } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface ServiceDetailModuleProps {
@@ -17,8 +17,6 @@ const ServiceDetailModule = ({ service }: ServiceDetailModuleProps) => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const locale = useLocale();
   const isId = locale === "id";
-  const phoneNumber = "6285190830010";
-  const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(service.whatsappMsg)}`;
 
   return (
     <div className="space-y-10">
@@ -205,15 +203,13 @@ const ServiceDetailModule = ({ service }: ServiceDetailModuleProps) => {
             : "Get in touch with Anduril today for a free technical consultation and custom scope proposal."}
         </p>
         <div className="pt-2">
-          <a
-            href={waUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-6 py-3 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:bg-emerald-600"
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-neutral-900 shadow-lg transition-all duration-300 hover:bg-primary-400"
           >
-            <BsWhatsapp size={16} />
-            <span>{isId ? "Hubungi via WhatsApp" : "Inquire Via WhatsApp"}</span>
-          </a>
+            <FiMail size={16} />
+            <span>{isId ? "Konsultasi & Ajukan Proyek" : "Inquire & Get Proposal"}</span>
+          </Link>
         </div>
       </div>
     </div>

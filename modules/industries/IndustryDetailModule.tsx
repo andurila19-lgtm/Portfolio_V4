@@ -3,8 +3,7 @@
 import { useLocale } from "next-intl";
 import { IndustryItem } from "@/common/constants/industryData";
 import { Link } from "@/i18n/navigation";
-import { FiCheckCircle, FiArrowRight, FiFileText } from "react-icons/fi";
-import { BsWhatsapp } from "react-icons/bs";
+import { FiCheckCircle, FiArrowRight, FiFileText, FiMail } from "react-icons/fi";
 
 interface IndustryDetailModuleProps {
   industry: IndustryItem;
@@ -13,10 +12,6 @@ interface IndustryDetailModuleProps {
 const IndustryDetailModule = ({ industry }: IndustryDetailModuleProps) => {
   const locale = useLocale();
   const isId = locale === "id";
-
-  const whatsappUrl = `https://wa.me/6285190830010?text=${encodeURIComponent(
-    `Halo Anduril, saya ingin berkonsultasi mengenai solusi website untuk industri ${industry.title}.`
-  )}`;
 
   return (
     <div className="space-y-8">
@@ -79,15 +74,13 @@ const IndustryDetailModule = ({ industry }: IndustryDetailModuleProps) => {
             : "Let\u0027s build a digital platform customized to your industry requirements."}
         </p>
         <div>
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-6 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-emerald-600"
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-neutral-900 shadow-lg transition hover:bg-primary-400"
           >
-            <BsWhatsapp size={16} />
+            <FiMail size={16} />
             <span>{isId ? "Konsultasi dengan Ahli" : "Talk to an Expert"}</span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

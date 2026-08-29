@@ -2,12 +2,11 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { BsWhatsapp, BsGithub, BsLinkedin } from "react-icons/bs";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { FiMail, FiMapPin, FiClock, FiArrowRight } from "react-icons/fi";
 
 const CTABanner = () => {
   const t = useTranslations("HomePage");
-  const whatsappUrl = "https://wa.me/6285190830010?text=Halo%20Anduril,%20saya%20tertarik%20untuk%20konsultasi%20pembuatan%20website.";
 
   return (
     <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-neutral-900 via-neutral-950 to-black p-8 text-white shadow-xl dark:border dark:border-neutral-800 sm:p-10">
@@ -33,22 +32,20 @@ const CTABanner = () => {
 
         {/* Action Buttons */}
         <div className="flex flex-wrap items-center gap-3 pt-2">
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-6 py-3 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-emerald-600"
-          >
-            <BsWhatsapp size={17} />
-            <span>Konsultasi WhatsApp</span>
-          </a>
-
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-neutral-900 shadow-md transition-all duration-300 hover:scale-105 hover:bg-primary-400"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-neutral-900 shadow-lg transition-all duration-300 hover:scale-105 hover:bg-primary-400"
           >
-            <span>Kirim Pesan Email</span>
+            <FiMail size={16} />
+            <span>Konsultasi & Kirim Pesan</span>
             <FiArrowRight size={16} />
+          </Link>
+
+          <Link
+            href="/pricing"
+            className="inline-flex items-center gap-2 rounded-xl border border-neutral-700 bg-neutral-900/80 px-6 py-3 text-sm font-semibold text-neutral-200 shadow-md transition-all duration-300 hover:scale-105 hover:bg-neutral-800 hover:text-white"
+          >
+            <span>Lihat Paket & Layanan</span>
           </Link>
         </div>
 

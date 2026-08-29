@@ -86,7 +86,7 @@ export default function ContactModule() {
               <BsLinkedin size={18} />
             </a>
             <a
-              href="https://www.instagram.com/rm_andurilahmad"
+              href="https://www.instagram.com/anduril.tsx"
               target="_blank"
               rel="noopener noreferrer"
               className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-slate-300 transition-all duration-300 hover:scale-110 hover:border-cyan-500/40 hover:bg-cyan-500/10 hover:text-cyan-400"

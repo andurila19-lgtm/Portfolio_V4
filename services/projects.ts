@@ -88,7 +88,12 @@ export const getProjectsData = async (locale?: string) => {
       problem,
       solution,
       result,
-      image: item.image || imageData?.publicUrl || "",
+      image:
+        item.image ||
+        (localMatch?.images && localMatch.images.length > 0 ? localMatch.images[0] : "") ||
+        (item.images && item.images.length > 0 ? item.images[0] : "") ||
+        imageData?.publicUrl ||
+        "",
     };
   });
 };

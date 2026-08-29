@@ -7,7 +7,6 @@ import {
   BsInstagram as InstagramIcon,
   BsLinkedin as LinkedinIcon,
   BsTiktok as TiktokIcon,
-  BsWhatsapp as WhatsappIcon,
 } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
 
@@ -27,18 +26,13 @@ export default function Footer() {
     },
     {
       name: "Instagram",
-      href: "https://www.instagram.com/rm_andurilahmad",
+      href: "https://www.instagram.com/anduril.tsx",
       icon: <InstagramIcon size={18} />,
     },
     {
       name: "TikTok",
       href: "https://www.tiktok.com/@andrl19",
       icon: <TiktokIcon size={18} />,
-    },
-    {
-      name: "WhatsApp",
-      href: "https://wa.me/6285190830010",
-      icon: <WhatsappIcon size={18} />,
     },
     {
       name: "Email",

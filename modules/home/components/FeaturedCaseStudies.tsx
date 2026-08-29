@@ -11,58 +11,58 @@ const getCaseStudiesData = (locale: string) => {
   const isId = locale === "id";
   return [
     {
-      id: "erastack",
-      title: isId ? "EraStack — Platform POS Modern Offline-First" : "EraStack — Offline-First Modern POS Platform",
-      category: isId ? "POS & Sistem Operasional" : "POS & Enterprise Operations",
-      client: isId ? "Retail, Minimarket & Usaha Komersial" : "Retail & Commercial Enterprises",
+      id: "karyatim",
+      title: isId ? "Karya Tim — Portofolio Korporat & Showcase Kontraktor" : "Karya Tim — Architectural Contractor Portfolio",
+      category: isId ? "Konstruksi & Arsitektur" : "Construction & Architecture",
+      client: isId ? "Kontraktor Bangunan & Proyek Komersial" : "Building Contractors & Commercial Projects",
       metrics: isId
         ? [
-            "Operasi transaksi 100% mandiri tanpa koneksi internet",
-            "Penyimpanan database SQLite lokal dengan mutasi stok atomic",
-            "Dukungan printer ESC/POS thermal & USB barcode scanner",
+            "+85% efisiensi presentasi tender proyek komersial",
+            "Showcase portofolio proyek selesai dengan visual resolusi tinggi",
+            "Formulir permintaan estimasi biaya terintegrasi",
           ]
         : [
-            "100% offline operational independence without internet connectivity",
-            "Local SQLite database storage with atomic inventory mutation",
-            "Hardware support for ESC/POS thermal printers & USB barcode scanners",
+            "+85% tender presentation efficiency for commercial projects",
+            "Completed project showcase with high-res visual galleries",
+            "Integrated direct quotation estimation workflows",
           ],
-      slug: "erastack",
+      slug: "karyatim",
     },
     {
-      id: "istana-gypsum",
-      title: isId ? "Istana Gypsum — Showroom Digital & Kalkulator RAB" : "Istana Gypsum — Digital Showroom & RAB Estimator",
-      category: isId ? "Arsitektur & Material Bangunan" : "Architecture & Building Materials",
-      client: isId ? "Kontraktor & Desain Interior" : "Contractors & Interior Design",
+      id: "reaksy-digital",
+      title: isId ? "REAKSY — Platform Software House & Solusi Bisnis" : "REAKSY — Enterprise Software House & Business Solutions",
+      category: isId ? "Software House & ERP/CRM" : "Software House & ERP/CRM",
+      client: isId ? "Perusahaan Enterprise & UMKM Indonesia" : "Enterprise Clients & Indonesian SMEs",
       metrics: isId
         ? [
-            "+65% efisiensi konsultasi lewat simulator kalkulator biaya interaktif",
-            "Tabel perbandingan material plafon & partisi terstruktur",
-            "Performa web sub-detik dengan skor Core Web Vitals 98+",
+            "Arsitektur sistem modular untuk custom ERP, POS & CRM",
+            "Kalkulator estimasi biaya solusi bisnis real-time",
+            "Performa SEO dark-mode berkecepatan tinggi",
           ]
         : [
-            "+65% consultation efficiency via interactive cost estimator simulator",
-            "Structured material comparison tables for gypsum & partitions",
-            "Sub-second web performance with 98+ Core Web Vitals score",
+            "Modular architecture for custom ERP, POS & CRM systems",
+            "Real-time enterprise solution project cost estimator",
+            "High-speed dark-mode enterprise SEO performance",
           ],
-      slug: "istana-gypsum",
+      slug: "reaksy-digital",
     },
     {
-      id: "mommy-skincare",
-      title: isId ? "Mommy Skincare — Katalog Layanan & Produk" : "Mommy Skincare — Services & Products Catalog",
-      category: isId ? "Healthcare & Skincare" : "Healthcare & Skincare",
-      client: isId ? "Klinik & Perawatan Kecantikan" : "Aesthetics & Skincare Clinic",
+      id: "nexs-academy-dashboard",
+      title: isId ? "NEXS Academy — Dashboard Teaching Management System" : "NEXS Academy — LMS & Teaching Management Dashboard",
+      category: isId ? "EdTech & Manajemen Akademik" : "EdTech & Academic Management",
+      client: isId ? "Lembaga Pendidikan & Kursus NEXS" : "NEXS Educational Academy & Instructors",
       metrics: isId
         ? [
-            "+40% peningkatan kemudahan reservasi dan konsultasi online",
-            "Skor performa Lighthouse & Core Web Vitals 95+",
-            "Antarmuka responsif ramah smartphone",
+            "100% digitalisasi absensi siswa & jadwal perkuliahan",
+            "Otomasi jurnal materi kelas dan rekap honor pengajar",
+            "Akses cepat responsif dengan Next.js 14 & Turbopack",
           ]
         : [
-            "+40% increase in online reservation and consultation ease",
-            "95+ Lighthouse Performance & Core Web Vitals score",
-            "Mobile-first responsive aesthetic interface",
+            "100% digital attendance tracking & class scheduling",
+            "Automated lesson journals and instructor payroll reporting",
+            "Sub-second responsive dashboard via Next.js 14 & Turbopack",
           ],
-      slug: "mommy-skincare",
+      slug: "nexs-academy-dashboard",
     },
   ];
 };

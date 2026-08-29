@@ -10,10 +10,11 @@ interface WhatsAppButtonProps {
 }
 
 const WhatsAppButton = ({
-  phoneNumber = "6285190830010", // User's active WhatsApp number
-  message = "Halo Anduril, saya melihat portofolio Anda di anduril.web.id dan ingin berkonsultasi mengenai proyek pembuatan website/aplikasi.",
+  phoneNumber = "",
+  message = "",
   floating = true,
 }: WhatsAppButtonProps) => {
+  if (!phoneNumber) return null;
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 

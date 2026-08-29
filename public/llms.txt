@@ -12,7 +12,7 @@
 - Custom Web Application Development (React.js, Next.js, TypeScript, TailwindCSS)
 - Scalable Backend Architecture & API Development (PostgreSQL, Supabase, Node.js)
 - Point of Sale (POS) & Business Administration Suites
-- E-Commerce & WhatsApp Checkout Integration
+- E-Commerce & Checkout Automation
 - AI Engineering & Agentic Web Integration
 - Cloud Infrastructure, DevOps & CI/CD Deployment
 
