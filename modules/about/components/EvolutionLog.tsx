@@ -12,7 +12,8 @@ interface TimelineItem {
   organization: string;
   period: string;
   isActive?: boolean;
-  description: string;
+  description?: string;
+  bullets?: string[];
   tags?: string[];
 }
 
@@ -20,57 +21,46 @@ const TIMELINE_DATA: TimelineItem[] = [
   {
     id: "1",
     type: "work",
-    role: "Fullstack Freelancer & Developer",
-    organization: "Self-Employed",
-    period: "2023 - Present",
+    role: "Founder / Full-Stack Developer",
+    organization: "REAKSY – Madiun, Indonesia",
+    period: "Desember 2025 – Saat ini",
     isActive: true,
-    description:
-      "Engineering high-performance web applications, scalable platforms, and modern frontend architecture, focusing on React, Next.js, and cloud infrastructure.",
-    tags: ["#React", "#Next.js", "#PostgreSQL", "#UI/UX"],
+    bullets: [
+      "Membangun dan mengembangkan website serta aplikasi bisnis menggunakan Next.js, React, TypeScript, Tailwind CSS, Laravel, Node.js, PostgreSQL, dan Supabase dari tahap perancangan hingga deployment.",
+      "Mengembangkan berbagai solusi digital seperti company profile, katalog produk, booking system, POS, inventory management, dashboard admin, dan aplikasi SaaS yang disesuaikan dengan kebutuhan bisnis.",
+      "Melakukan optimasi performance, responsive design, SEO, struktur database, API, authentication, dan keamanan aplikasi untuk menghasilkan aplikasi yang siap digunakan pada perangkat desktop maupun mobile.",
+      "Mengembangkan sistem EraStack POS dengan fitur POS, inventory, role-based access control (RBAC), dashboard, serta dukungan aplikasi Android dan desktop.",
+      "Membuat berbagai prototype dan website untuk kebutuhan lead generation dan digitalisasi bisnis, termasuk website untuk perusahaan manufaktur, interior, salon, travel, dan bisnis retail.",
+      "Melakukan analisis bisnis dan kebutuhan calon klien untuk mengidentifikasi masalah digital yang dapat diselesaikan melalui website atau sistem custom.",
+    ],
+    tags: ["#Next.js", "#React", "#TypeScript", "#TailwindCSS", "#Laravel", "#Node.js", "#PostgreSQL", "#Supabase"],
   },
   {
     id: "2",
-    type: "education",
-    role: "University Student (Informatics)",
-    organization: "Universitas PGRI Madiun",
-    period: "2025 - Present",
+    type: "work",
+    role: "Full-Stack Developer",
+    organization: "FREELANCE / PROJECT-BASED – Madiun, Indonesia",
+    period: "2025 – Saat ini",
     isActive: true,
-    description:
-      "Pursuing academic excellence in Computer Science & Informatics, deepening knowledge in distributed systems, software architecture, and AI engineering.",
-    tags: ["#ComputerScience", "#Algorithms", "#SoftwareEng"],
+    bullets: [
+      "Mengembangkan aplikasi web end-to-end mulai dari UI/UX, frontend, backend, database, API, authentication hingga deployment.",
+      "Membangun sistem menggunakan arsitektur modern berbasis Next.js App Router, REST API, Laravel, NestJS, PostgreSQL, Supabase, dan Firebase.",
+      "Mengembangkan sistem manajemen seperti booking, POS, inventory, dashboard, dan content management dengan memperhatikan skalabilitas dan maintainability.",
+      "Melakukan debugging, maintenance, performance optimization, serta deployment menggunakan platform seperti Vercel, Netlify, Railway, dan Cloudflare.",
+      "Mengintegrasikan berbagai layanan pihak ketiga dan API untuk meningkatkan fungsionalitas aplikasi.",
+    ],
+    tags: ["#Next.js", "#REST_API", "#NestJS", "#Laravel", "#PostgreSQL", "#Supabase", "#Firebase", "#Vercel"],
   },
   {
     id: "3",
-    type: "work",
-    role: "Backend Laravel Developer",
-    organization: "PT Sinar Mas Agro Resources and Technology Tbk",
-    period: "2024 - 2025",
-    isActive: false,
-    description:
-      "Designed and optimized robust backend services using Laravel for internal operations systems, managing large-scale data payloads across departments.",
-    tags: ["#Laravel", "#PHP", "#DatabaseOptimization", "#APIs"],
-  },
-  {
-    id: "4",
-    type: "work",
-    role: "Frontend Web Developer",
-    organization: "CV. Griyo Electrical",
-    period: "2023 - 2024",
-    isActive: false,
-    description:
-      "Architected company web profile, catalog interfaces, and optimized performance metrics achieving high conversion rates.",
-    tags: ["#Frontend", "#TailwindCSS", "#WebDesign"],
-  },
-  {
-    id: "5",
     type: "education",
-    role: "High School Graduate (Science & Tech)",
-    organization: "SMAN 1 Geger",
-    period: "2022 - 2025",
-    isActive: false,
+    role: "Program Studi Teknik Informatika",
+    organization: "Universitas PGRI Madiun",
+    period: "2025 – Sekarang",
+    isActive: true,
     description:
-      "Graduated with strong foundations in Mathematics, Physics, and Informatics, actively participating in competitive programming and technology showcases.",
-    tags: ["#Informatics", "#Mathematics", "#Physics"],
+      "Menempuh program sarjana Teknik Informatika dengan fokus pada rekayasa perangkat lunak, sistem komputasi modern, basis data relasional & cloud, serta arsitektur aplikasi berskala industri.",
+    tags: ["#TeknikInformatika", "#UniversitasPGRIMadiun", "#FullStackEngineering"],
   },
 ];
 
@@ -224,10 +214,23 @@ export default function EvolutionLog() {
                       </div>
                     </div>
 
-                    {/* Description */}
-                    <p className="pt-4 text-xs font-light leading-relaxed text-slate-400 sm:text-sm">
-                      {item.description}
-                    </p>
+                    {/* Description or Bullets */}
+                    {item.description && (
+                      <p className="pt-4 text-xs font-light leading-relaxed text-slate-400 sm:text-sm">
+                        {item.description}
+                      </p>
+                    )}
+
+                    {item.bullets && item.bullets.length > 0 && (
+                      <ul className="mt-4 space-y-2 text-xs font-light leading-relaxed text-slate-300 sm:text-sm">
+                        {item.bullets.map((bullet, bIdx) => (
+                          <li key={bIdx} className="flex items-start gap-2">
+                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
+                            <span>{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
 
                     {/* Tags */}
                     {item.tags && item.tags.length > 0 && (

@@ -195,7 +195,7 @@ export default function BentoHero() {
 
           <div className="grid grid-cols-2 gap-2 pt-3">
             <div className="rounded-xl border border-neutral-200 bg-neutral-50/80 p-2.5 text-center dark:border-neutral-800 dark:bg-neutral-800/40">
-              <div className="text-lg font-black text-neutral-900 dark:text-white">4+</div>
+              <div className="text-lg font-black text-neutral-900 dark:text-white">2+</div>
               <div className="text-[10px] font-medium text-neutral-500 dark:text-neutral-400">Yrs Exp</div>
             </div>
             <div className="rounded-xl border border-neutral-200 bg-neutral-50/80 p-2.5 text-center dark:border-neutral-800 dark:bg-neutral-800/40">
